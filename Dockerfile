@@ -24,7 +24,7 @@ RUN cd /tmp/kubespray && pip install -U -r requirements.txt
 
 # Download and install semaphore
 RUN cd /tmp && wget https://github.com/ansible-semaphore/semaphore/releases/\
-download/v2.10.7/semaphore_2.10.19_linux_amd64.deb 
+download/v2.10.19/semaphore_2.10.19_linux_amd64.deb 
 RUN dpkg -i /tmp/semaphore_2.10.19_linux_amd64.deb 
 
 # Copy playbooks
