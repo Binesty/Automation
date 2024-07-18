@@ -1,0 +1,24 @@
+- name: Installing argocd business packages
+  hosts: commands
+  gather_facts: False
+
+  tasks:
+    - name: Delete directory Remote argocd
+      become: yes 
+      ignore_errors: yes
+      file:
+        path: /tmp/semaphore/argocd
+        state: absent
+
+    - name: Copy argocd folder to remote
+      copy:
+        src: /semaphore/argocd
+        dest: /tmp/semaphore
+ 
+    - name: Clean applications business
+      command: kubectl delete application --all -n argocd --selector=project=business
+      ignore_errors: yes
+
+    - name: Create applications business
+      command: kubectl apply -f /tmp/semaphore/argocd/applications/business
+      ignore_errors: yes   

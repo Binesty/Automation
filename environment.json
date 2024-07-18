@@ -1,0 +1,9 @@
+{
+  "cluster_name": "binesty",
+  "kube_version": "v1.28.7",  
+  "kube_network_plugin": "calico",  
+  "container_manager": "containerd",  
+  "argocd_enabled": "true",
+  "argocd_admin_password": "changeme",
+  "kube_proxy_strict_arp": "true"  
+}

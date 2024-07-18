@@ -1,0 +1,134 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: nfs-minio
+  namespace: minio
+  labels:
+    storage.k8s.io/name: nfs
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: nfs-client
+  resources:
+    requests:
+      storage: 10Gi
+---      
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: minio
+  namespace: minio
+  labels:
+    app: minio
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: minio
+  template:
+    metadata:
+      labels:
+        app: minio
+    spec:
+      volumes:
+      - name: minio-volume
+        persistentVolumeClaim:
+          claimName: nfs-minio 
+      - name: minio-certificates
+        secret:
+          secretName: minio-secret
+          items:
+          - key: AWS_CERT
+            path: public.crt
+          - key: AWS_CERT_KEY
+            path: private.key
+      containers:
+      - name: minio
+        image: quay.io/minio/minio:latest
+        env:
+          - name: MINIO_ROOT_USER 
+            valueFrom:
+              secretKeyRef:
+                name: minio-user-secret
+                key: MINIO_ROOT_USER
+          - name: MINIO_ROOT_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: minio-user-secret
+                key: MINIO_ROOT_PASSWORD        
+        command:
+        - /bin/bash
+        - -c
+        args: 
+        - minio server /data --console-address :9090 --address :9000
+        volumeMounts:
+        - mountPath: /data
+          name: minio-volume                
+        resources:
+            limits:
+              cpu: 500m
+              memory: 800Mi
+            requests:
+              cpu: 500m
+              memory: 800Mi          
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: minio-service-console
+  namespace: minio
+spec:
+  selector:
+    app: minio
+  type: ClusterIP  
+  ports:
+    - port: 9090
+      targetPort: 9090
+      protocol: TCP  
+---  
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: minio-service-api
+  namespace: minio
+spec:
+  selector:
+    app: minio
+  type: ClusterIP  
+  ports:
+    - port: 9000
+      targetPort: 9000
+      protocol: TCP        
+---  
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:  
+    cert-manager.io/cluster-issuer: binesty-ca-issuer
+    cert-manager.io/duration: 2160h # 90d
+    cert-manager.io/renew-before: 360h # 15d        
+    nginx.ingress.kubernetes.io/rewrite-target: /
+  name: minio-ingress
+  namespace: minio
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: minio.binesty.io
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: minio-service-console
+            port:
+              number: 9090
+  tls:
+    - hosts:
+        - minio.binesty.io
+      secretName: minio-binesty-certificate-key-pair              
+---

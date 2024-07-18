@@ -1,0 +1,8 @@
+- name: Prune all images on all hosts
+  hosts: all  
+  gather_facts: False  
+  become: yes
+  tasks:
+    - name: Prune images containerd all hosts
+      shell: crictl rmi --prune
+      ignore_errors: true

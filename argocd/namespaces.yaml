@@ -1,0 +1,85 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: databases
+  labels:
+    use-vault: "true"
+---
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: crossplane
+  labels:
+    use-vault: "true"
+---
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: elastic-stack
+  labels:
+    use-vault: "true"
+---
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: keycloak
+  labels:
+    use-vault: "true"
+---
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: minio
+  labels:
+    use-vault: "true"
+    app.kubernetes.io/instance: minio
+    kubernetes.io/metadata.name: minio
+---
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: redis
+  labels:
+    use-vault: "true"
+---
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: kafka
+  labels:
+    use-vault: "true"
+---
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: cert-manager
+  labels:
+    use-vault: "true"
+    use-root-certificate: "true"
+---
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: business
+  labels:
+    use-vault: "true"
+    use-binesty-registry: "true"
+    use-root-certificate: "true"
+---
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: vault
+  labels:
+    use-vault: "true"    
+    use-root-certificate: "true"
+---

@@ -1,0 +1,76 @@
+- name: Installing NFS server
+  hosts: nfs
+  gather_facts: False  
+  become: yes
+  tasks:
+    - name: Install NFS server on master
+      apt:  
+        name: nfs-kernel-server
+        state: present  
+
+    - name: Create directory NFS
+      file:
+        path: /var/nfs
+        state: directory
+        owner: 1000
+    
+    - name: Create file /etc/exports
+      ansible.builtin.file:
+        path: /etc/exports
+        state: touch
+
+    - name: Create share minio
+      ansible.builtin.lineinfile:
+        path: /etc/exports        
+        line: "/var/nfs/volumes *(rw,sync,no_subtree_check,no_root_squash,no_all_squash,insecure)"
+
+    - name: Enable and start NFS server service
+      systemd:
+        name: nfs-server
+        enabled: yes
+        state: started
+
+    - name: Export NFS shares
+      command: exportfs -rav
+      ignore_errors: yes
+
+    - name: Show exported NFS shares
+      command: showmount -e localhost
+
+- name: Installing components all hosts
+  hosts: all  
+  gather_facts: False  
+  become: yes
+  tasks:
+    - name: Add Helm GPG key
+      apt_key:
+        url: https://baltocdn.com/helm/signing.asc
+
+    - name: Add Helm repository
+      apt_repository:
+        repo: "deb https://baltocdn.com/helm/stable/debian/ all main"
+        state: present
+
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+
+    - name: Install Helm
+      apt:
+        name: helm
+        state: present
+          
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+
+    - name: Install Nano, Open-iSCSI, NFS Common, and NFS Kernel Server
+      apt:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - nano
+        - open-iscsi
+        - nfs-common
+        - nfs-kernel-server
+

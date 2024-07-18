@@ -1,0 +1,214 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: keycloak-postgres-service
+  namespace: keycloak
+  labels:
+    app: postgres
+spec:
+  ports:
+  - port: 5432
+    name: postgres
+  selector:
+    app: keycloak-postgres
+  type: ClusterIP
+---
+
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: keycloak-postgres
+  namespace: keycloak
+spec:
+  serviceName: keycloak-postgres-service
+  replicas: 1
+  selector:
+    matchLabels:
+      app: keycloak-postgres
+  template:
+    metadata:
+      labels:
+        app: keycloak-postgres
+    spec:
+      containers:
+        - name: keycloak-postgres
+          image: postgres:latest          
+          env:
+            - name: POSTGRES_USER 
+              valueFrom:
+                secretKeyRef:
+                  name: keycloak-secret
+                  key: POSTGRES_USER
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: keycloak-secret
+                  key: POSTGRES_PASSWORD              
+            - name: PGDATA
+              value: /var/lib/postgresql/pgdata
+          ports:
+            - containerPort: 5432
+              name: postgres
+          volumeMounts:
+            - name: postgres-volume-claim
+              mountPath: /var/lib/postgresql/data
+          resources:
+            limits:
+              memory: 512Mi
+              cpu: "1"
+            requests:
+              memory: 256Mi
+              cpu: "0.2"
+  volumeClaimTemplates:
+    - metadata:
+        name: postgres-volume-claim
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: 10Gi
+---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: keycloak-configmap
+  namespace: keycloak
+data:    
+  JAVA_OPTS_APPEND: '-Djgroups.dns.query=keycloak-service.keycloak.svc.binesty'
+  KEYCLOAK_DATABASE_HOST: keycloak-postgres-service.svc.binesty
+  KEYCLOAK_DATABASE_PORT: '5432'
+  KEYCLOAK_DATABASE_NAME: 'keycloak'
+  KC_PROXY: 'edge'
+  KC_HOSTNAME: 'keycloak.binesty.io'
+  KC_HOSTNAME_STRICT_HTTPS: 'true'
+  KC_LOG_LEVEL: 'INFO'
+  KC_TRANSACTION_XA_ENABLED: 'true'
+  KC_HEALTH_ENABLED: 'true'
+  KC_METRICS_ENABLED: 'true'
+
+  # KEYCLOAK_ENABLE_HTTPS: 'true'    
+  # KEYCLOAK_LOG_OUTPUT: default    
+  # KEYCLOAK_ENABLE_STATISTICS: 'false'
+---
+
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: keycloak
+  namespace: keycloak
+  labels:
+    app: keycloak
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: keycloak
+  template:
+    metadata:
+      labels:
+        app: keycloak
+    spec:
+      containers:
+      - name: keycloak
+        image: quay.io/keycloak/keycloak:latest
+        volumeMounts:
+        - name: tls
+          mountPath: "/etc/ssl"
+          readOnly: true
+        args: ["start"]
+        envFrom:
+        - configMapRef:
+            name: keycloak-configmap
+        env:
+        - name: KEYCLOAK_ADMIN
+          valueFrom:
+            secretKeyRef:
+              key: KEYCLOAK_ADMIN
+              name: keycloak-secret
+        - name: KEYCLOAK_ADMIN_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              key: KEYCLOAK_ADMIN_PASSWORD
+              name: keycloak-secret
+        - name: KC_DB_USER
+          valueFrom:
+            secretKeyRef:
+              name: keycloak-secret
+              key: POSTGRES_USER
+        - name: KC_DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: keycloak-secret
+              key: POSTGRES_PASSWORD
+        ports:
+        - name: http
+          containerPort: 8080
+        resources:
+            limits:
+              memory: 800Mi
+              cpu: "1"
+            requests:
+              memory: 500Mi
+              cpu: "0.5"
+        readinessProbe:
+          httpGet:
+            scheme: HTTP
+            path: /realms/master
+            port: 8080
+          initialDelaySeconds: 90
+          periodSeconds: 1
+      volumes: 
+      - name: tls
+        secret:
+          secretName: keycloak-binesty-certificate-key-pair
+          optional: false
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: keycloak-service
+  namespace: keycloak
+  labels:
+    app: keycloak
+spec:
+  ports:
+  - name: https
+    port: 443
+    targetPort: 8080
+  selector:
+    app: keycloak
+  type: ClusterIP
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:  
+    cert-manager.io/cluster-issuer: binesty-ca-issuer
+    cert-manager.io/duration: 2160h # 90d
+    cert-manager.io/renew-before: 360h # 15d        
+    nginx.ingress.kubernetes.io/rewrite-target: /
+  name: keycloak-ingress
+  namespace: keycloak
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: keycloak.binesty.io
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: keycloak-service
+            port:
+              number: 443
+  tls:
+    - hosts:
+        - keycloak.binesty.io
+      secretName: keycloak-binesty-certificate-key-pair              
+---

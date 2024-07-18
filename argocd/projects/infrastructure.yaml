@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:  
+  generation: 3
+  managedFields:
+    - apiVersion: argoproj.io/v1alpha1
+      manager: argocd-server
+  name: infrastructure
+  namespace: argocd
+  selfLink: /apis/argoproj.io/v1alpha1/namespaces/argocd/appprojects/default
+spec:
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  destinations:
+    - namespace: '*'
+      server: '*'
+  sourceRepos:
+    - '*'
