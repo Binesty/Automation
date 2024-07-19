@@ -1,8 +1,27 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  creationTimestamp: '2024-05-03T02:25:37Z'
-  generation: 171
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: >
+      {"apiVersion":"argoproj.io/v1alpha1","kind":"Application","metadata":{"annotations":{},"creationTimestamp":"2024-05-03T02:25:37Z","generation":171,"labels":{"project":"infrastructure","source":"internal"},"managedFields":[{"apiVersion":"argoproj.io/v1alpha1","fieldsType":"FieldsV1","fieldsV1":{"f:metadata":{"f:labels":{".":{},"f:project":{},"f:source":{}}},"f:spec":{".":{},"f:destination":{".":{},"f:namespace":{},"f:server":{}},"f:project":{},"f:source":{".":{},"f:path":{},"f:repoURL":{},"f:targetRevision":{}},"f:syncPolicy":{".":{},"f:syncOptions":{}}},"f:status":{".":{},"f:health":{},"f:summary":{},"f:sync":{".":{},"f:comparedTo":{".":{},"f:destination":{},"f:source":{}}}}},"manager":"argocd-server","operation":"Update","time":"2024-05-03T02:29:18Z"},{"apiVersion":"argoproj.io/v1alpha1","fieldsType":"FieldsV1","fieldsV1":{"f:status":{"f:controllerNamespace":{},"f:health":{"f:status":{}},"f:history":{},"f:operationState":{".":{},"f:finishedAt":{},"f:message":{},"f:operation":{".":{},"f:initiatedBy":{".":{},"f:username":{}},"f:retry":{},"f:sync":{".":{},"f:revision":{},"f:syncOptions":{},"f:syncStrategy":{".":{},"f:hook":{".":{},"f:force":{}}}}},"f:phase":{},"f:startedAt":{},"f:syncResult":{".":{},"f:resources":{},"f:revision":{},"f:source":{".":{},"f:path":{},"f:repoURL":{},"f:targetRevision":{}}}},"f:reconciledAt":{},"f:resources":{},"f:sourceType":{},"f:summary":{"f:externalURLs":{},"f:images":{}},"f:sync":{"f:comparedTo":{"f:destination":{"f:namespace":{},"f:server":{}},"f:source":{"f:path":{},"f:repoURL":{},"f:targetRevision":{}}},"f:revision":{},"f:status":{}}}},"manager":"argocd-application-controller","operation":"Update","time":"2024-05-03T16:58:41Z"}],"name":"keycloak","namespace":"argocd","resourceVersion":"1534463","selfLink":"/apis/argoproj.io/v1alpha1/namespaces/argocd/applications/keycloak","uid":"db084b83-c526-482a-bc12-8e7c1b4c4dc0"},"spec":{"destination":{"namespace":"keycloak","server":"https://kubernetes.default.svc"},"project":"infrastructure","source":{"path":"cluster/argocd/sources/keycloak","repoURL":"git@github.com:Binesty/Kubernetes.git","targetRevision":"main"},"syncPolicy":{"syncOptions":["CreateNamespace=true"]}},"status":{"controllerNamespace":"argocd","health":{"status":"Healthy"},"history":[{"deployStartedAt":"2024-05-03T02:26:37Z","deployedAt":"2024-05-03T02:26:41Z","id":0,"revision":"08da1a328a6a000090effabac578be9ddc271dd1","source":{"path":"cluster/argocd/sources/keycloak","repoURL":"git@github.com:Binesty/Kubernetes.git","targetRevision":"main"}},{"deployStartedAt":"2024-05-03T02:27:48Z","deployedAt":"2024-05-03T02:27:52Z","id":1,"revision":"5590b0e7f8918733d981c4404af88e436cab6e51","source":{"path":"cluster/argocd/sources/keycloak","repoURL":"git@github.com:Binesty/Kubernetes.git","targetRevision":"main"}},{"deployStartedAt":"2024-05-03T02:29:18Z","deployedAt":"2024-05-03T02:29:21Z","id":2,"revision":"5590b0e7f8918733d981c4404af88e436cab6e51","source":{"path":"cluster/argocd/sources/keycloak","repoURL":"git@github.com:Binesty/Kubernetes.git","targetRevision":"main"}}],"operationState":{"finishedAt":"2024-05-03T02:29:21Z","message":"successfully
+      synced (all tasks
+      run)","operation":{"initiatedBy":{"username":"admin"},"retry":{},"sync":{"revision":"5590b0e7f8918733d981c4404af88e436cab6e51","syncOptions":["CreateNamespace=true","Replace=true"],"syncStrategy":{"hook":{"force":true}}}},"phase":"Succeeded","startedAt":"2024-05-03T02:29:18Z","syncResult":{"resources":[{"group":"","hookPhase":"Running","kind":"ConfigMap","message":"configmap
+      \"keycloak-configmap\" deleted\nconfigmap/keycloak-configmap
+      replaced","name":"keycloak-configmap","namespace":"keycloak","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"","hookPhase":"Running","kind":"Service","message":"service
+      \"keycloak-service\" deleted\nservice/keycloak-service
+      replaced","name":"keycloak-service","namespace":"keycloak","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"","hookPhase":"Running","kind":"Service","message":"service
+      \"keycloak-postgres-service\" deleted\nservice/keycloak-postgres-service
+      replaced","name":"keycloak-postgres-service","namespace":"keycloak","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"apps","hookPhase":"Running","kind":"Deployment","message":"deployment.apps
+      \"keycloak\" deleted\ndeployment.apps/keycloak
+      replaced","name":"keycloak","namespace":"keycloak","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"apps","hookPhase":"Running","kind":"StatefulSet","message":"statefulset.apps
+      \"keycloak-postgres\" deleted\nstatefulset.apps/keycloak-postgres
+      replaced","name":"keycloak-postgres","namespace":"keycloak","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"networking.k8s.io","hookPhase":"Running","kind":"Ingress","message":"ingress.networking.k8s.io
+      \"keycloak-ingress\" deleted\ningress.networking.k8s.io/keycloak-ingress
+      replaced","name":"keycloak-ingress","namespace":"keycloak","status":"Synced","syncPhase":"Sync","version":"v1"}],"revision":"5590b0e7f8918733d981c4404af88e436cab6e51","source":{"path":"cluster/argocd/sources/keycloak","repoURL":"git@github.com:Binesty/Kubernetes.git","targetRevision":"main"}}},"reconciledAt":"2024-05-03T16:58:38Z","resources":[{"kind":"ConfigMap","name":"keycloak-configmap","namespace":"keycloak","status":"Synced","version":"v1"},{"health":{"status":"Healthy"},"kind":"Service","name":"keycloak-postgres-service","namespace":"keycloak","status":"Synced","version":"v1"},{"health":{"status":"Healthy"},"kind":"Service","name":"keycloak-service","namespace":"keycloak","status":"Synced","version":"v1"},{"group":"apps","health":{"status":"Healthy"},"kind":"Deployment","name":"keycloak","namespace":"keycloak","status":"Synced","version":"v1"},{"group":"apps","health":{"message":"partitioned
+      roll out complete: 1 new pods have been
+      updated...","status":"Healthy"},"kind":"StatefulSet","name":"keycloak-postgres","namespace":"keycloak","status":"Synced","version":"v1"},{"group":"networking.k8s.io","health":{"status":"Healthy"},"kind":"Ingress","name":"keycloak-ingress","namespace":"keycloak","status":"Synced","version":"v1"}],"sourceType":"Kustomize","summary":{"externalURLs":["http://keycloak.binesty.corp/"],"images":["postgres:latest","quay.io/keycloak/keycloak:23.0.4"]},"sync":{"comparedTo":{"destination":{"namespace":"keycloak","server":"https://kubernetes.default.svc"},"source":{"path":"cluster/argocd/sources/keycloak","repoURL":"git@github.com:Binesty/Kubernetes.git","targetRevision":"main"}},"revision":"5590b0e7f8918733d981c4404af88e436cab6e51","status":"Synced"}}}
+  creationTimestamp: '2024-06-05T20:58:08Z'
+  generation: 7709
   labels:
     project: infrastructure
     source: internal
@@ -11,6 +30,9 @@ metadata:
       fieldsType: FieldsV1
       fieldsV1:
         f:metadata:
+          f:annotations:
+            .: {}
+            f:kubectl.kubernetes.io/last-applied-configuration: {}
           f:labels:
             .: {}
             f:project: {}
@@ -24,30 +46,43 @@ metadata:
           f:project: {}
           f:source:
             .: {}
-            f:path: {}
-            f:repoURL: {}
             f:targetRevision: {}
           f:syncPolicy:
             .: {}
             f:syncOptions: {}
         f:status:
           .: {}
+          f:controllerNamespace: {}
           f:health: {}
           f:summary: {}
           f:sync:
             .: {}
             f:comparedTo:
               .: {}
-              f:destination: {}
-              f:source: {}
+              f:destination:
+                .: {}
+                f:namespace: {}
+                f:server: {}
+              f:source:
+                .: {}
+                f:targetRevision: {}
+      manager: kubectl-client-side-apply
+      operation: Update
+      time: '2024-06-05T20:58:08Z'
+    - apiVersion: argoproj.io/v1alpha1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          f:source:
+            f:path: {}
+            f:repoURL: {}
       manager: argocd-server
       operation: Update
-      time: '2024-05-03T02:29:18Z'
+      time: '2024-07-19T16:38:57Z'
     - apiVersion: argoproj.io/v1alpha1
       fieldsType: FieldsV1
       fieldsV1:
         f:status:
-          f:controllerNamespace: {}
           f:health:
             f:status: {}
           f:history: {}
@@ -67,9 +102,7 @@ metadata:
                 f:syncOptions: {}
                 f:syncStrategy:
                   .: {}
-                  f:hook:
-                    .: {}
-                    f:force: {}
+                  f:hook: {}
             f:phase: {}
             f:startedAt: {}
             f:syncResult:
@@ -89,22 +122,18 @@ metadata:
             f:images: {}
           f:sync:
             f:comparedTo:
-              f:destination:
-                f:namespace: {}
-                f:server: {}
               f:source:
                 f:path: {}
                 f:repoURL: {}
-                f:targetRevision: {}
             f:revision: {}
             f:status: {}
       manager: argocd-application-controller
       operation: Update
-      time: '2024-05-03T16:58:41Z'
+      time: '2024-07-19T16:52:18Z'
   name: keycloak
   namespace: argocd
-  resourceVersion: '1534463'
-  uid: db084b83-c526-482a-bc12-8e7c1b4c4dc0
+  resourceVersion: '17435448'
+  uid: 08d64e7f-fd38-47ad-a73f-59719686f43d
   selfLink: /apis/argoproj.io/v1alpha1/namespaces/argocd/applications/keycloak
 status:
   controllerNamespace: argocd
@@ -114,6 +143,7 @@ status:
     - deployStartedAt: '2024-05-03T02:26:37Z'
       deployedAt: '2024-05-03T02:26:41Z'
       id: 0
+      initiatedBy: {}
       revision: 08da1a328a6a000090effabac578be9ddc271dd1
       source:
         path: cluster/argocd/sources/keycloak
@@ -122,6 +152,7 @@ status:
     - deployStartedAt: '2024-05-03T02:27:48Z'
       deployedAt: '2024-05-03T02:27:52Z'
       id: 1
+      initiatedBy: {}
       revision: 5590b0e7f8918733d981c4404af88e436cab6e51
       source:
         path: cluster/argocd/sources/keycloak
@@ -130,36 +161,43 @@ status:
     - deployStartedAt: '2024-05-03T02:29:18Z'
       deployedAt: '2024-05-03T02:29:21Z'
       id: 2
+      initiatedBy: {}
       revision: 5590b0e7f8918733d981c4404af88e436cab6e51
       source:
         path: cluster/argocd/sources/keycloak
         repoURL: git@github.com:Binesty/Kubernetes.git
         targetRevision: main
+    - deployStartedAt: '2024-06-12T17:41:04Z'
+      deployedAt: '2024-06-12T17:41:06Z'
+      id: 3
+      initiatedBy:
+        username: admin
+      revision: 5face3373364205637e1826f7fd23219f1821738
+      source:
+        path: cluster/argocd/sources/keycloak
+        repoURL: git@github.com:Binesty/Kubernetes.git
+        targetRevision: main
   operationState:
-    finishedAt: '2024-05-03T02:29:21Z'
+    finishedAt: '2024-06-12T17:41:06Z'
     message: successfully synced (all tasks run)
     operation:
       initiatedBy:
         username: admin
       retry: {}
       sync:
-        revision: 5590b0e7f8918733d981c4404af88e436cab6e51
+        revision: 5face3373364205637e1826f7fd23219f1821738
         syncOptions:
           - CreateNamespace=true
-          - Replace=true
         syncStrategy:
-          hook:
-            force: true
+          hook: {}
     phase: Succeeded
-    startedAt: '2024-05-03T02:29:18Z'
+    startedAt: '2024-06-12T17:41:04Z'
     syncResult:
       resources:
         - group: ''
           hookPhase: Running
           kind: ConfigMap
-          message: |-
-            configmap "keycloak-configmap" deleted
-            configmap/keycloak-configmap replaced
+          message: configmap/keycloak-configmap configured
           name: keycloak-configmap
           namespace: keycloak
           status: Synced
@@ -168,10 +206,8 @@ status:
         - group: ''
           hookPhase: Running
           kind: Service
-          message: |-
-            service "keycloak-service" deleted
-            service/keycloak-service replaced
-          name: keycloak-service
+          message: service/keycloak-postgres-service configured
+          name: keycloak-postgres-service
           namespace: keycloak
           status: Synced
           syncPhase: Sync
@@ -179,10 +215,8 @@ status:
         - group: ''
           hookPhase: Running
           kind: Service
-          message: |-
-            service "keycloak-postgres-service" deleted
-            service/keycloak-postgres-service replaced
-          name: keycloak-postgres-service
+          message: service/keycloak-service configured
+          name: keycloak-service
           namespace: keycloak
           status: Synced
           syncPhase: Sync
@@ -190,9 +224,7 @@ status:
         - group: apps
           hookPhase: Running
           kind: Deployment
-          message: |-
-            deployment.apps "keycloak" deleted
-            deployment.apps/keycloak replaced
+          message: deployment.apps/keycloak configured
           name: keycloak
           namespace: keycloak
           status: Synced
@@ -201,9 +233,7 @@ status:
         - group: apps
           hookPhase: Running
           kind: StatefulSet
-          message: |-
-            statefulset.apps "keycloak-postgres" deleted
-            statefulset.apps/keycloak-postgres replaced
+          message: statefulset.apps/keycloak-postgres configured
           name: keycloak-postgres
           namespace: keycloak
           status: Synced
@@ -212,20 +242,18 @@ status:
         - group: networking.k8s.io
           hookPhase: Running
           kind: Ingress
-          message: |-
-            ingress.networking.k8s.io "keycloak-ingress" deleted
-            ingress.networking.k8s.io/keycloak-ingress replaced
+          message: ingress.networking.k8s.io/keycloak-ingress configured
           name: keycloak-ingress
           namespace: keycloak
           status: Synced
           syncPhase: Sync
           version: v1
-      revision: 5590b0e7f8918733d981c4404af88e436cab6e51
+      revision: 5face3373364205637e1826f7fd23219f1821738
       source:
         path: cluster/argocd/sources/keycloak
         repoURL: git@github.com:Binesty/Kubernetes.git
         targetRevision: main
-  reconciledAt: '2024-05-03T16:58:38Z'
+  reconciledAt: '2024-07-19T16:52:17Z'
   resources:
     - kind: ConfigMap
       name: keycloak-configmap
@@ -274,20 +302,20 @@ status:
   sourceType: Kustomize
   summary:
     externalURLs:
-      - http://keycloak.binesty.corp/
+      - https://keycloak.binesty.io/
     images:
       - postgres:latest
-      - quay.io/keycloak/keycloak:23.0.4
+      - quay.io/keycloak/keycloak:latest
   sync:
     comparedTo:
       destination:
         namespace: keycloak
         server: https://kubernetes.default.svc
       source:
-        path: cluster/argocd/sources/keycloak
-        repoURL: git@github.com:Binesty/Kubernetes.git
+        path: argocd/sources/keycloak
+        repoURL: git@github.com:Binesty/Automation.git
         targetRevision: main
-    revision: 5590b0e7f8918733d981c4404af88e436cab6e51
+    revision: 2325df6152c42fe82976edd3eff16d40c0d39366
     status: Synced
 spec:
   destination:
@@ -295,8 +323,8 @@ spec:
     server: https://kubernetes.default.svc
   project: infrastructure
   source:
-    path: cluster/argocd/sources/keycloak
-    repoURL: git@github.com:Binesty/Kubernetes.git
+    path: argocd/sources/keycloak
+    repoURL: git@github.com:Binesty/Automation.git
     targetRevision: main
   syncPolicy:
     syncOptions:
