@@ -27,3 +27,4 @@ spec:
     - hosts:
         - argocd.binesty.io
       secretName: argocd-binesty-certificate-key-pair 
+---
