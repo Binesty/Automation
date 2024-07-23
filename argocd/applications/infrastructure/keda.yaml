@@ -3,7 +3,7 @@ kind: Application
 metadata:
   annotations:
     kubectl.kubernetes.io/last-applied-configuration: >
-      {"apiVersion":"argoproj.io/v1alpha1","kind":"Application","metadata":{"annotations":{},"creationTimestamp":"2024-04-25T20:20:49Z","generation":1512,"labels":{"project":"infrastructure","source":"internal"},"managedFields":[{"apiVersion":"argoproj.io/v1alpha1","fieldsType":"FieldsV1","fieldsV1":{"f:metadata":{"f:annotations":{".":{},"f:kubectl.kubernetes.io/last-applied-configuration":{}},"f:labels":{".":{},"f:project":{},"f:source":{}}},"f:spec":{".":{},"f:destination":{".":{},"f:namespace":{},"f:server":{}},"f:project":{},"f:source":{".":{},"f:path":{},"f:repoURL":{},"f:targetRevision":{}},"f:syncPolicy":{".":{},"f:syncOptions":{}}},"f:status":{".":{},"f:controllerNamespace":{},"f:health":{},"f:summary":{},"f:sync":{".":{},"f:comparedTo":{".":{},"f:destination":{".":{},"f:namespace":{},"f:server":{}},"f:source":{".":{},"f:path":{},"f:repoURL":{},"f:targetRevision":{}}}}}},"manager":"kubectl-client-side-apply","operation":"Update","time":"2024-04-25T20:20:49Z"},{"apiVersion":"argoproj.io/v1alpha1","fieldsType":"FieldsV1","fieldsV1":{"f:status":{"f:health":{"f:status":{}},"f:history":{},"f:operationState":{".":{},"f:finishedAt":{},"f:message":{},"f:operation":{".":{},"f:initiatedBy":{".":{},"f:username":{}},"f:retry":{},"f:sync":{".":{},"f:revision":{},"f:syncOptions":{},"f:syncStrategy":{".":{},"f:hook":{}}}},"f:phase":{},"f:startedAt":{},"f:syncResult":{".":{},"f:resources":{},"f:revision":{},"f:source":{".":{},"f:path":{},"f:repoURL":{},"f:targetRevision":{}}}},"f:reconciledAt":{},"f:resources":{},"f:sourceType":{},"f:summary":{"f:images":{}},"f:sync":{"f:revision":{},"f:status":{}}}},"manager":"argocd-application-controller","operation":"Update","time":"2024-05-03T16:58:41Z"}],"name":"keda","namespace":"argocd","resourceVersion":"1534469","selfLink":"/apis/argoproj.io/v1alpha1/namespaces/argocd/applications/keda","uid":"b3d70b18-c285-4fab-a475-41523972cc64"},"spec":{"destination":{"namespace":"keda","server":"https://kubernetes.default.svc"},"project":"infrastructure","source":{"path":"cluster/argocd/sources/keda","repoURL":"git@github.com:Binesty/Kubernetes.git","targetRevision":"main"},"syncPolicy":{"syncOptions":["CreateNamespace=true","ServerSideApply=true"]}},"status":{"controllerNamespace":"argocd","health":{"status":"Healthy"},"history":[{"deployStartedAt":"2024-04-02T22:16:59Z","deployedAt":"2024-04-02T22:17:18Z","id":0,"revision":"9e1f5d9a7bbd9a73222c2c47495744188f313917","source":{"path":"cluster/argocd/sources/keda","repoURL":"git@github.com:Binesty/Kubernetes.git","targetRevision":"main"}},{"deployStartedAt":"2024-04-05T05:09:37Z","deployedAt":"2024-04-05T05:09:47Z","id":1,"revision":"281d71653b9c9f4ba74f008d5388ee00ff481b2e","source":{"path":"cluster/argocd/sources/keda","repoURL":"git@github.com:Binesty/Kubernetes.git","targetRevision":"main"}},{"deployStartedAt":"2024-04-26T00:20:34Z","deployedAt":"2024-04-26T00:20:53Z","id":2,"revision":"53a12d603f32692babbacf9cca77dbfb2cc73461","source":{"path":"cluster/argocd/sources/keda","repoURL":"git@github.com:Binesty/Kubernetes.git","targetRevision":"main"}}],"operationState":{"finishedAt":"2024-04-26T00:20:53Z","message":"successfully
+      {"apiVersion":"argoproj.io/v1alpha1","kind":"Application","metadata":{"annotations":{},"creationTimestamp":"2024-06-05T20:58:07Z","generation":7782,"labels":{"project":"infrastructure","source":"internal"},"managedFields":[{"apiVersion":"argoproj.io/v1alpha1","fieldsType":"FieldsV1","fieldsV1":{"f:metadata":{"f:annotations":{".":{},"f:kubectl.kubernetes.io/last-applied-configuration":{}},"f:labels":{".":{},"f:project":{},"f:source":{}}},"f:spec":{".":{},"f:destination":{".":{},"f:namespace":{},"f:server":{}},"f:project":{},"f:source":{".":{},"f:targetRevision":{}},"f:syncPolicy":{".":{},"f:syncOptions":{}}},"f:status":{".":{},"f:controllerNamespace":{},"f:health":{},"f:operationState":{".":{},"f:finishedAt":{},"f:message":{},"f:operation":{".":{},"f:initiatedBy":{".":{},"f:username":{}},"f:retry":{},"f:sync":{".":{},"f:revision":{},"f:syncOptions":{},"f:syncStrategy":{".":{},"f:hook":{}}}},"f:phase":{},"f:startedAt":{},"f:syncResult":{".":{},"f:resources":{},"f:revision":{},"f:source":{".":{},"f:path":{},"f:repoURL":{},"f:targetRevision":{}}}},"f:summary":{".":{},"f:images":{}},"f:sync":{".":{},"f:comparedTo":{".":{},"f:destination":{".":{},"f:namespace":{},"f:server":{}},"f:source":{".":{},"f:targetRevision":{}}}}}},"manager":"kubectl-client-side-apply","operation":"Update","time":"2024-06-05T20:58:07Z"},{"apiVersion":"argoproj.io/v1alpha1","fieldsType":"FieldsV1","fieldsV1":{"f:spec":{"f:source":{"f:path":{},"f:repoURL":{}}},"f:status":{"f:history":{}}},"manager":"argocd-server","operation":"Update","time":"2024-07-19T16:38:09Z"},{"apiVersion":"argoproj.io/v1alpha1","fieldsType":"FieldsV1","fieldsV1":{"f:status":{"f:health":{"f:status":{}},"f:reconciledAt":{},"f:resources":{},"f:sourceType":{},"f:sync":{"f:comparedTo":{"f:source":{"f:path":{},"f:repoURL":{}}},"f:revision":{},"f:status":{}}}},"manager":"argocd-application-controller","operation":"Update","time":"2024-07-19T16:52:19Z"}],"name":"keda","namespace":"argocd","resourceVersion":"17435460","selfLink":"/apis/argoproj.io/v1alpha1/namespaces/argocd/applications/keda","uid":"8b8dc9f1-9cb9-4a82-8c65-c7e64fcd5bb4"},"spec":{"destination":{"namespace":"keda","server":"https://kubernetes.default.svc"},"project":"infrastructure","source":{"path":"argocd/sources/keda","repoURL":"git@github.com:Binesty/Automation.git","targetRevision":"main"},"syncPolicy":{"syncOptions":["CreateNamespace=true","ServerSideApply=true"]}},"status":{"controllerNamespace":"argocd","health":{"status":"Healthy"},"history":[{"deployStartedAt":"2024-04-02T22:16:59Z","deployedAt":"2024-04-02T22:17:18Z","id":0,"initiatedBy":{},"revision":"9e1f5d9a7bbd9a73222c2c47495744188f313917","source":{"path":"cluster/argocd/sources/keda","repoURL":"git@github.com:Binesty/Kubernetes.git","targetRevision":"main"}},{"deployStartedAt":"2024-04-05T05:09:37Z","deployedAt":"2024-04-05T05:09:47Z","id":1,"initiatedBy":{},"revision":"281d71653b9c9f4ba74f008d5388ee00ff481b2e","source":{"path":"cluster/argocd/sources/keda","repoURL":"git@github.com:Binesty/Kubernetes.git","targetRevision":"main"}},{"deployStartedAt":"2024-04-26T00:20:34Z","deployedAt":"2024-04-26T00:20:53Z","id":2,"initiatedBy":{},"revision":"53a12d603f32692babbacf9cca77dbfb2cc73461","source":{"path":"cluster/argocd/sources/keda","repoURL":"git@github.com:Binesty/Kubernetes.git","targetRevision":"main"}}],"operationState":{"finishedAt":"2024-04-26T00:20:53Z","message":"successfully
       synced (all tasks
       run)","operation":{"initiatedBy":{"username":"admin"},"retry":{},"sync":{"revision":"53a12d603f32692babbacf9cca77dbfb2cc73461","syncOptions":["CreateNamespace=true","ServerSideApply=true"],"syncStrategy":{"hook":{}}}},"phase":"Succeeded","startedAt":"2024-04-26T00:20:34Z","syncResult":{"resources":[{"group":"","hookPhase":"Running","kind":"Namespace","message":"namespace/keda
       serverside-applied","name":"keda","namespace":"keda","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"","hookPhase":"Running","kind":"ServiceAccount","message":"serviceaccount/keda-operator
@@ -39,11 +39,11 @@ metadata:
       serverside-applied","name":"keda-operator","namespace":"keda","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"apps","hookPhase":"Running","kind":"Deployment","message":"deployment.apps/keda-metrics-apiserver
       serverside-applied","name":"keda-metrics-apiserver","namespace":"keda","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"apiregistration.k8s.io","hookPhase":"Running","kind":"APIService","message":"apiservice.apiregistration.k8s.io/v1beta1.external.metrics.k8s.io
       serverside-applied","name":"v1beta1.external.metrics.k8s.io","namespace":"keda","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"admissionregistration.k8s.io","hookPhase":"Running","kind":"ValidatingWebhookConfiguration","message":"validatingwebhookconfiguration.admissionregistration.k8s.io/keda-admission
-      serverside-applied","name":"keda-admission","namespace":"keda","status":"Synced","syncPhase":"Sync","version":"v1"}],"revision":"53a12d603f32692babbacf9cca77dbfb2cc73461","source":{"path":"cluster/argocd/sources/keda","repoURL":"git@github.com:Binesty/Kubernetes.git","targetRevision":"main"}}},"reconciledAt":"2024-05-03T16:58:38Z","resources":[{"kind":"Namespace","name":"keda","status":"Synced","version":"v1"},{"health":{"status":"Healthy"},"kind":"Service","name":"keda-admission-webhooks","namespace":"keda","status":"Synced","version":"v1"},{"health":{"status":"Healthy"},"kind":"Service","name":"keda-metrics-apiserver","namespace":"keda","status":"Synced","version":"v1"},{"health":{"status":"Healthy"},"kind":"Service","name":"keda-operator","namespace":"keda","status":"Synced","version":"v1"},{"kind":"ServiceAccount","name":"keda-operator","namespace":"keda","status":"Synced","version":"v1"},{"group":"admissionregistration.k8s.io","kind":"ValidatingWebhookConfiguration","name":"keda-admission","status":"Synced","version":"v1"},{"group":"apiextensions.k8s.io","kind":"CustomResourceDefinition","name":"cloudeventsources.eventing.keda.sh","status":"Synced","version":"v1"},{"group":"apiextensions.k8s.io","kind":"CustomResourceDefinition","name":"clustertriggerauthentications.keda.sh","status":"Synced","version":"v1"},{"group":"apiextensions.k8s.io","kind":"CustomResourceDefinition","name":"scaledjobs.keda.sh","status":"Synced","version":"v1"},{"group":"apiextensions.k8s.io","kind":"CustomResourceDefinition","name":"scaledobjects.keda.sh","status":"Synced","version":"v1"},{"group":"apiextensions.k8s.io","kind":"CustomResourceDefinition","name":"triggerauthentications.keda.sh","status":"Synced","version":"v1"},{"group":"apiregistration.k8s.io","health":{"message":"Passed:
+      serverside-applied","name":"keda-admission","namespace":"keda","status":"Synced","syncPhase":"Sync","version":"v1"}],"revision":"53a12d603f32692babbacf9cca77dbfb2cc73461","source":{"path":"cluster/argocd/sources/keda","repoURL":"git@github.com:Binesty/Kubernetes.git","targetRevision":"main"}}},"reconciledAt":"2024-07-19T16:52:17Z","resources":[{"kind":"Namespace","name":"keda","status":"Synced","version":"v1"},{"health":{"status":"Healthy"},"kind":"Service","name":"keda-admission-webhooks","namespace":"keda","status":"Synced","version":"v1"},{"health":{"status":"Healthy"},"kind":"Service","name":"keda-metrics-apiserver","namespace":"keda","status":"Synced","version":"v1"},{"health":{"status":"Healthy"},"kind":"Service","name":"keda-operator","namespace":"keda","status":"Synced","version":"v1"},{"kind":"ServiceAccount","name":"keda-operator","namespace":"keda","status":"Synced","version":"v1"},{"group":"admissionregistration.k8s.io","kind":"ValidatingWebhookConfiguration","name":"keda-admission","status":"Synced","version":"v1"},{"group":"apiextensions.k8s.io","kind":"CustomResourceDefinition","name":"cloudeventsources.eventing.keda.sh","status":"Synced","version":"v1"},{"group":"apiextensions.k8s.io","kind":"CustomResourceDefinition","name":"clustertriggerauthentications.keda.sh","status":"Synced","version":"v1"},{"group":"apiextensions.k8s.io","kind":"CustomResourceDefinition","name":"scaledjobs.keda.sh","status":"Synced","version":"v1"},{"group":"apiextensions.k8s.io","kind":"CustomResourceDefinition","name":"scaledobjects.keda.sh","status":"Synced","version":"v1"},{"group":"apiextensions.k8s.io","kind":"CustomResourceDefinition","name":"triggerauthentications.keda.sh","status":"Synced","version":"v1"},{"group":"apiregistration.k8s.io","health":{"message":"Passed:
       all checks
-      passed","status":"Healthy"},"kind":"APIService","name":"v1beta1.external.metrics.k8s.io","status":"Synced","version":"v1"},{"group":"apps","health":{"status":"Healthy"},"kind":"Deployment","name":"keda-admission","namespace":"keda","status":"Synced","version":"v1"},{"group":"apps","health":{"status":"Healthy"},"kind":"Deployment","name":"keda-metrics-apiserver","namespace":"keda","status":"Synced","version":"v1"},{"group":"apps","health":{"status":"Healthy"},"kind":"Deployment","name":"keda-operator","namespace":"keda","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"keda-external-metrics-reader","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"keda-operator","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"ClusterRoleBinding","name":"keda-hpa-controller-external-metrics","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"ClusterRoleBinding","name":"keda-operator","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"ClusterRoleBinding","name":"keda-system-auth-delegator","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"Role","name":"keda-operator","namespace":"keda","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"RoleBinding","name":"keda-auth-reader","namespace":"keda","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"RoleBinding","name":"keda-operator","namespace":"keda","status":"Synced","version":"v1"}],"sourceType":"Kustomize","summary":{"images":["ghcr.io/kedacore/keda-admission-webhooks:2.13.1","ghcr.io/kedacore/keda-metrics-apiserver:2.13.1","ghcr.io/kedacore/keda:2.13.1"]},"sync":{"comparedTo":{"destination":{"namespace":"keda","server":"https://kubernetes.default.svc"},"source":{"path":"cluster/argocd/sources/keda","repoURL":"git@github.com:Binesty/Kubernetes.git","targetRevision":"main"}},"revision":"5590b0e7f8918733d981c4404af88e436cab6e51","status":"Synced"}}}
-  creationTimestamp: '2024-06-05T20:58:07Z'
-  generation: 7782
+      passed","status":"Healthy"},"kind":"APIService","name":"v1beta1.external.metrics.k8s.io","status":"Synced","version":"v1"},{"group":"apps","health":{"status":"Healthy"},"kind":"Deployment","name":"keda-admission","namespace":"keda","status":"Synced","version":"v1"},{"group":"apps","health":{"status":"Healthy"},"kind":"Deployment","name":"keda-metrics-apiserver","namespace":"keda","status":"Synced","version":"v1"},{"group":"apps","health":{"status":"Healthy"},"kind":"Deployment","name":"keda-operator","namespace":"keda","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"keda-external-metrics-reader","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"keda-operator","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"ClusterRoleBinding","name":"keda-hpa-controller-external-metrics","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"ClusterRoleBinding","name":"keda-operator","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"ClusterRoleBinding","name":"keda-system-auth-delegator","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"Role","name":"keda-operator","namespace":"keda","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"RoleBinding","name":"keda-auth-reader","namespace":"keda","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"RoleBinding","name":"keda-operator","namespace":"keda","status":"Synced","version":"v1"}],"sourceType":"Kustomize","summary":{"images":["ghcr.io/kedacore/keda-admission-webhooks:2.13.1","ghcr.io/kedacore/keda-metrics-apiserver:2.13.1","ghcr.io/kedacore/keda:2.13.1"]},"sync":{"comparedTo":{"destination":{"namespace":"keda","server":"https://kubernetes.default.svc"},"source":{"path":"argocd/sources/keda","repoURL":"git@github.com:Binesty/Automation.git","targetRevision":"main"}},"revision":"2325df6152c42fe82976edd3eff16d40c0d39366","status":"Synced"}}}
+  creationTimestamp: '2024-07-22T14:51:11Z'
+  generation: 194
   labels:
     project: infrastructure
     source: internal
@@ -68,6 +68,8 @@ metadata:
           f:project: {}
           f:source:
             .: {}
+            f:path: {}
+            f:repoURL: {}
             f:targetRevision: {}
           f:syncPolicy:
             .: {}
@@ -76,6 +78,31 @@ metadata:
           .: {}
           f:controllerNamespace: {}
           f:health: {}
+          f:sourceType: {}
+          f:summary: {}
+          f:sync:
+            .: {}
+            f:comparedTo:
+              .: {}
+              f:destination:
+                .: {}
+                f:namespace: {}
+                f:server: {}
+              f:source:
+                .: {}
+                f:path: {}
+                f:repoURL: {}
+                f:targetRevision: {}
+      manager: kubectl-client-side-apply
+      operation: Update
+      time: '2024-07-22T14:51:11Z'
+    - apiVersion: argoproj.io/v1alpha1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:health:
+            f:status: {}
+          f:history: {}
           f:operationState:
             .: {}
             f:finishedAt: {}
@@ -104,58 +131,20 @@ metadata:
                 f:path: {}
                 f:repoURL: {}
                 f:targetRevision: {}
-          f:summary:
-            .: {}
-            f:images: {}
-          f:sync:
-            .: {}
-            f:comparedTo:
-              .: {}
-              f:destination:
-                .: {}
-                f:namespace: {}
-                f:server: {}
-              f:source:
-                .: {}
-                f:targetRevision: {}
-      manager: kubectl-client-side-apply
-      operation: Update
-      time: '2024-06-05T20:58:07Z'
-    - apiVersion: argoproj.io/v1alpha1
-      fieldsType: FieldsV1
-      fieldsV1:
-        f:spec:
-          f:source:
-            f:path: {}
-            f:repoURL: {}
-        f:status:
-          f:history: {}
-      manager: argocd-server
-      operation: Update
-      time: '2024-07-19T16:38:09Z'
-    - apiVersion: argoproj.io/v1alpha1
-      fieldsType: FieldsV1
-      fieldsV1:
-        f:status:
-          f:health:
-            f:status: {}
           f:reconciledAt: {}
           f:resources: {}
-          f:sourceType: {}
+          f:summary:
+            f:images: {}
           f:sync:
-            f:comparedTo:
-              f:source:
-                f:path: {}
-                f:repoURL: {}
             f:revision: {}
             f:status: {}
       manager: argocd-application-controller
       operation: Update
-      time: '2024-07-19T16:52:19Z'
+      time: '2024-07-23T12:30:58Z'
   name: keda
   namespace: argocd
-  resourceVersion: '17435460'
-  uid: 8b8dc9f1-9cb9-4a82-8c65-c7e64fcd5bb4
+  resourceVersion: '233480'
+  uid: 7461f648-6903-46fe-babb-ed0d57c9d02b
   selfLink: /apis/argoproj.io/v1alpha1/namespaces/argocd/applications/keda
 status:
   controllerNamespace: argocd
@@ -189,22 +178,32 @@ status:
         path: cluster/argocd/sources/keda
         repoURL: git@github.com:Binesty/Kubernetes.git
         targetRevision: main
+    - deployStartedAt: '2024-07-22T19:31:33Z'
+      deployedAt: '2024-07-22T19:31:39Z'
+      id: 3
+      initiatedBy:
+        username: admin
+      revision: 2261fa003c30651487a5b17d55126af95ba015d4
+      source:
+        path: argocd/sources/keda
+        repoURL: git@github.com:Binesty/Automation.git
+        targetRevision: main
   operationState:
-    finishedAt: '2024-04-26T00:20:53Z'
+    finishedAt: '2024-07-22T19:31:39Z'
     message: successfully synced (all tasks run)
     operation:
       initiatedBy:
         username: admin
       retry: {}
       sync:
-        revision: 53a12d603f32692babbacf9cca77dbfb2cc73461
+        revision: 2261fa003c30651487a5b17d55126af95ba015d4
         syncOptions:
           - CreateNamespace=true
           - ServerSideApply=true
         syncStrategy:
           hook: {}
     phase: Succeeded
-    startedAt: '2024-04-26T00:20:34Z'
+    startedAt: '2024-07-22T19:31:33Z'
     syncResult:
       resources:
         - group: ''
@@ -240,6 +239,17 @@ status:
           hookPhase: Running
           kind: CustomResourceDefinition
           message: >-
+            customresourcedefinition.apiextensions.k8s.io/clustertriggerauthentications.keda.sh
+            serverside-applied
+          name: clustertriggerauthentications.keda.sh
+          namespace: keda
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: apiextensions.k8s.io
+          hookPhase: Running
+          kind: CustomResourceDefinition
+          message: >-
             customresourcedefinition.apiextensions.k8s.io/scaledobjects.keda.sh
             serverside-applied
           name: scaledobjects.keda.sh
@@ -262,17 +272,6 @@ status:
           hookPhase: Running
           kind: CustomResourceDefinition
           message: >-
-            customresourcedefinition.apiextensions.k8s.io/clustertriggerauthentications.keda.sh
-            serverside-applied
-          name: clustertriggerauthentications.keda.sh
-          namespace: keda
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: apiextensions.k8s.io
-          hookPhase: Running
-          kind: CustomResourceDefinition
-          message: >-
             customresourcedefinition.apiextensions.k8s.io/scaledjobs.keda.sh
             serverside-applied
           name: scaledjobs.keda.sh
@@ -283,23 +282,7 @@ status:
         - group: rbac.authorization.k8s.io
           hookPhase: Running
           kind: ClusterRole
-          message: >-
-            clusterrole.rbac.authorization.k8s.io/keda-operator reconciled.
-            clusterrole.rbac.authorization.k8s.io/keda-operator
-            serverside-applied
-          name: keda-operator
-          namespace: keda
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: rbac.authorization.k8s.io
-          hookPhase: Running
-          kind: ClusterRole
-          message: >-
-            clusterrole.rbac.authorization.k8s.io/keda-external-metrics-reader
-            reconciled.
-            clusterrole.rbac.authorization.k8s.io/keda-external-metrics-reader
-            serverside-applied
+          message: "clusterrole.rbac.authorization.k8s.io/keda-external-metrics-reader reconciled. reconciliation required create\n\tmissing rules added:\n\t\t{Verbs:[*] APIGroups:[external.metrics.k8s.io] Resources:[*] ResourceNames:[] NonResourceURLs:[]}. clusterrole.rbac.authorization.k8s.io/keda-external-metrics-reader serverside-applied"
           name: keda-external-metrics-reader
           namespace: keda
           status: Synced
@@ -307,12 +290,8 @@ status:
           version: v1
         - group: rbac.authorization.k8s.io
           hookPhase: Running
-          kind: ClusterRoleBinding
-          message: >-
-            clusterrolebinding.rbac.authorization.k8s.io/keda-operator
-            reconciled.
-            clusterrolebinding.rbac.authorization.k8s.io/keda-operator
-            serverside-applied
+          kind: ClusterRole
+          message: "clusterrole.rbac.authorization.k8s.io/keda-operator reconciled. reconciliation required create\n\tmissing rules added:\n\t\t{Verbs:[get list watch] APIGroups:[] Resources:[configmaps configmaps/status] ResourceNames:[] NonResourceURLs:[]}\n\t\t{Verbs:[*] APIGroups:[] Resources:[events] ResourceNames:[] NonResourceURLs:[]}\n\t\t{Verbs:[get list watch] APIGroups:[] Resources:[external pods secrets services] ResourceNames:[] NonResourceURLs:[]}\n\t\t{Verbs:[list watch] APIGroups:[] Resources:[limitranges] ResourceNames:[] NonResourceURLs:[]}\n\t\t{Verbs:[list watch] APIGroups:[] Resources:[serviceaccounts] ResourceNames:[] NonResourceURLs:[]}\n\t\t{Verbs:[get] APIGroups:[*] Resources:[*] ResourceNames:[] NonResourceURLs:[]}\n\t\t{Verbs:[get list patch update watch] APIGroups:[*] Resources:[*/scale] ResourceNames:[] NonResourceURLs:[]}\n\t\t{Verbs:[get list patch update watch] APIGroups:[admissionregistration.k8s.io] Resources:[validatingwebhookconfigurations] ResourceNames:[] NonResourceURLs:[]}\n\t\t{Verbs:[get list patch update watch] APIGroups:[apiregistration.k8s.io] Resources:[apiservices] ResourceNames:[] NonResourceURLs:[]}\n\t\t{Verbs:[list watch] APIGroups:[apps] Resources:[deployments statefulsets] ResourceNames:[] NonResourceURLs:[]}\n\t\t{Verbs:[*] APIGroups:[autoscaling] Resources:[horizontalpodautoscalers] ResourceNames:[] NonResourceURLs:[]}\n\t\t{Verbs:[*] APIGroups:[batch] Resources:[jobs] ResourceNames:[] NonResourceURLs:[]}\n\t\t{Verbs:[*] APIGroups:[eventing.keda.sh] Resources:[cloudeventsources cloudeventsources/status] ResourceNames:[] NonResourceURLs:[]}\n\t\t{Verbs:[*] APIGroups:[keda.sh] Resources:[clustertriggerauthentications clustertriggerauthentications/status] ResourceNames:[] NonResourceURLs:[]}\n\t\t{Verbs:[*] APIGroups:[keda.sh] Resources:[scaledjobs scaledjobs/finalizers scaledjobs/status] ResourceNames:[] NonResourceURLs:[]}\n\t\t{Verbs:[*] APIGroups:[keda.sh] Resources:[scaledobjects scaledobjects/finalizers scaledobjects/status] ResourceNames:[] NonResourceURLs:[]}\n\t\t{Verbs:[*] APIGroups:[keda.sh] Resources:[triggerauthentications triggerauthentications/status] ResourceNames:[] NonResourceURLs:[]}. clusterrole.rbac.authorization.k8s.io/keda-operator serverside-applied"
           name: keda-operator
           namespace: keda
           status: Synced
@@ -321,11 +300,7 @@ status:
         - group: rbac.authorization.k8s.io
           hookPhase: Running
           kind: ClusterRoleBinding
-          message: >-
-            clusterrolebinding.rbac.authorization.k8s.io/keda-system-auth-delegator
-            reconciled.
-            clusterrolebinding.rbac.authorization.k8s.io/keda-system-auth-delegator
-            serverside-applied
+          message: "clusterrolebinding.rbac.authorization.k8s.io/keda-system-auth-delegator reconciled. reconciliation required create\n\tmissing subjects added:\n\t\t{Kind:ServiceAccount APIGroup: Name:keda-operator Namespace:keda}. clusterrolebinding.rbac.authorization.k8s.io/keda-system-auth-delegator serverside-applied"
           name: keda-system-auth-delegator
           namespace: keda
           status: Synced
@@ -334,11 +309,16 @@ status:
         - group: rbac.authorization.k8s.io
           hookPhase: Running
           kind: ClusterRoleBinding
-          message: >-
-            clusterrolebinding.rbac.authorization.k8s.io/keda-hpa-controller-external-metrics
-            reconciled.
-            clusterrolebinding.rbac.authorization.k8s.io/keda-hpa-controller-external-metrics
-            serverside-applied
+          message: "clusterrolebinding.rbac.authorization.k8s.io/keda-operator reconciled. reconciliation required create\n\tmissing subjects added:\n\t\t{Kind:ServiceAccount APIGroup: Name:keda-operator Namespace:keda}. clusterrolebinding.rbac.authorization.k8s.io/keda-operator serverside-applied"
+          name: keda-operator
+          namespace: keda
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: rbac.authorization.k8s.io
+          hookPhase: Running
+          kind: ClusterRoleBinding
+          message: "clusterrolebinding.rbac.authorization.k8s.io/keda-hpa-controller-external-metrics reconciled. reconciliation required create\n\tmissing subjects added:\n\t\t{Kind:ServiceAccount APIGroup: Name:horizontal-pod-autoscaler Namespace:kube-system}. clusterrolebinding.rbac.authorization.k8s.io/keda-hpa-controller-external-metrics serverside-applied"
           name: keda-hpa-controller-external-metrics
           namespace: keda
           status: Synced
@@ -347,9 +327,7 @@ status:
         - group: rbac.authorization.k8s.io
           hookPhase: Running
           kind: Role
-          message: >-
-            role.rbac.authorization.k8s.io/keda-operator reconciled.
-            role.rbac.authorization.k8s.io/keda-operator serverside-applied
+          message: "role.rbac.authorization.k8s.io/keda-operator reconciled. reconciliation required create\n\tmissing rules added:\n\t\t{Verbs:[create delete get list patch update watch] APIGroups:[] Resources:[secrets] ResourceNames:[] NonResourceURLs:[]}\n\t\t{Verbs:[*] APIGroups:[coordination.k8s.io] Resources:[leases] ResourceNames:[] NonResourceURLs:[]}. role.rbac.authorization.k8s.io/keda-operator serverside-applied"
           name: keda-operator
           namespace: keda
           status: Synced
@@ -358,23 +336,26 @@ status:
         - group: rbac.authorization.k8s.io
           hookPhase: Running
           kind: RoleBinding
-          message: >-
-            rolebinding.rbac.authorization.k8s.io/keda-operator reconciled.
-            rolebinding.rbac.authorization.k8s.io/keda-operator
-            serverside-applied
-          name: keda-operator
-          namespace: keda
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: rbac.authorization.k8s.io
-          hookPhase: Running
-          kind: RoleBinding
-          message: >-
-            rolebinding.rbac.authorization.k8s.io/keda-auth-reader reconciled.
-            rolebinding.rbac.authorization.k8s.io/keda-auth-reader
-            serverside-applied
+          message: "rolebinding.rbac.authorization.k8s.io/keda-auth-reader reconciled. reconciliation required create\n\tmissing subjects added:\n\t\t{Kind:ServiceAccount APIGroup: Name:keda-operator Namespace:keda}. rolebinding.rbac.authorization.k8s.io/keda-auth-reader serverside-applied"
           name: keda-auth-reader
+          namespace: keda
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: rbac.authorization.k8s.io
+          hookPhase: Running
+          kind: RoleBinding
+          message: "rolebinding.rbac.authorization.k8s.io/keda-operator reconciled. reconciliation required create\n\tmissing subjects added:\n\t\t{Kind:ServiceAccount APIGroup: Name:keda-operator Namespace:keda}. rolebinding.rbac.authorization.k8s.io/keda-operator serverside-applied"
+          name: keda-operator
+          namespace: keda
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: ''
+          hookPhase: Running
+          kind: Service
+          message: service/keda-operator serverside-applied
+          name: keda-operator
           namespace: keda
           status: Synced
           syncPhase: Sync
@@ -397,24 +378,6 @@ status:
           status: Synced
           syncPhase: Sync
           version: v1
-        - group: ''
-          hookPhase: Running
-          kind: Service
-          message: service/keda-operator serverside-applied
-          name: keda-operator
-          namespace: keda
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: apps
-          hookPhase: Running
-          kind: Deployment
-          message: deployment.apps/keda-admission serverside-applied
-          name: keda-admission
-          namespace: keda
-          status: Synced
-          syncPhase: Sync
-          version: v1
         - group: apps
           hookPhase: Running
           kind: Deployment
@@ -429,6 +392,15 @@ status:
           kind: Deployment
           message: deployment.apps/keda-metrics-apiserver serverside-applied
           name: keda-metrics-apiserver
+          namespace: keda
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: apps
+          hookPhase: Running
+          kind: Deployment
+          message: deployment.apps/keda-admission serverside-applied
+          name: keda-admission
           namespace: keda
           status: Synced
           syncPhase: Sync
@@ -455,12 +427,12 @@ status:
           status: Synced
           syncPhase: Sync
           version: v1
-      revision: 53a12d603f32692babbacf9cca77dbfb2cc73461
+      revision: 2261fa003c30651487a5b17d55126af95ba015d4
       source:
-        path: cluster/argocd/sources/keda
-        repoURL: git@github.com:Binesty/Kubernetes.git
+        path: argocd/sources/keda
+        repoURL: git@github.com:Binesty/Automation.git
         targetRevision: main
-  reconciledAt: '2024-07-19T16:52:17Z'
+  reconciledAt: '2024-07-23T12:30:57Z'
   resources:
     - kind: Namespace
       name: keda
@@ -612,7 +584,7 @@ status:
         path: argocd/sources/keda
         repoURL: git@github.com:Binesty/Automation.git
         targetRevision: main
-    revision: 2325df6152c42fe82976edd3eff16d40c0d39366
+    revision: e5d794e616b52162b76b97d41c8ca39fd6f171f2
     status: Synced
 spec:
   destination:

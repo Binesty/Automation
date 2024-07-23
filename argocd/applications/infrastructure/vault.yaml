@@ -1,469 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  annotations:
-    kubectl.kubernetes.io/last-applied-configuration: >
-      {"apiVersion":"argoproj.io/v1alpha1","kind":"Application","metadata":{"annotations":{},"creationTimestamp":"2024-04-05T04:45:34Z","generation":1411,"labels":{"project":"infrastructure","source":"external"},"managedFields":[{"apiVersion":"argoproj.io/v1alpha1","fieldsType":"FieldsV1","fieldsV1":{"f:metadata":{"f:annotations":{".":{},"f:kubectl.kubernetes.io/last-applied-configuration":{}},"f:labels":{".":{},"f:source":{}}},"f:spec":{".":{},"f:destination":{".":{},"f:namespace":{},"f:server":{}},"f:project":{},"f:source":{".":{},"f:chart":{},"f:helm":{".":{},"f:parameters":{}},"f:repoURL":{},"f:targetRevision":{}},"f:syncPolicy":{".":{},"f:syncOptions":{}}},"f:status":{".":{},"f:controllerNamespace":{},"f:health":{},"f:summary":{},"f:sync":{".":{},"f:comparedTo":{".":{},"f:destination":{".":{},"f:namespace":{},"f:server":{}},"f:source":{".":{},"f:chart":{},"f:helm":{".":{},"f:parameters":{}},"f:repoURL":{},"f:targetRevision":{}}}}}},"manager":"kubectl-client-side-apply","operation":"Update","time":"2024-04-05T04:45:34Z"},{"apiVersion":"argoproj.io/v1alpha1","fieldsType":"FieldsV1","fieldsV1":{"f:metadata":{"f:labels":{"f:project":{}}}},"manager":"argocd-server","operation":"Update","time":"2024-04-12T18:05:08Z"},{"apiVersion":"argoproj.io/v1alpha1","fieldsType":"FieldsV1","fieldsV1":{"f:status":{"f:health":{"f:status":{}},"f:history":{},"f:operationState":{".":{},"f:finishedAt":{},"f:message":{},"f:operation":{".":{},"f:initiatedBy":{".":{},"f:username":{}},"f:retry":{},"f:sync":{".":{},"f:resources":{},"f:revision":{},"f:syncOptions":{},"f:syncStrategy":{".":{},"f:hook":{}}}},"f:phase":{},"f:startedAt":{},"f:syncResult":{".":{},"f:resources":{},"f:revision":{},"f:source":{".":{},"f:chart":{},"f:helm":{".":{},"f:parameters":{}},"f:repoURL":{},"f:targetRevision":{}}}},"f:reconciledAt":{},"f:resources":{},"f:sourceType":{},"f:summary":{"f:externalURLs":{},"f:images":{}},"f:sync":{"f:revision":{},"f:status":{}}}},"manager":"argocd-application-controller","operation":"Update","time":"2024-04-12T18:14:31Z"}],"name":"vault","namespace":"argocd","resourceVersion":"1242341","selfLink":"/apis/argoproj.io/v1alpha1/namespaces/argocd/applications/vault","uid":"9f4a7c5d-6e44-45e0-97ae-1fc59f9f2f04"},"spec":{"destination":{"namespace":"vault","server":"https://kubernetes.default.svc"},"project":"infrastructure","source":{"chart":"vault","helm":{"parameters":[{"name":"server.ingress.enabled","value":"true"},{"name":"server.ingress.hosts[0].host","value":"vault.binesty.corp"},{"name":"server.ingress.ingressClassName","value":"nginx"},{"name":"ui.enabled","value":"true"},{"name":"server.ha.config","value":"       
-      ui = true         listener \"tcp\"          {           tls_disable =
-      1           address = \"[::]:8200\"           cluster_address =
-      \"[::]:8201\"         }         seal \"azurekeyvault\"         
-      {           tenant_id       =
-      \"d6f40208-0e69-4598-a450-1e46d6668a38\"           client_id       =
-      \"560878d3-e08a-4f6b-b4c4-075d6c433e2e\"           client_secret   =
-      \"ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf\"           vault_name      =
-      \"binesty-key-vault\"           key_name        =
-      \"vault-hashicorp-kubernetes-unseal-key\"           subscription_id =
-      \"b8bdcba6-cce6-459d-a1a4-059f6b590f8e\"         }         storage
-      \"raft\"          {           path = \"/vault/data\"         }        
-      service_registration \"kubernetes\"
-      {}"},{"name":"server.ha.raft.config","value":"        ui = true        
-      listener \"tcp\"          {           tls_disable = 1           address =
-      \"[::]:8200\"           cluster_address = \"[::]:8201\"         }        
-      seal \"azurekeyvault\"          {           tenant_id       =
-      \"d6f40208-0e69-4598-a450-1e46d6668a38\"           client_id       =
-      \"560878d3-e08a-4f6b-b4c4-075d6c433e2e\"           client_secret   =
-      \"ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf\"           vault_name      =
-      \"binesty-key-vault\"           key_name        =
-      \"vault-hashicorp-kubernetes-unseal-key\"           subscription_id =
-      \"b8bdcba6-cce6-459d-a1a4-059f6b590f8e\"         }         storage
-      \"raft\"          {           path = \"/vault/data\"         }        
-      service_registration \"kubernetes\"
-      {}"},{"name":"injector.replicas","value":"1"},{"name":"server.standalone.config","value":"       
-      ui = true         listener \"tcp\"          {           tls_disable =
-      1           address = \"[::]:8200\"           cluster_address =
-      \"[::]:8201\"         }         seal \"azurekeyvault\"         
-      {           tenant_id       =
-      \"d6f40208-0e69-4598-a450-1e46d6668a38\"           client_id       =
-      \"560878d3-e08a-4f6b-b4c4-075d6c433e2e\"           client_secret   =
-      \"ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf\"           vault_name      =
-      \"binesty-key-vault\"           key_name        =
-      \"vault-hashicorp-kubernetes-unseal-key\"           subscription_id =
-      \"b8bdcba6-cce6-459d-a1a4-059f6b590f8e\"         }         storage
-      \"raft\"          {           path = \"/vault/data\"         }        
-      service_registration \"kubernetes\"
-      {}"},{"name":"server.auditStorage.size","value":"5Gi"},{"name":"server.dataStorage.size","value":"5Gi"}]},"repoURL":"https://helm.releases.hashicorp.com","targetRevision":"0.27.0"},"syncPolicy":{"syncOptions":["CreateNamespace=true"]}},"status":{"controllerNamespace":"argocd","health":{"status":"Healthy"},"history":[{"deployStartedAt":"2023-08-15T23:57:13Z","deployedAt":"2023-08-15T23:57:17Z","id":11,"revision":"0.25.0","source":{"chart":"vault","helm":{"parameters":[{"name":"server.ingress.enabled","value":"true"},{"name":"server.ingress.hosts[0].host","value":"vault.binesty.net"},{"name":"server.ingress.ingressClassName","value":"nginx"},{"name":"ui.enabled","value":"true"},{"name":"server.ha.config","value":"       
-      ui = true         listener \"tcp\"          {           tls_disable =
-      1           address = \"[::]:8200\"           cluster_address =
-      \"[::]:8201\"         }         seal \"azurekeyvault\"         
-      {           tenant_id       =
-      \"d6f40208-0e69-4598-a450-1e46d6668a38\"           client_id       =
-      \"560878d3-e08a-4f6b-b4c4-075d6c433e2e\"           client_secret   =
-      \"ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf\"           vault_name      =
-      \"binesty-key-vault\"           key_name        =
-      \"vault-hashicorp-kubernetes-unseal-key\"           subscription_id =
-      \"b8bdcba6-cce6-459d-a1a4-059f6b590f8e\"         }         storage
-      \"raft\"          {           path = \"/vault/data\"         }        
-      service_registration \"kubernetes\"
-      {}"},{"name":"server.ha.raft.config","value":"        ui = true        
-      listener \"tcp\"          {           tls_disable = 1           address =
-      \"[::]:8200\"           cluster_address = \"[::]:8201\"         }        
-      seal \"azurekeyvault\"          {           tenant_id       =
-      \"d6f40208-0e69-4598-a450-1e46d6668a38\"           client_id       =
-      \"560878d3-e08a-4f6b-b4c4-075d6c433e2e\"           client_secret   =
-      \"ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf\"           vault_name      =
-      \"binesty-key-vault\"           key_name        =
-      \"vault-hashicorp-kubernetes-unseal-key\"           subscription_id =
-      \"b8bdcba6-cce6-459d-a1a4-059f6b590f8e\"         }         storage
-      \"raft\"          {           path = \"/vault/data\"         }        
-      service_registration \"kubernetes\"
-      {}"},{"name":"injector.replicas","value":"2"}]},"repoURL":"https://helm.releases.hashicorp.com","targetRevision":"0.25.0"}},{"deployStartedAt":"2023-08-15T23:58:32Z","deployedAt":"2023-08-16T00:05:34Z","id":12,"revision":"0.25.0","source":{"chart":"vault","helm":{"parameters":[{"name":"server.ingress.enabled","value":"true"},{"name":"server.ingress.hosts[0].host","value":"vault.binesty.net"},{"name":"server.ingress.ingressClassName","value":"nginx"},{"name":"ui.enabled","value":"true"},{"name":"server.ha.config","value":"       
-      ui = true         listener \"tcp\"          {           tls_disable =
-      1           address = \"[::]:8200\"           cluster_address =
-      \"[::]:8201\"         }         seal \"azurekeyvault\"         
-      {           tenant_id       =
-      \"d6f40208-0e69-4598-a450-1e46d6668a38\"           client_id       =
-      \"560878d3-e08a-4f6b-b4c4-075d6c433e2e\"           client_secret   =
-      \"ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf\"           vault_name      =
-      \"binesty-key-vault\"           key_name        =
-      \"vault-hashicorp-kubernetes-unseal-key\"           subscription_id =
-      \"b8bdcba6-cce6-459d-a1a4-059f6b590f8e\"         }         storage
-      \"raft\"          {           path = \"/vault/data\"         }        
-      service_registration \"kubernetes\"
-      {}"},{"name":"server.ha.raft.config","value":"        ui = true        
-      listener \"tcp\"          {           tls_disable = 1           address =
-      \"[::]:8200\"           cluster_address = \"[::]:8201\"         }        
-      seal \"azurekeyvault\"          {           tenant_id       =
-      \"d6f40208-0e69-4598-a450-1e46d6668a38\"           client_id       =
-      \"560878d3-e08a-4f6b-b4c4-075d6c433e2e\"           client_secret   =
-      \"ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf\"           vault_name      =
-      \"binesty-key-vault\"           key_name        =
-      \"vault-hashicorp-kubernetes-unseal-key\"           subscription_id =
-      \"b8bdcba6-cce6-459d-a1a4-059f6b590f8e\"         }         storage
-      \"raft\"          {           path = \"/vault/data\"         }        
-      service_registration \"kubernetes\"
-      {}"},{"name":"injector.replicas","value":"1"}]},"repoURL":"https://helm.releases.hashicorp.com","targetRevision":"0.25.0"}},{"deployStartedAt":"2023-08-16T00:09:32Z","deployedAt":"2023-08-16T00:09:35Z","id":13,"revision":"0.25.0","source":{"chart":"vault","helm":{"parameters":[{"name":"server.ingress.enabled","value":"true"},{"name":"server.ingress.hosts[0].host","value":"vault.binesty.net"},{"name":"server.ingress.ingressClassName","value":"nginx"},{"name":"ui.enabled","value":"true"},{"name":"server.ha.config","value":"       
-      ui = true         listener \"tcp\"          {           tls_disable =
-      1           address = \"[::]:8200\"           cluster_address =
-      \"[::]:8201\"         }         seal \"azurekeyvault\"         
-      {           tenant_id       =
-      \"d6f40208-0e69-4598-a450-1e46d6668a38\"           client_id       =
-      \"560878d3-e08a-4f6b-b4c4-075d6c433e2e\"           client_secret   =
-      \"ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf\"           vault_name      =
-      \"binesty-key-vault\"           key_name        =
-      \"vault-hashicorp-kubernetes-unseal-key\"           subscription_id =
-      \"b8bdcba6-cce6-459d-a1a4-059f6b590f8e\"         }         storage
-      \"raft\"          {           path = \"/vault/data\"         }        
-      service_registration \"kubernetes\"
-      {}"},{"name":"server.ha.raft.config","value":"        ui = true        
-      listener \"tcp\"          {           tls_disable = 1           address =
-      \"[::]:8200\"           cluster_address = \"[::]:8201\"         }        
-      seal \"azurekeyvault\"          {           tenant_id       =
-      \"d6f40208-0e69-4598-a450-1e46d6668a38\"           client_id       =
-      \"560878d3-e08a-4f6b-b4c4-075d6c433e2e\"           client_secret   =
-      \"ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf\"           vault_name      =
-      \"binesty-key-vault\"           key_name        =
-      \"vault-hashicorp-kubernetes-unseal-key\"           subscription_id =
-      \"b8bdcba6-cce6-459d-a1a4-059f6b590f8e\"         }         storage
-      \"raft\"          {           path = \"/vault/data\"         }        
-      service_registration \"kubernetes\"
-      {}"},{"name":"injector.replicas","value":"1"}]},"repoURL":"https://helm.releases.hashicorp.com","targetRevision":"0.25.0"}},{"deployStartedAt":"2023-08-16T00:35:22Z","deployedAt":"2023-08-16T00:35:24Z","id":14,"revision":"0.25.0","source":{"chart":"vault","helm":{"parameters":[{"name":"server.ingress.enabled","value":"true"},{"name":"server.ingress.hosts[0].host","value":"vault.binesty.net"},{"name":"server.ingress.ingressClassName","value":"nginx"},{"name":"ui.enabled","value":"true"},{"name":"server.ha.config","value":"       
-      ui = true         listener \"tcp\"          {           tls_disable =
-      1           address = \"[::]:8200\"           cluster_address =
-      \"[::]:8201\"         }         seal \"azurekeyvault\"         
-      {           tenant_id       =
-      \"d6f40208-0e69-4598-a450-1e46d6668a38\"           client_id       =
-      \"560878d3-e08a-4f6b-b4c4-075d6c433e2e\"           client_secret   =
-      \"ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf\"           vault_name      =
-      \"binesty-key-vault\"           key_name        =
-      \"vault-hashicorp-kubernetes-unseal-key\"           subscription_id =
-      \"b8bdcba6-cce6-459d-a1a4-059f6b590f8e\"         }         storage
-      \"raft\"          {           path = \"/vault/data\"         }        
-      service_registration \"kubernetes\"
-      {}"},{"name":"server.ha.raft.config","value":"        ui = true        
-      listener \"tcp\"          {           tls_disable = 1           address =
-      \"[::]:8200\"           cluster_address = \"[::]:8201\"         }        
-      seal \"azurekeyvault\"          {           tenant_id       =
-      \"d6f40208-0e69-4598-a450-1e46d6668a38\"           client_id       =
-      \"560878d3-e08a-4f6b-b4c4-075d6c433e2e\"           client_secret   =
-      \"ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf\"           vault_name      =
-      \"binesty-key-vault\"           key_name        =
-      \"vault-hashicorp-kubernetes-unseal-key\"           subscription_id =
-      \"b8bdcba6-cce6-459d-a1a4-059f6b590f8e\"         }         storage
-      \"raft\"          {           path = \"/vault/data\"         }        
-      service_registration \"kubernetes\"
-      {}"},{"name":"injector.replicas","value":"1"}]},"repoURL":"https://helm.releases.hashicorp.com","targetRevision":"0.25.0"}},{"deployStartedAt":"2023-08-16T00:39:26Z","deployedAt":"2023-08-16T00:39:28Z","id":15,"revision":"0.25.0","source":{"chart":"vault","helm":{"parameters":[{"name":"server.ingress.enabled","value":"true"},{"name":"server.ingress.hosts[0].host","value":"vault.binesty.net"},{"name":"server.ingress.ingressClassName","value":"nginx"},{"name":"ui.enabled","value":"true"},{"name":"server.ha.config","value":"       
-      ui = true         listener \"tcp\"          {           tls_disable =
-      1           address = \"[::]:8200\"           cluster_address =
-      \"[::]:8201\"         }         seal \"azurekeyvault\"         
-      {           tenant_id       =
-      \"d6f40208-0e69-4598-a450-1e46d6668a38\"           client_id       =
-      \"560878d3-e08a-4f6b-b4c4-075d6c433e2e\"           client_secret   =
-      \"ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf\"           vault_name      =
-      \"binesty-key-vault\"           key_name        =
-      \"vault-hashicorp-kubernetes-unseal-key\"           subscription_id =
-      \"b8bdcba6-cce6-459d-a1a4-059f6b590f8e\"         }         storage
-      \"raft\"          {           path = \"/vault/data\"         }        
-      service_registration \"kubernetes\"
-      {}"},{"name":"server.ha.raft.config","value":"        ui = true        
-      listener \"tcp\"          {           tls_disable = 1           address =
-      \"[::]:8200\"           cluster_address = \"[::]:8201\"         }        
-      seal \"azurekeyvault\"          {           tenant_id       =
-      \"d6f40208-0e69-4598-a450-1e46d6668a38\"           client_id       =
-      \"560878d3-e08a-4f6b-b4c4-075d6c433e2e\"           client_secret   =
-      \"ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf\"           vault_name      =
-      \"binesty-key-vault\"           key_name        =
-      \"vault-hashicorp-kubernetes-unseal-key\"           subscription_id =
-      \"b8bdcba6-cce6-459d-a1a4-059f6b590f8e\"         }         storage
-      \"raft\"          {           path = \"/vault/data\"         }        
-      service_registration \"kubernetes\"
-      {}"},{"name":"injector.replicas","value":"1"},{"name":"server.standalone.config","value":"       
-      ui = true         listener \"tcp\"          {           tls_disable =
-      1           address = \"[::]:8200\"           cluster_address =
-      \"[::]:8201\"         }         seal \"azurekeyvault\"         
-      {           tenant_id       =
-      \"d6f40208-0e69-4598-a450-1e46d6668a38\"           client_id       =
-      \"560878d3-e08a-4f6b-b4c4-075d6c433e2e\"           client_secret   =
-      \"ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf\"           vault_name      =
-      \"binesty-key-vault\"           key_name        =
-      \"vault-hashicorp-kubernetes-unseal-key\"           subscription_id =
-      \"b8bdcba6-cce6-459d-a1a4-059f6b590f8e\"         }         storage
-      \"raft\"          {           path = \"/vault/data\"         }        
-      service_registration \"kubernetes\"
-      {}"}]},"repoURL":"https://helm.releases.hashicorp.com","targetRevision":"0.25.0"}},{"deployStartedAt":"2023-08-16T00:40:39Z","deployedAt":"2023-08-16T00:40:43Z","id":16,"revision":"0.25.0","source":{"chart":"vault","helm":{"parameters":[{"name":"server.ingress.enabled","value":"true"},{"name":"server.ingress.hosts[0].host","value":"vault.binesty.net"},{"name":"server.ingress.ingressClassName","value":"nginx"},{"name":"ui.enabled","value":"true"},{"name":"server.ha.config","value":"       
-      ui = true         listener \"tcp\"          {           tls_disable =
-      1           address = \"[::]:8200\"           cluster_address =
-      \"[::]:8201\"         }         seal \"azurekeyvault\"         
-      {           tenant_id       =
-      \"d6f40208-0e69-4598-a450-1e46d6668a38\"           client_id       =
-      \"560878d3-e08a-4f6b-b4c4-075d6c433e2e\"           client_secret   =
-      \"ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf\"           vault_name      =
-      \"binesty-key-vault\"           key_name        =
-      \"vault-hashicorp-kubernetes-unseal-key\"           subscription_id =
-      \"b8bdcba6-cce6-459d-a1a4-059f6b590f8e\"         }         storage
-      \"raft\"          {           path = \"/vault/data\"         }        
-      service_registration \"kubernetes\"
-      {}"},{"name":"server.ha.raft.config","value":"        ui = true        
-      listener \"tcp\"          {           tls_disable = 1           address =
-      \"[::]:8200\"           cluster_address = \"[::]:8201\"         }        
-      seal \"azurekeyvault\"          {           tenant_id       =
-      \"d6f40208-0e69-4598-a450-1e46d6668a38\"           client_id       =
-      \"560878d3-e08a-4f6b-b4c4-075d6c433e2e\"           client_secret   =
-      \"ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf\"           vault_name      =
-      \"binesty-key-vault\"           key_name        =
-      \"vault-hashicorp-kubernetes-unseal-key\"           subscription_id =
-      \"b8bdcba6-cce6-459d-a1a4-059f6b590f8e\"         }         storage
-      \"raft\"          {           path = \"/vault/data\"         }        
-      service_registration \"kubernetes\"
-      {}"},{"name":"injector.replicas","value":"1"},{"name":"server.standalone.config","value":"       
-      ui = true         listener \"tcp\"          {           tls_disable =
-      1           address = \"[::]:8200\"           cluster_address =
-      \"[::]:8201\"         }         seal \"azurekeyvault\"         
-      {           tenant_id       =
-      \"d6f40208-0e69-4598-a450-1e46d6668a38\"           client_id       =
-      \"560878d3-e08a-4f6b-b4c4-075d6c433e2e\"           client_secret   =
-      \"ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf\"           vault_name      =
-      \"binesty-key-vault\"           key_name        =
-      \"vault-hashicorp-kubernetes-unseal-key\"           subscription_id =
-      \"b8bdcba6-cce6-459d-a1a4-059f6b590f8e\"         }         storage
-      \"raft\"          {           path = \"/vault/data\"         }        
-      service_registration \"kubernetes\"
-      {}"}]},"repoURL":"https://helm.releases.hashicorp.com","targetRevision":"0.25.0"}},{"deployStartedAt":"2023-08-16T00:52:24Z","deployedAt":"2023-08-16T00:52:28Z","id":17,"revision":"0.25.0","source":{"chart":"vault","helm":{"parameters":[{"name":"server.ingress.enabled","value":"true"},{"name":"server.ingress.hosts[0].host","value":"vault.binesty.net"},{"name":"server.ingress.ingressClassName","value":"nginx"},{"name":"ui.enabled","value":"true"},{"name":"server.ha.config","value":"       
-      ui = true         listener \"tcp\"          {           tls_disable =
-      1           address = \"[::]:8200\"           cluster_address =
-      \"[::]:8201\"         }         seal \"azurekeyvault\"         
-      {           tenant_id       =
-      \"d6f40208-0e69-4598-a450-1e46d6668a38\"           client_id       =
-      \"560878d3-e08a-4f6b-b4c4-075d6c433e2e\"           client_secret   =
-      \"ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf\"           vault_name      =
-      \"binesty-key-vault\"           key_name        =
-      \"vault-hashicorp-kubernetes-unseal-key\"           subscription_id =
-      \"b8bdcba6-cce6-459d-a1a4-059f6b590f8e\"         }         storage
-      \"raft\"          {           path = \"/vault/data\"         }        
-      service_registration \"kubernetes\"
-      {}"},{"name":"server.ha.raft.config","value":"        ui = true        
-      listener \"tcp\"          {           tls_disable = 1           address =
-      \"[::]:8200\"           cluster_address = \"[::]:8201\"         }        
-      seal \"azurekeyvault\"          {           tenant_id       =
-      \"d6f40208-0e69-4598-a450-1e46d6668a38\"           client_id       =
-      \"560878d3-e08a-4f6b-b4c4-075d6c433e2e\"           client_secret   =
-      \"ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf\"           vault_name      =
-      \"binesty-key-vault\"           key_name        =
-      \"vault-hashicorp-kubernetes-unseal-key\"           subscription_id =
-      \"b8bdcba6-cce6-459d-a1a4-059f6b590f8e\"         }         storage
-      \"raft\"          {           path = \"/vault/data\"         }        
-      service_registration \"kubernetes\"
-      {}"},{"name":"injector.replicas","value":"1"},{"name":"server.standalone.config","value":"       
-      ui = true         listener \"tcp\"          {           tls_disable =
-      1           address = \"[::]:8200\"           cluster_address =
-      \"[::]:8201\"         }         seal \"azurekeyvault\"         
-      {           tenant_id       =
-      \"d6f40208-0e69-4598-a450-1e46d6668a38\"           client_id       =
-      \"560878d3-e08a-4f6b-b4c4-075d6c433e2e\"           client_secret   =
-      \"ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf\"           vault_name      =
-      \"binesty-key-vault\"           key_name        =
-      \"vault-hashicorp-kubernetes-unseal-key\"           subscription_id =
-      \"b8bdcba6-cce6-459d-a1a4-059f6b590f8e\"         }         storage
-      \"raft\"          {           path = \"/vault/data\"         }        
-      service_registration \"kubernetes\"
-      {}"},{"name":"server.auditStorage.size","value":"5Gi"},{"name":"server.dataStorage.size","value":"5Gi"}]},"repoURL":"https://helm.releases.hashicorp.com","targetRevision":"0.25.0"}},{"deployStartedAt":"2023-09-28T18:09:16Z","deployedAt":"2023-09-28T18:09:17Z","id":18,"revision":"0.25.0","source":{"chart":"vault","helm":{"parameters":[{"name":"server.ingress.enabled","value":"true"},{"name":"server.ingress.hosts[0].host","value":"vault.binesty.corp"},{"name":"server.ingress.ingressClassName","value":"nginx"},{"name":"ui.enabled","value":"true"},{"name":"server.ha.config","value":"       
-      ui = true         listener \"tcp\"          {           tls_disable =
-      1           address = \"[::]:8200\"           cluster_address =
-      \"[::]:8201\"         }         seal \"azurekeyvault\"         
-      {           tenant_id       =
-      \"d6f40208-0e69-4598-a450-1e46d6668a38\"           client_id       =
-      \"560878d3-e08a-4f6b-b4c4-075d6c433e2e\"           client_secret   =
-      \"ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf\"           vault_name      =
-      \"binesty-key-vault\"           key_name        =
-      \"vault-hashicorp-kubernetes-unseal-key\"           subscription_id =
-      \"b8bdcba6-cce6-459d-a1a4-059f6b590f8e\"         }         storage
-      \"raft\"          {           path = \"/vault/data\"         }        
-      service_registration \"kubernetes\"
-      {}"},{"name":"server.ha.raft.config","value":"        ui = true        
-      listener \"tcp\"          {           tls_disable = 1           address =
-      \"[::]:8200\"           cluster_address = \"[::]:8201\"         }        
-      seal \"azurekeyvault\"          {           tenant_id       =
-      \"d6f40208-0e69-4598-a450-1e46d6668a38\"           client_id       =
-      \"560878d3-e08a-4f6b-b4c4-075d6c433e2e\"           client_secret   =
-      \"ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf\"           vault_name      =
-      \"binesty-key-vault\"           key_name        =
-      \"vault-hashicorp-kubernetes-unseal-key\"           subscription_id =
-      \"b8bdcba6-cce6-459d-a1a4-059f6b590f8e\"         }         storage
-      \"raft\"          {           path = \"/vault/data\"         }        
-      service_registration \"kubernetes\"
-      {}"},{"name":"injector.replicas","value":"1"},{"name":"server.standalone.config","value":"       
-      ui = true         listener \"tcp\"          {           tls_disable =
-      1           address = \"[::]:8200\"           cluster_address =
-      \"[::]:8201\"         }         seal \"azurekeyvault\"         
-      {           tenant_id       =
-      \"d6f40208-0e69-4598-a450-1e46d6668a38\"           client_id       =
-      \"560878d3-e08a-4f6b-b4c4-075d6c433e2e\"           client_secret   =
-      \"ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf\"           vault_name      =
-      \"binesty-key-vault\"           key_name        =
-      \"vault-hashicorp-kubernetes-unseal-key\"           subscription_id =
-      \"b8bdcba6-cce6-459d-a1a4-059f6b590f8e\"         }         storage
-      \"raft\"          {           path = \"/vault/data\"         }        
-      service_registration \"kubernetes\"
-      {}"},{"name":"server.auditStorage.size","value":"5Gi"},{"name":"server.dataStorage.size","value":"5Gi"}]},"repoURL":"https://helm.releases.hashicorp.com","targetRevision":"0.25.0"}},{"deployStartedAt":"2024-04-03T13:01:38Z","deployedAt":"2024-04-03T13:01:46Z","id":19,"revision":"0.27.0","source":{"chart":"vault","helm":{"parameters":[{"name":"server.ingress.enabled","value":"true"},{"name":"server.ingress.hosts[0].host","value":"vault.binesty.corp"},{"name":"server.ingress.ingressClassName","value":"nginx"},{"name":"ui.enabled","value":"true"},{"name":"server.ha.config","value":"       
-      ui = true         listener \"tcp\"          {           tls_disable =
-      1           address = \"[::]:8200\"           cluster_address =
-      \"[::]:8201\"         }         seal \"azurekeyvault\"         
-      {           tenant_id       =
-      \"d6f40208-0e69-4598-a450-1e46d6668a38\"           client_id       =
-      \"560878d3-e08a-4f6b-b4c4-075d6c433e2e\"           client_secret   =
-      \"ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf\"           vault_name      =
-      \"binesty-key-vault\"           key_name        =
-      \"vault-hashicorp-kubernetes-unseal-key\"           subscription_id =
-      \"b8bdcba6-cce6-459d-a1a4-059f6b590f8e\"         }         storage
-      \"raft\"          {           path = \"/vault/data\"         }        
-      service_registration \"kubernetes\"
-      {}"},{"name":"server.ha.raft.config","value":"        ui = true        
-      listener \"tcp\"          {           tls_disable = 1           address =
-      \"[::]:8200\"           cluster_address = \"[::]:8201\"         }        
-      seal \"azurekeyvault\"          {           tenant_id       =
-      \"d6f40208-0e69-4598-a450-1e46d6668a38\"           client_id       =
-      \"560878d3-e08a-4f6b-b4c4-075d6c433e2e\"           client_secret   =
-      \"ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf\"           vault_name      =
-      \"binesty-key-vault\"           key_name        =
-      \"vault-hashicorp-kubernetes-unseal-key\"           subscription_id =
-      \"b8bdcba6-cce6-459d-a1a4-059f6b590f8e\"         }         storage
-      \"raft\"          {           path = \"/vault/data\"         }        
-      service_registration \"kubernetes\"
-      {}"},{"name":"injector.replicas","value":"1"},{"name":"server.standalone.config","value":"       
-      ui = true         listener \"tcp\"          {           tls_disable =
-      1           address = \"[::]:8200\"           cluster_address =
-      \"[::]:8201\"         }         seal \"azurekeyvault\"         
-      {           tenant_id       =
-      \"d6f40208-0e69-4598-a450-1e46d6668a38\"           client_id       =
-      \"560878d3-e08a-4f6b-b4c4-075d6c433e2e\"           client_secret   =
-      \"ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf\"           vault_name      =
-      \"binesty-key-vault\"           key_name        =
-      \"vault-hashicorp-kubernetes-unseal-key\"           subscription_id =
-      \"b8bdcba6-cce6-459d-a1a4-059f6b590f8e\"         }         storage
-      \"raft\"          {           path = \"/vault/data\"         }        
-      service_registration \"kubernetes\"
-      {}"},{"name":"server.auditStorage.size","value":"5Gi"},{"name":"server.dataStorage.size","value":"5Gi"}]},"repoURL":"https://helm.releases.hashicorp.com","targetRevision":"0.27.0"}},{"deployStartedAt":"2024-04-05T04:54:19Z","deployedAt":"2024-04-05T04:54:28Z","id":20,"revision":"0.27.0","source":{"chart":"vault","helm":{"parameters":[{"name":"server.ingress.enabled","value":"true"},{"name":"server.ingress.hosts[0].host","value":"vault.binesty.corp"},{"name":"server.ingress.ingressClassName","value":"nginx"},{"name":"ui.enabled","value":"true"},{"name":"server.ha.config","value":"       
-      ui = true         listener \"tcp\"          {           tls_disable =
-      1           address = \"[::]:8200\"           cluster_address =
-      \"[::]:8201\"         }         seal \"azurekeyvault\"         
-      {           tenant_id       =
-      \"d6f40208-0e69-4598-a450-1e46d6668a38\"           client_id       =
-      \"560878d3-e08a-4f6b-b4c4-075d6c433e2e\"           client_secret   =
-      \"ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf\"           vault_name      =
-      \"binesty-key-vault\"           key_name        =
-      \"vault-hashicorp-kubernetes-unseal-key\"           subscription_id =
-      \"b8bdcba6-cce6-459d-a1a4-059f6b590f8e\"         }         storage
-      \"raft\"          {           path = \"/vault/data\"         }        
-      service_registration \"kubernetes\"
-      {}"},{"name":"server.ha.raft.config","value":"        ui = true        
-      listener \"tcp\"          {           tls_disable = 1           address =
-      \"[::]:8200\"           cluster_address = \"[::]:8201\"         }        
-      seal \"azurekeyvault\"          {           tenant_id       =
-      \"d6f40208-0e69-4598-a450-1e46d6668a38\"           client_id       =
-      \"560878d3-e08a-4f6b-b4c4-075d6c433e2e\"           client_secret   =
-      \"ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf\"           vault_name      =
-      \"binesty-key-vault\"           key_name        =
-      \"vault-hashicorp-kubernetes-unseal-key\"           subscription_id =
-      \"b8bdcba6-cce6-459d-a1a4-059f6b590f8e\"         }         storage
-      \"raft\"          {           path = \"/vault/data\"         }        
-      service_registration \"kubernetes\"
-      {}"},{"name":"injector.replicas","value":"1"},{"name":"server.standalone.config","value":"       
-      ui = true         listener \"tcp\"          {           tls_disable =
-      1           address = \"[::]:8200\"           cluster_address =
-      \"[::]:8201\"         }         seal \"azurekeyvault\"         
-      {           tenant_id       =
-      \"d6f40208-0e69-4598-a450-1e46d6668a38\"           client_id       =
-      \"560878d3-e08a-4f6b-b4c4-075d6c433e2e\"           client_secret   =
-      \"ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf\"           vault_name      =
-      \"binesty-key-vault\"           key_name        =
-      \"vault-hashicorp-kubernetes-unseal-key\"           subscription_id =
-      \"b8bdcba6-cce6-459d-a1a4-059f6b590f8e\"         }         storage
-      \"raft\"          {           path = \"/vault/data\"         }        
-      service_registration \"kubernetes\"
-      {}"},{"name":"server.auditStorage.size","value":"5Gi"},{"name":"server.dataStorage.size","value":"5Gi"}]},"repoURL":"https://helm.releases.hashicorp.com","targetRevision":"0.27.0"}}],"operationState":{"finishedAt":"2024-04-10T20:22:22Z","message":"successfully
-      synced (all tasks
-      run)","operation":{"initiatedBy":{"username":"admin"},"retry":{},"sync":{"resources":[{"group":"admissionregistration.k8s.io","kind":"MutatingWebhookConfiguration","name":"vault-agent-injector-cfg"}],"revision":"0.27.0","syncOptions":["CreateNamespace=true"],"syncStrategy":{"hook":{}}}},"phase":"Succeeded","startedAt":"2024-04-10T20:22:21Z","syncResult":{"resources":[{"group":"admissionregistration.k8s.io","hookPhase":"Running","kind":"MutatingWebhookConfiguration","message":"mutatingwebhookconfiguration.admissionregistration.k8s.io/vault-agent-injector-cfg
-      configured","name":"vault-agent-injector-cfg","namespace":"vault","status":"Synced","syncPhase":"Sync","version":"v1"}],"revision":"0.27.0","source":{"chart":"vault","helm":{"parameters":[{"name":"server.ingress.enabled","value":"true"},{"name":"server.ingress.hosts[0].host","value":"vault.binesty.corp"},{"name":"server.ingress.ingressClassName","value":"nginx"},{"name":"ui.enabled","value":"true"},{"name":"server.ha.config","value":"       
-      ui = true         listener \"tcp\"          {           tls_disable =
-      1           address = \"[::]:8200\"           cluster_address =
-      \"[::]:8201\"         }         seal \"azurekeyvault\"         
-      {           tenant_id       =
-      \"d6f40208-0e69-4598-a450-1e46d6668a38\"           client_id       =
-      \"560878d3-e08a-4f6b-b4c4-075d6c433e2e\"           client_secret   =
-      \"ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf\"           vault_name      =
-      \"binesty-key-vault\"           key_name        =
-      \"vault-hashicorp-kubernetes-unseal-key\"           subscription_id =
-      \"b8bdcba6-cce6-459d-a1a4-059f6b590f8e\"         }         storage
-      \"raft\"          {           path = \"/vault/data\"         }        
-      service_registration \"kubernetes\"
-      {}"},{"name":"server.ha.raft.config","value":"        ui = true        
-      listener \"tcp\"          {           tls_disable = 1           address =
-      \"[::]:8200\"           cluster_address = \"[::]:8201\"         }        
-      seal \"azurekeyvault\"          {           tenant_id       =
-      \"d6f40208-0e69-4598-a450-1e46d6668a38\"           client_id       =
-      \"560878d3-e08a-4f6b-b4c4-075d6c433e2e\"           client_secret   =
-      \"ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf\"           vault_name      =
-      \"binesty-key-vault\"           key_name        =
-      \"vault-hashicorp-kubernetes-unseal-key\"           subscription_id =
-      \"b8bdcba6-cce6-459d-a1a4-059f6b590f8e\"         }         storage
-      \"raft\"          {           path = \"/vault/data\"         }        
-      service_registration \"kubernetes\"
-      {}"},{"name":"injector.replicas","value":"1"},{"name":"server.standalone.config","value":"       
-      ui = true         listener \"tcp\"          {           tls_disable =
-      1           address = \"[::]:8200\"           cluster_address =
-      \"[::]:8201\"         }         seal \"azurekeyvault\"         
-      {           tenant_id       =
-      \"d6f40208-0e69-4598-a450-1e46d6668a38\"           client_id       =
-      \"560878d3-e08a-4f6b-b4c4-075d6c433e2e\"           client_secret   =
-      \"ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf\"           vault_name      =
-      \"binesty-key-vault\"           key_name        =
-      \"vault-hashicorp-kubernetes-unseal-key\"           subscription_id =
-      \"b8bdcba6-cce6-459d-a1a4-059f6b590f8e\"         }         storage
-      \"raft\"          {           path = \"/vault/data\"         }        
-      service_registration \"kubernetes\"
-      {}"},{"name":"server.auditStorage.size","value":"5Gi"},{"name":"server.dataStorage.size","value":"5Gi"}]},"repoURL":"https://helm.releases.hashicorp.com","targetRevision":"0.27.0"}}},"reconciledAt":"2024-04-12T18:14:30Z","resources":[{"kind":"ConfigMap","name":"vault-config","namespace":"vault","status":"Synced","version":"v1"},{"health":{"status":"Healthy"},"kind":"Service","name":"vault","namespace":"vault","status":"Synced","version":"v1"},{"health":{"status":"Healthy"},"kind":"Service","name":"vault-agent-injector-svc","namespace":"vault","status":"Synced","version":"v1"},{"health":{"status":"Healthy"},"kind":"Service","name":"vault-internal","namespace":"vault","status":"Synced","version":"v1"},{"health":{"status":"Healthy"},"kind":"Service","name":"vault-ui","namespace":"vault","status":"Synced","version":"v1"},{"kind":"ServiceAccount","name":"vault","namespace":"vault","status":"Synced","version":"v1"},{"kind":"ServiceAccount","name":"vault-agent-injector","namespace":"vault","status":"Synced","version":"v1"},{"group":"admissionregistration.k8s.io","kind":"MutatingWebhookConfiguration","name":"vault-agent-injector-cfg","status":"OutOfSync","version":"v1"},{"group":"apps","health":{"status":"Healthy"},"kind":"Deployment","name":"vault-agent-injector","namespace":"vault","status":"Synced","version":"v1"},{"group":"apps","health":{"message":"statefulset
-      has 1 ready
-      pods","status":"Healthy"},"kind":"StatefulSet","name":"vault","namespace":"vault","status":"Synced","version":"v1"},{"group":"networking.k8s.io","health":{"status":"Healthy"},"kind":"Ingress","name":"vault","namespace":"vault","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"vault-agent-injector-clusterrole","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"ClusterRoleBinding","name":"vault-agent-injector-binding","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"ClusterRoleBinding","name":"vault-server-binding","status":"Synced","version":"v1"}],"sourceType":"Helm","summary":{"externalURLs":["http://vault.binesty.corp/"],"images":["hashicorp/vault-k8s:1.3.1","hashicorp/vault:1.15.2"]},"sync":{"comparedTo":{"destination":{"namespace":"vault","server":"https://kubernetes.default.svc"},"source":{"chart":"vault","helm":{"parameters":[{"name":"server.ingress.enabled","value":"true"},{"name":"server.ingress.hosts[0].host","value":"vault.binesty.corp"},{"name":"server.ingress.ingressClassName","value":"nginx"},{"name":"ui.enabled","value":"true"},{"name":"server.ha.config","value":"       
-      ui = true         listener \"tcp\"          {           tls_disable =
-      1           address = \"[::]:8200\"           cluster_address =
-      \"[::]:8201\"         }         seal \"azurekeyvault\"         
-      {           tenant_id       =
-      \"d6f40208-0e69-4598-a450-1e46d6668a38\"           client_id       =
-      \"560878d3-e08a-4f6b-b4c4-075d6c433e2e\"           client_secret   =
-      \"ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf\"           vault_name      =
-      \"binesty-key-vault\"           key_name        =
-      \"vault-hashicorp-kubernetes-unseal-key\"           subscription_id =
-      \"b8bdcba6-cce6-459d-a1a4-059f6b590f8e\"         }         storage
-      \"raft\"          {           path = \"/vault/data\"         }        
-      service_registration \"kubernetes\"
-      {}"},{"name":"server.ha.raft.config","value":"        ui = true        
-      listener \"tcp\"          {           tls_disable = 1           address =
-      \"[::]:8200\"           cluster_address = \"[::]:8201\"         }        
-      seal \"azurekeyvault\"          {           tenant_id       =
-      \"d6f40208-0e69-4598-a450-1e46d6668a38\"           client_id       =
-      \"560878d3-e08a-4f6b-b4c4-075d6c433e2e\"           client_secret   =
-      \"ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf\"           vault_name      =
-      \"binesty-key-vault\"           key_name        =
-      \"vault-hashicorp-kubernetes-unseal-key\"           subscription_id =
-      \"b8bdcba6-cce6-459d-a1a4-059f6b590f8e\"         }         storage
-      \"raft\"          {           path = \"/vault/data\"         }        
-      service_registration \"kubernetes\"
-      {}"},{"name":"injector.replicas","value":"1"},{"name":"server.standalone.config","value":"       
-      ui = true         listener \"tcp\"          {           tls_disable =
-      1           address = \"[::]:8200\"           cluster_address =
-      \"[::]:8201\"         }         seal \"azurekeyvault\"         
-      {           tenant_id       =
-      \"d6f40208-0e69-4598-a450-1e46d6668a38\"           client_id       =
-      \"560878d3-e08a-4f6b-b4c4-075d6c433e2e\"           client_secret   =
-      \"ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf\"           vault_name      =
-      \"binesty-key-vault\"           key_name        =
-      \"vault-hashicorp-kubernetes-unseal-key\"           subscription_id =
-      \"b8bdcba6-cce6-459d-a1a4-059f6b590f8e\"         }         storage
-      \"raft\"          {           path = \"/vault/data\"         }        
-      service_registration \"kubernetes\"
-      {}"},{"name":"server.auditStorage.size","value":"5Gi"},{"name":"server.dataStorage.size","value":"5Gi"}]},"repoURL":"https://helm.releases.hashicorp.com","targetRevision":"0.27.0"}},"revision":"0.27.0","status":"OutOfSync"}}}
-  creationTimestamp: '2024-04-25T20:20:49Z'
-  generation: 6532
+  creationTimestamp: '2024-07-22T19:26:35Z'
+  generation: 382
   labels:
     project: infrastructure
-    source: external
+    source: internal
   managedFields:
     - apiVersion: argoproj.io/v1alpha1
       fieldsType: FieldsV1
       fieldsV1:
         f:metadata:
-          f:annotations:
-            .: {}
-            f:kubectl.kubernetes.io/last-applied-configuration: {}
           f:labels:
             .: {}
             f:project: {}
@@ -477,48 +24,30 @@ metadata:
           f:project: {}
           f:source:
             .: {}
-            f:chart: {}
-            f:helm: {}
+            f:path: {}
             f:repoURL: {}
+            f:targetRevision: {}
           f:syncPolicy:
             .: {}
             f:syncOptions: {}
         f:status:
           .: {}
-          f:controllerNamespace: {}
           f:health: {}
           f:summary: {}
           f:sync:
             .: {}
             f:comparedTo:
               .: {}
-              f:destination:
-                .: {}
-                f:namespace: {}
-                f:server: {}
-              f:source:
-                .: {}
-                f:chart: {}
-                f:helm: {}
-                f:repoURL: {}
-      manager: kubectl-client-side-apply
-      operation: Update
-      time: '2024-04-25T20:20:49Z'
-    - apiVersion: argoproj.io/v1alpha1
-      fieldsType: FieldsV1
-      fieldsV1:
-        f:spec:
-          f:source:
-            f:helm:
-              f:parameters: {}
-            f:targetRevision: {}
+              f:destination: {}
+              f:source: {}
       manager: argocd-server
       operation: Update
-      time: '2024-05-31T19:09:05Z'
+      time: '2024-07-23T12:28:38Z'
     - apiVersion: argoproj.io/v1alpha1
       fieldsType: FieldsV1
       fieldsV1:
         f:status:
+          f:controllerNamespace: {}
           f:health:
             f:status: {}
           f:history: {}
@@ -534,26 +63,20 @@ metadata:
               f:retry: {}
               f:sync:
                 .: {}
-                f:prune: {}
+                f:resources: {}
                 f:revision: {}
                 f:syncOptions: {}
                 f:syncStrategy:
                   .: {}
-                  f:hook:
-                    .: {}
-                    f:force: {}
+                  f:hook: {}
             f:phase: {}
             f:startedAt: {}
             f:syncResult:
               .: {}
-              f:resources: {}
               f:revision: {}
               f:source:
                 .: {}
-                f:chart: {}
-                f:helm:
-                  .: {}
-                  f:parameters: {}
+                f:path: {}
                 f:repoURL: {}
                 f:targetRevision: {}
           f:reconciledAt: {}
@@ -563,654 +86,86 @@ metadata:
             f:images: {}
           f:sync:
             f:comparedTo:
+              f:destination:
+                f:namespace: {}
+                f:server: {}
               f:source:
-                f:helm:
-                  f:parameters: {}
+                f:path: {}
+                f:repoURL: {}
                 f:targetRevision: {}
             f:revision: {}
             f:status: {}
       manager: argocd-application-controller
       operation: Update
-      time: '2024-05-31T19:21:19Z'
+      time: '2024-07-23T12:42:29Z'
   name: vault
   namespace: argocd
-  resourceVersion: '7575560'
-  uid: e8e49f78-ec54-4b35-9716-87d2f49d5b74
+  resourceVersion: '237993'
+  uid: 4381d4f5-8684-4f80-8bcc-5eb0a788f9f7
   selfLink: /apis/argoproj.io/v1alpha1/namespaces/argocd/applications/vault
 status:
   controllerNamespace: argocd
   health:
     status: Healthy
   history:
-    - deployStartedAt: '2024-05-31T18:11:28Z'
-      deployedAt: '2024-05-31T18:11:30Z'
-      id: 32
+    - deployStartedAt: '2024-07-22T19:26:48Z'
+      deployedAt: '2024-07-22T19:26:50Z'
+      id: 0
       initiatedBy:
         username: admin
-      revision: 0.28.0
+      revision: 2261fa003c30651487a5b17d55126af95ba015d4
       source:
-        chart: vault
-        helm:
-          parameters:
-            - name: server.ingress.enabled
-              value: 'true'
-            - name: server.ingress.hosts[0].host
-              value: vault.binesty.io
-            - name: server.ingress.ingressClassName
-              value: nginx
-            - name: ui.enabled
-              value: 'true'
-            - name: server.ha.config
-              value: '        ui = true         listener "tcp"          {           tls_disable = 1           address = "[::]:8200"           cluster_address = "[::]:8201"         }         seal "azurekeyvault"          {           tenant_id       = "d6f40208-0e69-4598-a450-1e46d6668a38"           client_id       = "560878d3-e08a-4f6b-b4c4-075d6c433e2e"           client_secret   = "ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf"           vault_name      = "binesty-key-vault"           key_name        = "vault-hashicorp-kubernetes-unseal-key"           subscription_id = "b8bdcba6-cce6-459d-a1a4-059f6b590f8e"         }         storage "raft"          {           path = "/vault/data"         }         service_registration "kubernetes" {}'
-            - name: server.ha.raft.config
-              value: '        ui = true         listener "tcp"          {           tls_disable = 1           address = "[::]:8200"           cluster_address = "[::]:8201"         }         seal "azurekeyvault"          {           tenant_id       = "d6f40208-0e69-4598-a450-1e46d6668a38"           client_id       = "560878d3-e08a-4f6b-b4c4-075d6c433e2e"           client_secret   = "ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf"           vault_name      = "binesty-key-vault"           key_name        = "vault-hashicorp-kubernetes-unseal-key"           subscription_id = "b8bdcba6-cce6-459d-a1a4-059f6b590f8e"         }         storage "raft"          {           path = "/vault/data"         }         service_registration "kubernetes" {}'
-            - name: injector.replicas
-              value: '1'
-            - name: server.standalone.config
-              value: '        ui = true         listener "tcp"          {           tls_disable = 1           address = "[::]:8200"           cluster_address = "[::]:8201"         }         seal "azurekeyvault"          {           tenant_id       = "d6f40208-0e69-4598-a450-1e46d6668a38"           client_id       = "560878d3-e08a-4f6b-b4c4-075d6c433e2e"           client_secret   = "ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf"           vault_name      = "binesty-key-vault"           key_name        = "vault-hashicorp-kubernetes-unseal-key"           subscription_id = "b8bdcba6-cce6-459d-a1a4-059f6b590f8e"         }         storage "raft"          {           path = "/vault/data"         }         service_registration "kubernetes" {}'
-            - name: server.auditStorage.size
-              value: 5Gi
-            - name: server.dataStorage.size
-              value: 5Gi
-            - name: server.auditStorage.storageClass
-              value: nfs-client
-            - name: server.dataStorage.storageClass
-              value: nfs-client
-            - name: global.tlsDisable
-              value: 'false'
-            - name: injector.certs.secretName
-              value: vault-binesty-certificate-key-pair
-        repoURL: https://helm.releases.hashicorp.com
-        targetRevision: 0.28.0
-    - deployStartedAt: '2024-05-31T18:22:32Z'
-      deployedAt: '2024-05-31T18:22:33Z'
-      id: 33
+        path: argocd/sources/vault
+        repoURL: git@github.com:Binesty/Automation.git
+        targetRevision: main
+    - deployStartedAt: '2024-07-23T12:23:39Z'
+      deployedAt: '2024-07-23T12:23:43Z'
+      id: 1
       initiatedBy:
         username: admin
-      revision: 0.28.0
+      revision: e5d794e616b52162b76b97d41c8ca39fd6f171f2
       source:
-        chart: vault
-        helm:
-          parameters:
-            - name: server.ingress.enabled
-              value: 'true'
-            - name: server.ingress.hosts[0].host
-              value: vault.binesty.io
-            - name: server.ingress.ingressClassName
-              value: nginx
-            - name: ui.enabled
-              value: 'true'
-            - name: server.ha.config
-              value: '        ui = true         listener "tcp"          {           tls_disable = 1           address = "[::]:8200"           cluster_address = "[::]:8201"         }         seal "azurekeyvault"          {           tenant_id       = "d6f40208-0e69-4598-a450-1e46d6668a38"           client_id       = "560878d3-e08a-4f6b-b4c4-075d6c433e2e"           client_secret   = "ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf"           vault_name      = "binesty-key-vault"           key_name        = "vault-hashicorp-kubernetes-unseal-key"           subscription_id = "b8bdcba6-cce6-459d-a1a4-059f6b590f8e"         }         storage "raft"          {           path = "/vault/data"         }         service_registration "kubernetes" {}'
-            - name: server.ha.raft.config
-              value: '        ui = true         listener "tcp"          {           tls_disable = 1           address = "[::]:8200"           cluster_address = "[::]:8201"         }         seal "azurekeyvault"          {           tenant_id       = "d6f40208-0e69-4598-a450-1e46d6668a38"           client_id       = "560878d3-e08a-4f6b-b4c4-075d6c433e2e"           client_secret   = "ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf"           vault_name      = "binesty-key-vault"           key_name        = "vault-hashicorp-kubernetes-unseal-key"           subscription_id = "b8bdcba6-cce6-459d-a1a4-059f6b590f8e"         }         storage "raft"          {           path = "/vault/data"         }         service_registration "kubernetes" {}'
-            - name: injector.replicas
-              value: '1'
-            - name: server.standalone.config
-              value: '        ui = true         listener "tcp"          {           tls_disable = 1           address = "[::]:8200"           cluster_address = "[::]:8201"         }         seal "azurekeyvault"          {           tenant_id       = "d6f40208-0e69-4598-a450-1e46d6668a38"           client_id       = "560878d3-e08a-4f6b-b4c4-075d6c433e2e"           client_secret   = "ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf"           vault_name      = "binesty-key-vault"           key_name        = "vault-hashicorp-kubernetes-unseal-key"           subscription_id = "b8bdcba6-cce6-459d-a1a4-059f6b590f8e"         }         storage "raft"          {           path = "/vault/data"         }         service_registration "kubernetes" {}'
-            - name: server.auditStorage.size
-              value: 5Gi
-            - name: server.dataStorage.size
-              value: 5Gi
-            - name: server.auditStorage.storageClass
-              value: nfs-client
-            - name: server.dataStorage.storageClass
-              value: nfs-client
-            - name: global.tlsDisable
-              value: 'false'
-            - name: injector.certs.secretName
-              value: vault-binesty-certificate-key-pair
-            - name: injector.certs.certName
-              value: ca.crt
-        repoURL: https://helm.releases.hashicorp.com
-        targetRevision: 0.28.0
-    - deployStartedAt: '2024-05-31T18:24:55Z'
-      deployedAt: '2024-05-31T18:24:56Z'
-      id: 34
+        path: argocd/sources/vault
+        repoURL: git@github.com:Binesty/Automation.git
+        targetRevision: main
+    - deployStartedAt: '2024-07-23T12:24:24Z'
+      deployedAt: '2024-07-23T12:24:25Z'
+      id: 2
       initiatedBy:
         username: admin
-      revision: 0.28.0
+      revision: e5d794e616b52162b76b97d41c8ca39fd6f171f2
       source:
-        chart: vault
-        helm:
-          parameters:
-            - name: server.ingress.enabled
-              value: 'true'
-            - name: server.ingress.hosts[0].host
-              value: vault.binesty.io
-            - name: server.ingress.ingressClassName
-              value: nginx
-            - name: ui.enabled
-              value: 'true'
-            - name: server.ha.config
-              value: '        ui = true         listener "tcp"          {           tls_disable = 1           address = "[::]:8200"           cluster_address = "[::]:8201"         }         seal "azurekeyvault"          {           tenant_id       = "d6f40208-0e69-4598-a450-1e46d6668a38"           client_id       = "560878d3-e08a-4f6b-b4c4-075d6c433e2e"           client_secret   = "ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf"           vault_name      = "binesty-key-vault"           key_name        = "vault-hashicorp-kubernetes-unseal-key"           subscription_id = "b8bdcba6-cce6-459d-a1a4-059f6b590f8e"         }         storage "raft"          {           path = "/vault/data"         }         service_registration "kubernetes" {}'
-            - name: server.ha.raft.config
-              value: '        ui = true         listener "tcp"          {           tls_disable = 1           address = "[::]:8200"           cluster_address = "[::]:8201"         }         seal "azurekeyvault"          {           tenant_id       = "d6f40208-0e69-4598-a450-1e46d6668a38"           client_id       = "560878d3-e08a-4f6b-b4c4-075d6c433e2e"           client_secret   = "ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf"           vault_name      = "binesty-key-vault"           key_name        = "vault-hashicorp-kubernetes-unseal-key"           subscription_id = "b8bdcba6-cce6-459d-a1a4-059f6b590f8e"         }         storage "raft"          {           path = "/vault/data"         }         service_registration "kubernetes" {}'
-            - name: injector.replicas
-              value: '1'
-            - name: server.standalone.config
-              value: '        ui = true         listener "tcp"          {           tls_disable = 1           address = "[::]:8200"           cluster_address = "[::]:8201"         }         seal "azurekeyvault"          {           tenant_id       = "d6f40208-0e69-4598-a450-1e46d6668a38"           client_id       = "560878d3-e08a-4f6b-b4c4-075d6c433e2e"           client_secret   = "ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf"           vault_name      = "binesty-key-vault"           key_name        = "vault-hashicorp-kubernetes-unseal-key"           subscription_id = "b8bdcba6-cce6-459d-a1a4-059f6b590f8e"         }         storage "raft"          {           path = "/vault/data"         }         service_registration "kubernetes" {}'
-            - name: server.auditStorage.size
-              value: 5Gi
-            - name: server.dataStorage.size
-              value: 5Gi
-            - name: server.auditStorage.storageClass
-              value: nfs-client
-            - name: server.dataStorage.storageClass
-              value: nfs-client
-            - name: global.tlsDisable
-              value: 'false'
-            - name: injector.certs.secretName
-              value: vault-binesty-certificate-key-pair
-            - name: injector.certs.certName
-              value: ca.crt
-        repoURL: https://helm.releases.hashicorp.com
-        targetRevision: 0.28.0
-    - deployStartedAt: '2024-05-31T18:28:32Z'
-      deployedAt: '2024-05-31T18:28:33Z'
-      id: 35
-      initiatedBy:
-        username: admin
-      revision: 0.28.0
-      source:
-        chart: vault
-        helm:
-          parameters:
-            - name: server.ingress.enabled
-              value: 'true'
-            - name: server.ingress.hosts[0].host
-              value: vault.binesty.io
-            - name: server.ingress.ingressClassName
-              value: nginx
-            - name: ui.enabled
-              value: 'true'
-            - name: server.ha.config
-              value: '        ui = true         listener "tcp"          {           tls_disable = 1           address = "[::]:8200"           cluster_address = "[::]:8201"         }         seal "azurekeyvault"          {           tenant_id       = "d6f40208-0e69-4598-a450-1e46d6668a38"           client_id       = "560878d3-e08a-4f6b-b4c4-075d6c433e2e"           client_secret   = "ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf"           vault_name      = "binesty-key-vault"           key_name        = "vault-hashicorp-kubernetes-unseal-key"           subscription_id = "b8bdcba6-cce6-459d-a1a4-059f6b590f8e"         }         storage "raft"          {           path = "/vault/data"         }         service_registration "kubernetes" {}'
-            - name: server.ha.raft.config
-              value: '        ui = true         listener "tcp"          {           tls_disable = 1           address = "[::]:8200"           cluster_address = "[::]:8201"         }         seal "azurekeyvault"          {           tenant_id       = "d6f40208-0e69-4598-a450-1e46d6668a38"           client_id       = "560878d3-e08a-4f6b-b4c4-075d6c433e2e"           client_secret   = "ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf"           vault_name      = "binesty-key-vault"           key_name        = "vault-hashicorp-kubernetes-unseal-key"           subscription_id = "b8bdcba6-cce6-459d-a1a4-059f6b590f8e"         }         storage "raft"          {           path = "/vault/data"         }         service_registration "kubernetes" {}'
-            - name: injector.replicas
-              value: '1'
-            - name: server.standalone.config
-              value: '        ui = true         listener "tcp"          {           tls_disable = 1           address = "[::]:8200"           cluster_address = "[::]:8201"         }         seal "azurekeyvault"          {           tenant_id       = "d6f40208-0e69-4598-a450-1e46d6668a38"           client_id       = "560878d3-e08a-4f6b-b4c4-075d6c433e2e"           client_secret   = "ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf"           vault_name      = "binesty-key-vault"           key_name        = "vault-hashicorp-kubernetes-unseal-key"           subscription_id = "b8bdcba6-cce6-459d-a1a4-059f6b590f8e"         }         storage "raft"          {           path = "/vault/data"         }         service_registration "kubernetes" {}'
-            - name: server.auditStorage.size
-              value: 5Gi
-            - name: server.dataStorage.size
-              value: 5Gi
-            - name: server.auditStorage.storageClass
-              value: nfs-client
-            - name: server.dataStorage.storageClass
-              value: nfs-client
-            - name: global.tlsDisable
-              value: 'true'
-            - name: injector.certs.secretName
-              value: vault-binesty-certificate-key-pair
-            - name: injector.certs.certName
-              value: tls.crt
-        repoURL: https://helm.releases.hashicorp.com
-        targetRevision: 0.28.0
-    - deployStartedAt: '2024-05-31T18:32:44Z'
-      deployedAt: '2024-05-31T18:32:46Z'
-      id: 36
-      initiatedBy:
-        username: admin
-      revision: 0.28.0
-      source:
-        chart: vault
-        helm:
-          parameters:
-            - name: server.ingress.enabled
-              value: 'true'
-            - name: server.ingress.hosts[0].host
-              value: vault.binesty.io
-            - name: server.ingress.ingressClassName
-              value: nginx
-            - name: ui.enabled
-              value: 'true'
-            - name: server.ha.config
-              value: '        ui = true         listener "tcp"          {           tls_disable = 1           address = "[::]:8200"           cluster_address = "[::]:8201"         }         seal "azurekeyvault"          {           tenant_id       = "d6f40208-0e69-4598-a450-1e46d6668a38"           client_id       = "560878d3-e08a-4f6b-b4c4-075d6c433e2e"           client_secret   = "ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf"           vault_name      = "binesty-key-vault"           key_name        = "vault-hashicorp-kubernetes-unseal-key"           subscription_id = "b8bdcba6-cce6-459d-a1a4-059f6b590f8e"         }         storage "raft"          {           path = "/vault/data"         }         service_registration "kubernetes" {}'
-            - name: server.ha.raft.config
-              value: '        ui = true         listener "tcp"          {           tls_disable = 1           address = "[::]:8200"           cluster_address = "[::]:8201"         }         seal "azurekeyvault"          {           tenant_id       = "d6f40208-0e69-4598-a450-1e46d6668a38"           client_id       = "560878d3-e08a-4f6b-b4c4-075d6c433e2e"           client_secret   = "ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf"           vault_name      = "binesty-key-vault"           key_name        = "vault-hashicorp-kubernetes-unseal-key"           subscription_id = "b8bdcba6-cce6-459d-a1a4-059f6b590f8e"         }         storage "raft"          {           path = "/vault/data"         }         service_registration "kubernetes" {}'
-            - name: injector.replicas
-              value: '1'
-            - name: server.standalone.config
-              value: '        ui = true         listener "tcp"          {           tls_disable = 1           address = "[::]:8200"           cluster_address = "[::]:8201"         }         seal "azurekeyvault"          {           tenant_id       = "d6f40208-0e69-4598-a450-1e46d6668a38"           client_id       = "560878d3-e08a-4f6b-b4c4-075d6c433e2e"           client_secret   = "ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf"           vault_name      = "binesty-key-vault"           key_name        = "vault-hashicorp-kubernetes-unseal-key"           subscription_id = "b8bdcba6-cce6-459d-a1a4-059f6b590f8e"         }         storage "raft"          {           path = "/vault/data"         }         service_registration "kubernetes" {}'
-            - name: server.auditStorage.size
-              value: 5Gi
-            - name: server.dataStorage.size
-              value: 5Gi
-            - name: server.auditStorage.storageClass
-              value: nfs-client
-            - name: server.dataStorage.storageClass
-              value: nfs-client
-            - name: global.tlsDisable
-              value: 'true'
-            - name: injector.certs.secretName
-              value: vault-binesty-certificate-key-pair
-            - name: injector.certs.certName
-              value: tls.crt
-        repoURL: https://helm.releases.hashicorp.com
-        targetRevision: 0.28.0
-    - deployStartedAt: '2024-05-31T18:42:40Z'
-      deployedAt: '2024-05-31T18:42:41Z'
-      id: 37
-      initiatedBy:
-        username: admin
-      revision: 0.28.0
-      source:
-        chart: vault
-        helm:
-          parameters:
-            - name: server.ingress.enabled
-              value: 'true'
-            - name: server.ingress.hosts[0].host
-              value: vault.binesty.io
-            - name: server.ingress.ingressClassName
-              value: nginx
-            - name: ui.enabled
-              value: 'true'
-            - name: server.ha.config
-              value: '        ui = true         listener "tcp"          {           tls_disable = 1           address = "[::]:8200"           cluster_address = "[::]:8201"         }         seal "azurekeyvault"          {           tenant_id       = "d6f40208-0e69-4598-a450-1e46d6668a38"           client_id       = "560878d3-e08a-4f6b-b4c4-075d6c433e2e"           client_secret   = "ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf"           vault_name      = "binesty-key-vault"           key_name        = "vault-hashicorp-kubernetes-unseal-key"           subscription_id = "b8bdcba6-cce6-459d-a1a4-059f6b590f8e"         }         storage "raft"          {           path = "/vault/data"         }         service_registration "kubernetes" {}'
-            - name: server.ha.raft.config
-              value: '        ui = true         listener "tcp"          {           tls_disable = 1           address = "[::]:8200"           cluster_address = "[::]:8201"         }         seal "azurekeyvault"          {           tenant_id       = "d6f40208-0e69-4598-a450-1e46d6668a38"           client_id       = "560878d3-e08a-4f6b-b4c4-075d6c433e2e"           client_secret   = "ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf"           vault_name      = "binesty-key-vault"           key_name        = "vault-hashicorp-kubernetes-unseal-key"           subscription_id = "b8bdcba6-cce6-459d-a1a4-059f6b590f8e"         }         storage "raft"          {           path = "/vault/data"         }         service_registration "kubernetes" {}'
-            - name: injector.replicas
-              value: '1'
-            - name: server.standalone.config
-              value: '        ui = true         listener "tcp"          {           tls_disable = 1           address = "[::]:8200"           cluster_address = "[::]:8201"         }         seal "azurekeyvault"          {           tenant_id       = "d6f40208-0e69-4598-a450-1e46d6668a38"           client_id       = "560878d3-e08a-4f6b-b4c4-075d6c433e2e"           client_secret   = "ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf"           vault_name      = "binesty-key-vault"           key_name        = "vault-hashicorp-kubernetes-unseal-key"           subscription_id = "b8bdcba6-cce6-459d-a1a4-059f6b590f8e"         }         storage "raft"          {           path = "/vault/data"         }         service_registration "kubernetes" {}'
-            - name: server.auditStorage.size
-              value: 5Gi
-            - name: server.dataStorage.size
-              value: 5Gi
-            - name: server.auditStorage.storageClass
-              value: nfs-client
-            - name: server.dataStorage.storageClass
-              value: nfs-client
-            - name: global.tlsDisable
-              value: 'true'
-            - name: injector.certs.secretName
-              value: vault-binesty-certificate-key-pair
-            - name: injector.certs.certName
-              value: ca.crt
-        repoURL: https://helm.releases.hashicorp.com
-        targetRevision: 0.28.0
-    - deployStartedAt: '2024-05-31T18:54:33Z'
-      deployedAt: '2024-05-31T18:54:34Z'
-      id: 38
-      initiatedBy:
-        username: admin
-      revision: 0.28.0
-      source:
-        chart: vault
-        helm:
-          parameters:
-            - name: server.ingress.enabled
-              value: 'true'
-            - name: server.ingress.hosts[0].host
-              value: vault.binesty.io
-            - name: server.ingress.ingressClassName
-              value: nginx
-            - name: ui.enabled
-              value: 'true'
-            - name: server.ha.config
-              value: '        ui = true         listener "tcp"          {           tls_disable = 1           address = "[::]:8200"           cluster_address = "[::]:8201"         }         seal "azurekeyvault"          {           tenant_id       = "d6f40208-0e69-4598-a450-1e46d6668a38"           client_id       = "560878d3-e08a-4f6b-b4c4-075d6c433e2e"           client_secret   = "ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf"           vault_name      = "binesty-key-vault"           key_name        = "vault-hashicorp-kubernetes-unseal-key"           subscription_id = "b8bdcba6-cce6-459d-a1a4-059f6b590f8e"         }         storage "raft"          {           path = "/vault/data"         }         service_registration "kubernetes" {}'
-            - name: server.ha.raft.config
-              value: '        ui = true         listener "tcp"          {           tls_disable = 1           address = "[::]:8200"           cluster_address = "[::]:8201"         }         seal "azurekeyvault"          {           tenant_id       = "d6f40208-0e69-4598-a450-1e46d6668a38"           client_id       = "560878d3-e08a-4f6b-b4c4-075d6c433e2e"           client_secret   = "ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf"           vault_name      = "binesty-key-vault"           key_name        = "vault-hashicorp-kubernetes-unseal-key"           subscription_id = "b8bdcba6-cce6-459d-a1a4-059f6b590f8e"         }         storage "raft"          {           path = "/vault/data"         }         service_registration "kubernetes" {}'
-            - name: injector.replicas
-              value: '1'
-            - name: server.standalone.config
-              value: '        ui = true         listener "tcp"          {           tls_disable = 1           address = "[::]:8200"           cluster_address = "[::]:8201"         }         seal "azurekeyvault"          {           tenant_id       = "d6f40208-0e69-4598-a450-1e46d6668a38"           client_id       = "560878d3-e08a-4f6b-b4c4-075d6c433e2e"           client_secret   = "ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf"           vault_name      = "binesty-key-vault"           key_name        = "vault-hashicorp-kubernetes-unseal-key"           subscription_id = "b8bdcba6-cce6-459d-a1a4-059f6b590f8e"         }         storage "raft"          {           path = "/vault/data"         }         service_registration "kubernetes" {}'
-            - name: server.auditStorage.size
-              value: 5Gi
-            - name: server.dataStorage.size
-              value: 5Gi
-            - name: server.auditStorage.storageClass
-              value: nfs-client
-            - name: server.dataStorage.storageClass
-              value: nfs-client
-            - name: global.tlsDisable
-              value: 'true'
-            - name: injector.certs.secretName
-              value: vault-binesty-certificate-key-pair
-            - name: injector.certs.certName
-              value: tls.crt
-        repoURL: https://helm.releases.hashicorp.com
-        targetRevision: 0.28.0
-    - deployStartedAt: '2024-05-31T18:55:37Z'
-      deployedAt: '2024-05-31T18:55:39Z'
-      id: 39
-      initiatedBy:
-        username: admin
-      revision: 0.28.0
-      source:
-        chart: vault
-        helm:
-          parameters:
-            - name: server.ingress.enabled
-              value: 'true'
-            - name: server.ingress.hosts[0].host
-              value: vault.binesty.io
-            - name: server.ingress.ingressClassName
-              value: nginx
-            - name: ui.enabled
-              value: 'true'
-            - name: server.ha.config
-              value: '        ui = true         listener "tcp"          {           tls_disable = 1           address = "[::]:8200"           cluster_address = "[::]:8201"         }         seal "azurekeyvault"          {           tenant_id       = "d6f40208-0e69-4598-a450-1e46d6668a38"           client_id       = "560878d3-e08a-4f6b-b4c4-075d6c433e2e"           client_secret   = "ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf"           vault_name      = "binesty-key-vault"           key_name        = "vault-hashicorp-kubernetes-unseal-key"           subscription_id = "b8bdcba6-cce6-459d-a1a4-059f6b590f8e"         }         storage "raft"          {           path = "/vault/data"         }         service_registration "kubernetes" {}'
-            - name: server.ha.raft.config
-              value: '        ui = true         listener "tcp"          {           tls_disable = 1           address = "[::]:8200"           cluster_address = "[::]:8201"         }         seal "azurekeyvault"          {           tenant_id       = "d6f40208-0e69-4598-a450-1e46d6668a38"           client_id       = "560878d3-e08a-4f6b-b4c4-075d6c433e2e"           client_secret   = "ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf"           vault_name      = "binesty-key-vault"           key_name        = "vault-hashicorp-kubernetes-unseal-key"           subscription_id = "b8bdcba6-cce6-459d-a1a4-059f6b590f8e"         }         storage "raft"          {           path = "/vault/data"         }         service_registration "kubernetes" {}'
-            - name: injector.replicas
-              value: '1'
-            - name: server.standalone.config
-              value: '        ui = true         listener "tcp"          {           tls_disable = 1           address = "[::]:8200"           cluster_address = "[::]:8201"         }         seal "azurekeyvault"          {           tenant_id       = "d6f40208-0e69-4598-a450-1e46d6668a38"           client_id       = "560878d3-e08a-4f6b-b4c4-075d6c433e2e"           client_secret   = "ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf"           vault_name      = "binesty-key-vault"           key_name        = "vault-hashicorp-kubernetes-unseal-key"           subscription_id = "b8bdcba6-cce6-459d-a1a4-059f6b590f8e"         }         storage "raft"          {           path = "/vault/data"         }         service_registration "kubernetes" {}'
-            - name: server.auditStorage.size
-              value: 5Gi
-            - name: server.dataStorage.size
-              value: 5Gi
-            - name: server.auditStorage.storageClass
-              value: nfs-client
-            - name: server.dataStorage.storageClass
-              value: nfs-client
-            - name: global.tlsDisable
-              value: 'true'
-            - name: injector.certs.secretName
-              value: vault-binesty-certificate-key-pair
-            - name: injector.certs.certName
-              value: tls.crt
-        repoURL: https://helm.releases.hashicorp.com
-        targetRevision: 0.28.0
-    - deployStartedAt: '2024-05-31T19:08:48Z'
-      deployedAt: '2024-05-31T19:08:48Z'
-      id: 40
-      initiatedBy:
-        username: admin
-      revision: 0.28.0
-      source:
-        chart: vault
-        helm:
-          parameters:
-            - name: server.ingress.hosts[0].host
-              value: vault.binesty.io
-            - name: server.ingress.ingressClassName
-              value: nginx
-            - name: ui.enabled
-              value: 'true'
-            - name: server.ha.config
-              value: '        ui = true         listener "tcp"          {           tls_disable = 1           address = "[::]:8200"           cluster_address = "[::]:8201"         }         seal "azurekeyvault"          {           tenant_id       = "d6f40208-0e69-4598-a450-1e46d6668a38"           client_id       = "560878d3-e08a-4f6b-b4c4-075d6c433e2e"           client_secret   = "ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf"           vault_name      = "binesty-key-vault"           key_name        = "vault-hashicorp-kubernetes-unseal-key"           subscription_id = "b8bdcba6-cce6-459d-a1a4-059f6b590f8e"         }         storage "raft"          {           path = "/vault/data"         }         service_registration "kubernetes" {}'
-            - name: server.ha.raft.config
-              value: '        ui = true         listener "tcp"          {           tls_disable = 1           address = "[::]:8200"           cluster_address = "[::]:8201"         }         seal "azurekeyvault"          {           tenant_id       = "d6f40208-0e69-4598-a450-1e46d6668a38"           client_id       = "560878d3-e08a-4f6b-b4c4-075d6c433e2e"           client_secret   = "ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf"           vault_name      = "binesty-key-vault"           key_name        = "vault-hashicorp-kubernetes-unseal-key"           subscription_id = "b8bdcba6-cce6-459d-a1a4-059f6b590f8e"         }         storage "raft"          {           path = "/vault/data"         }         service_registration "kubernetes" {}'
-            - name: injector.replicas
-              value: '1'
-            - name: server.standalone.config
-              value: '        ui = true         listener "tcp"          {           tls_disable = 1           address = "[::]:8200"           cluster_address = "[::]:8201"         }         seal "azurekeyvault"          {           tenant_id       = "d6f40208-0e69-4598-a450-1e46d6668a38"           client_id       = "560878d3-e08a-4f6b-b4c4-075d6c433e2e"           client_secret   = "ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf"           vault_name      = "binesty-key-vault"           key_name        = "vault-hashicorp-kubernetes-unseal-key"           subscription_id = "b8bdcba6-cce6-459d-a1a4-059f6b590f8e"         }         storage "raft"          {           path = "/vault/data"         }         service_registration "kubernetes" {}'
-            - name: server.auditStorage.size
-              value: 5Gi
-            - name: server.dataStorage.size
-              value: 5Gi
-            - name: server.auditStorage.storageClass
-              value: nfs-client
-            - name: server.dataStorage.storageClass
-              value: nfs-client
-            - name: global.tlsDisable
-              value: 'true'
-            - name: injector.certs.secretName
-              value: vault-binesty-certificate-key-pair
-            - name: injector.certs.certName
-              value: tls.crt
-        repoURL: https://helm.releases.hashicorp.com
-        targetRevision: 0.28.0
-    - deployStartedAt: '2024-05-31T19:09:05Z'
-      deployedAt: '2024-05-31T19:09:25Z'
-      id: 41
-      initiatedBy:
-        username: admin
-      revision: 0.28.0
-      source:
-        chart: vault
-        helm:
-          parameters:
-            - name: server.ingress.hosts[0].host
-              value: vault.binesty.io
-            - name: server.ingress.ingressClassName
-              value: nginx
-            - name: ui.enabled
-              value: 'true'
-            - name: server.ha.config
-              value: '        ui = true         listener "tcp"          {           tls_disable = 1           address = "[::]:8200"           cluster_address = "[::]:8201"         }         seal "azurekeyvault"          {           tenant_id       = "d6f40208-0e69-4598-a450-1e46d6668a38"           client_id       = "560878d3-e08a-4f6b-b4c4-075d6c433e2e"           client_secret   = "ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf"           vault_name      = "binesty-key-vault"           key_name        = "vault-hashicorp-kubernetes-unseal-key"           subscription_id = "b8bdcba6-cce6-459d-a1a4-059f6b590f8e"         }         storage "raft"          {           path = "/vault/data"         }         service_registration "kubernetes" {}'
-            - name: server.ha.raft.config
-              value: '        ui = true         listener "tcp"          {           tls_disable = 1           address = "[::]:8200"           cluster_address = "[::]:8201"         }         seal "azurekeyvault"          {           tenant_id       = "d6f40208-0e69-4598-a450-1e46d6668a38"           client_id       = "560878d3-e08a-4f6b-b4c4-075d6c433e2e"           client_secret   = "ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf"           vault_name      = "binesty-key-vault"           key_name        = "vault-hashicorp-kubernetes-unseal-key"           subscription_id = "b8bdcba6-cce6-459d-a1a4-059f6b590f8e"         }         storage "raft"          {           path = "/vault/data"         }         service_registration "kubernetes" {}'
-            - name: injector.replicas
-              value: '1'
-            - name: server.standalone.config
-              value: '        ui = true         listener "tcp"          {           tls_disable = 1           address = "[::]:8200"           cluster_address = "[::]:8201"         }         seal "azurekeyvault"          {           tenant_id       = "d6f40208-0e69-4598-a450-1e46d6668a38"           client_id       = "560878d3-e08a-4f6b-b4c4-075d6c433e2e"           client_secret   = "ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf"           vault_name      = "binesty-key-vault"           key_name        = "vault-hashicorp-kubernetes-unseal-key"           subscription_id = "b8bdcba6-cce6-459d-a1a4-059f6b590f8e"         }         storage "raft"          {           path = "/vault/data"         }         service_registration "kubernetes" {}'
-            - name: server.auditStorage.size
-              value: 5Gi
-            - name: server.dataStorage.size
-              value: 5Gi
-            - name: server.auditStorage.storageClass
-              value: nfs-client
-            - name: server.dataStorage.storageClass
-              value: nfs-client
-            - name: global.tlsDisable
-              value: 'true'
-            - name: injector.certs.secretName
-              value: vault-binesty-certificate-key-pair
-            - name: injector.certs.certName
-              value: tls.crt
-        repoURL: https://helm.releases.hashicorp.com
-        targetRevision: 0.28.0
+        path: argocd/sources/vault
+        repoURL: git@github.com:Binesty/Automation.git
+        targetRevision: main
   operationState:
-    finishedAt: '2024-05-31T19:09:25Z'
+    finishedAt: '2024-07-23T12:25:06Z'
     message: successfully synced (no more tasks)
     operation:
       initiatedBy:
         username: admin
       retry: {}
       sync:
-        prune: true
-        revision: 0.28.0
+        resources:
+          - group: networking.k8s.io
+            kind: Ingress
+            name: vault-ingress
+            namespace: vault
+        revision: e5d794e616b52162b76b97d41c8ca39fd6f171f2
         syncOptions:
           - CreateNamespace=true
-          - Replace=true
           - PruneLast=true
         syncStrategy:
-          hook:
-            force: true
+          hook: {}
     phase: Succeeded
-    startedAt: '2024-05-31T19:09:05Z'
+    startedAt: '2024-07-23T12:25:06Z'
     syncResult:
-      resources:
-        - group: ''
-          hookPhase: Succeeded
-          kind: ServiceAccount
-          message: |-
-            serviceaccount "vault" deleted
-            serviceaccount/vault replaced
-          name: vault
-          namespace: vault
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: ''
-          hookPhase: Succeeded
-          kind: ServiceAccount
-          message: |-
-            serviceaccount "vault-agent-injector" deleted
-            serviceaccount/vault-agent-injector replaced
-          name: vault-agent-injector
-          namespace: vault
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: ''
-          hookPhase: Succeeded
-          kind: ConfigMap
-          message: |-
-            configmap "vault-config" deleted
-            configmap/vault-config replaced
-          name: vault-config
-          namespace: vault
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: rbac.authorization.k8s.io
-          hookPhase: Succeeded
-          kind: ClusterRole
-          message: >-
-            clusterrole.rbac.authorization.k8s.io/vault-agent-injector-clusterrole
-            reconciled. clusterrole.rbac.authorization.k8s.io
-            "vault-agent-injector-clusterrole" deleted
-
-            clusterrole.rbac.authorization.k8s.io/vault-agent-injector-clusterrole
-            replaced
-          name: vault-agent-injector-clusterrole
-          namespace: vault
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: rbac.authorization.k8s.io
-          hookPhase: Succeeded
-          kind: ClusterRoleBinding
-          message: >-
-            clusterrolebinding.rbac.authorization.k8s.io/vault-agent-injector-binding
-            reconciled. clusterrolebinding.rbac.authorization.k8s.io
-            "vault-agent-injector-binding" deleted
-
-            clusterrolebinding.rbac.authorization.k8s.io/vault-agent-injector-binding
-            replaced
-          name: vault-agent-injector-binding
-          namespace: vault
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: rbac.authorization.k8s.io
-          hookPhase: Succeeded
-          kind: ClusterRoleBinding
-          message: >-
-            clusterrolebinding.rbac.authorization.k8s.io/vault-server-binding
-            reconciled. clusterrolebinding.rbac.authorization.k8s.io
-            "vault-server-binding" deleted
-
-            clusterrolebinding.rbac.authorization.k8s.io/vault-server-binding
-            replaced
-          name: vault-server-binding
-          namespace: vault
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: ''
-          hookPhase: Succeeded
-          kind: Service
-          message: |-
-            service "vault-internal" deleted
-            service/vault-internal replaced
-          name: vault-internal
-          namespace: vault
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: ''
-          hookPhase: Succeeded
-          kind: Service
-          message: |-
-            service "vault-agent-injector-svc" deleted
-            service/vault-agent-injector-svc replaced
-          name: vault-agent-injector-svc
-          namespace: vault
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: ''
-          hookPhase: Succeeded
-          kind: Service
-          message: |-
-            service "vault-ui" deleted
-            service/vault-ui replaced
-          name: vault-ui
-          namespace: vault
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: ''
-          hookPhase: Succeeded
-          kind: Service
-          message: |-
-            service "vault" deleted
-            service/vault replaced
-          name: vault
-          namespace: vault
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: apps
-          hookPhase: Succeeded
-          kind: Deployment
-          message: |-
-            deployment.apps "vault-agent-injector" deleted
-            deployment.apps/vault-agent-injector replaced
-          name: vault-agent-injector
-          namespace: vault
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: apps
-          hookPhase: Running
-          kind: StatefulSet
-          message: |-
-            statefulset.apps "vault" deleted
-            statefulset.apps/vault replaced
-          name: vault
-          namespace: vault
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: admissionregistration.k8s.io
-          hookPhase: Succeeded
-          kind: MutatingWebhookConfiguration
-          message: >-
-            mutatingwebhookconfiguration.admissionregistration.k8s.io
-            "vault-agent-injector-cfg" deleted
-
-            mutatingwebhookconfiguration.admissionregistration.k8s.io/vault-agent-injector-cfg
-            replaced
-          name: vault-agent-injector-cfg
-          namespace: vault
-          status: Synced
-          syncPhase: Sync
-          version: v1
-      revision: 0.28.0
+      revision: e5d794e616b52162b76b97d41c8ca39fd6f171f2
       source:
-        chart: vault
-        helm:
-          parameters:
-            - name: server.ingress.hosts[0].host
-              value: vault.binesty.io
-            - name: server.ingress.ingressClassName
-              value: nginx
-            - name: ui.enabled
-              value: 'true'
-            - name: server.ha.config
-              value: '        ui = true         listener "tcp"          {           tls_disable = 1           address = "[::]:8200"           cluster_address = "[::]:8201"         }         seal "azurekeyvault"          {           tenant_id       = "d6f40208-0e69-4598-a450-1e46d6668a38"           client_id       = "560878d3-e08a-4f6b-b4c4-075d6c433e2e"           client_secret   = "ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf"           vault_name      = "binesty-key-vault"           key_name        = "vault-hashicorp-kubernetes-unseal-key"           subscription_id = "b8bdcba6-cce6-459d-a1a4-059f6b590f8e"         }         storage "raft"          {           path = "/vault/data"         }         service_registration "kubernetes" {}'
-            - name: server.ha.raft.config
-              value: '        ui = true         listener "tcp"          {           tls_disable = 1           address = "[::]:8200"           cluster_address = "[::]:8201"         }         seal "azurekeyvault"          {           tenant_id       = "d6f40208-0e69-4598-a450-1e46d6668a38"           client_id       = "560878d3-e08a-4f6b-b4c4-075d6c433e2e"           client_secret   = "ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf"           vault_name      = "binesty-key-vault"           key_name        = "vault-hashicorp-kubernetes-unseal-key"           subscription_id = "b8bdcba6-cce6-459d-a1a4-059f6b590f8e"         }         storage "raft"          {           path = "/vault/data"         }         service_registration "kubernetes" {}'
-            - name: injector.replicas
-              value: '1'
-            - name: server.standalone.config
-              value: '        ui = true         listener "tcp"          {           tls_disable = 1           address = "[::]:8200"           cluster_address = "[::]:8201"         }         seal "azurekeyvault"          {           tenant_id       = "d6f40208-0e69-4598-a450-1e46d6668a38"           client_id       = "560878d3-e08a-4f6b-b4c4-075d6c433e2e"           client_secret   = "ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf"           vault_name      = "binesty-key-vault"           key_name        = "vault-hashicorp-kubernetes-unseal-key"           subscription_id = "b8bdcba6-cce6-459d-a1a4-059f6b590f8e"         }         storage "raft"          {           path = "/vault/data"         }         service_registration "kubernetes" {}'
-            - name: server.auditStorage.size
-              value: 5Gi
-            - name: server.dataStorage.size
-              value: 5Gi
-            - name: server.auditStorage.storageClass
-              value: nfs-client
-            - name: server.dataStorage.storageClass
-              value: nfs-client
-            - name: global.tlsDisable
-              value: 'true'
-            - name: injector.certs.secretName
-              value: vault-binesty-certificate-key-pair
-            - name: injector.certs.certName
-              value: tls.crt
-        repoURL: https://helm.releases.hashicorp.com
-        targetRevision: 0.28.0
-  reconciledAt: '2024-05-31T19:21:18Z'
+        path: argocd/sources/vault
+        repoURL: git@github.com:Binesty/Automation.git
+        targetRevision: main
+  reconciledAt: '2024-07-23T12:41:08Z'
   resources:
     - kind: ConfigMap
       name: vault-config
@@ -1292,7 +247,7 @@ status:
       name: vault-server-binding
       status: Synced
       version: v1
-  sourceType: Helm
+  sourceType: Kustomize
   summary:
     images:
       - hashicorp/vault-k8s:1.4.1
@@ -1303,40 +258,10 @@ status:
         namespace: vault
         server: https://kubernetes.default.svc
       source:
-        chart: vault
-        helm:
-          parameters:
-            - name: server.ingress.hosts[0].host
-              value: vault.binesty.io
-            - name: server.ingress.ingressClassName
-              value: nginx
-            - name: ui.enabled
-              value: 'true'
-            - name: server.ha.config
-              value: '        ui = true         listener "tcp"          {           tls_disable = 1           address = "[::]:8200"           cluster_address = "[::]:8201"         }         seal "azurekeyvault"          {           tenant_id       = "d6f40208-0e69-4598-a450-1e46d6668a38"           client_id       = "560878d3-e08a-4f6b-b4c4-075d6c433e2e"           client_secret   = "ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf"           vault_name      = "binesty-key-vault"           key_name        = "vault-hashicorp-kubernetes-unseal-key"           subscription_id = "b8bdcba6-cce6-459d-a1a4-059f6b590f8e"         }         storage "raft"          {           path = "/vault/data"         }         service_registration "kubernetes" {}'
-            - name: server.ha.raft.config
-              value: '        ui = true         listener "tcp"          {           tls_disable = 1           address = "[::]:8200"           cluster_address = "[::]:8201"         }         seal "azurekeyvault"          {           tenant_id       = "d6f40208-0e69-4598-a450-1e46d6668a38"           client_id       = "560878d3-e08a-4f6b-b4c4-075d6c433e2e"           client_secret   = "ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf"           vault_name      = "binesty-key-vault"           key_name        = "vault-hashicorp-kubernetes-unseal-key"           subscription_id = "b8bdcba6-cce6-459d-a1a4-059f6b590f8e"         }         storage "raft"          {           path = "/vault/data"         }         service_registration "kubernetes" {}'
-            - name: injector.replicas
-              value: '1'
-            - name: server.standalone.config
-              value: '        ui = true         listener "tcp"          {           tls_disable = 1           address = "[::]:8200"           cluster_address = "[::]:8201"         }         seal "azurekeyvault"          {           tenant_id       = "d6f40208-0e69-4598-a450-1e46d6668a38"           client_id       = "560878d3-e08a-4f6b-b4c4-075d6c433e2e"           client_secret   = "ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf"           vault_name      = "binesty-key-vault"           key_name        = "vault-hashicorp-kubernetes-unseal-key"           subscription_id = "b8bdcba6-cce6-459d-a1a4-059f6b590f8e"         }         storage "raft"          {           path = "/vault/data"         }         service_registration "kubernetes" {}'
-            - name: server.auditStorage.size
-              value: 5Gi
-            - name: server.dataStorage.size
-              value: 5Gi
-            - name: server.auditStorage.storageClass
-              value: nfs-client
-            - name: server.dataStorage.storageClass
-              value: nfs-client
-            - name: global.tlsDisable
-              value: 'true'
-            - name: injector.certs.secretName
-              value: vault-binesty-certificate-key-pair
-            - name: injector.certs.certName
-              value: tls.crt
-        repoURL: https://helm.releases.hashicorp.com
-        targetRevision: 0.28.0
-    revision: 0.28.0
+        path: argocd/sources/vault
+        repoURL: git@github.com:Binesty/Automation.git
+        targetRevision: main
+    revision: e5d794e616b52162b76b97d41c8ca39fd6f171f2
     status: Synced
 spec:
   destination:
@@ -1344,39 +269,9 @@ spec:
     server: https://kubernetes.default.svc
   project: infrastructure
   source:
-    chart: vault
-    helm:
-      parameters:
-        - name: server.ingress.hosts[0].host
-          value: vault.binesty.io
-        - name: server.ingress.ingressClassName
-          value: nginx
-        - name: ui.enabled
-          value: 'true'
-        - name: server.ha.config
-          value: '        ui = true         listener "tcp"          {           tls_disable = 1           address = "[::]:8200"           cluster_address = "[::]:8201"         }         seal "azurekeyvault"          {           tenant_id       = "d6f40208-0e69-4598-a450-1e46d6668a38"           client_id       = "560878d3-e08a-4f6b-b4c4-075d6c433e2e"           client_secret   = "ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf"           vault_name      = "binesty-key-vault"           key_name        = "vault-hashicorp-kubernetes-unseal-key"           subscription_id = "b8bdcba6-cce6-459d-a1a4-059f6b590f8e"         }         storage "raft"          {           path = "/vault/data"         }         service_registration "kubernetes" {}'
-        - name: server.ha.raft.config
-          value: '        ui = true         listener "tcp"          {           tls_disable = 1           address = "[::]:8200"           cluster_address = "[::]:8201"         }         seal "azurekeyvault"          {           tenant_id       = "d6f40208-0e69-4598-a450-1e46d6668a38"           client_id       = "560878d3-e08a-4f6b-b4c4-075d6c433e2e"           client_secret   = "ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf"           vault_name      = "binesty-key-vault"           key_name        = "vault-hashicorp-kubernetes-unseal-key"           subscription_id = "b8bdcba6-cce6-459d-a1a4-059f6b590f8e"         }         storage "raft"          {           path = "/vault/data"         }         service_registration "kubernetes" {}'
-        - name: injector.replicas
-          value: '1'
-        - name: server.standalone.config
-          value: '        ui = true         listener "tcp"          {           tls_disable = 1           address = "[::]:8200"           cluster_address = "[::]:8201"         }         seal "azurekeyvault"          {           tenant_id       = "d6f40208-0e69-4598-a450-1e46d6668a38"           client_id       = "560878d3-e08a-4f6b-b4c4-075d6c433e2e"           client_secret   = "ImD8Q~PTrtDXoPdD1KEMjOpteZTiXm6KLuTOubKf"           vault_name      = "binesty-key-vault"           key_name        = "vault-hashicorp-kubernetes-unseal-key"           subscription_id = "b8bdcba6-cce6-459d-a1a4-059f6b590f8e"         }         storage "raft"          {           path = "/vault/data"         }         service_registration "kubernetes" {}'
-        - name: server.auditStorage.size
-          value: 5Gi
-        - name: server.dataStorage.size
-          value: 5Gi
-        - name: server.auditStorage.storageClass
-          value: nfs-client
-        - name: server.dataStorage.storageClass
-          value: nfs-client
-        - name: global.tlsDisable
-          value: 'true'
-        - name: injector.certs.secretName
-          value: vault-binesty-certificate-key-pair
-        - name: injector.certs.certName
-          value: tls.crt
-    repoURL: https://helm.releases.hashicorp.com
-    targetRevision: 0.28.0
+    path: argocd/sources/vault
+    repoURL: git@github.com:Binesty/Automation.git
+    targetRevision: main
   syncPolicy:
     syncOptions:
       - CreateNamespace=true

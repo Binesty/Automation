@@ -1,8 +1,101 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  creationTimestamp: '2024-06-05T20:59:22Z'
-  generation: 7660
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: >
+      {"apiVersion":"argoproj.io/v1alpha1","kind":"Application","metadata":{"annotations":{},"creationTimestamp":"2024-06-05T20:59:22Z","generation":7660,"labels":{"project":"infrastructure","source":"internal"},"managedFields":[{"apiVersion":"argoproj.io/v1alpha1","fieldsType":"FieldsV1","fieldsV1":{"f:metadata":{"f:labels":{".":{},"f:project":{},"f:source":{}}},"f:spec":{".":{},"f:destination":{".":{},"f:namespace":{},"f:server":{}},"f:project":{},"f:source":{".":{},"f:path":{},"f:repoURL":{},"f:targetRevision":{}},"f:syncPolicy":{".":{},"f:syncOptions":{}}},"f:status":{".":{},"f:health":{},"f:summary":{},"f:sync":{".":{},"f:comparedTo":{".":{},"f:destination":{},"f:source":{}}}}},"manager":"argocd-server","operation":"Update","time":"2024-07-19T14:50:30Z"},{"apiVersion":"argoproj.io/v1alpha1","fieldsType":"FieldsV1","fieldsV1":{"f:status":{"f:controllerNamespace":{},"f:health":{"f:status":{}},"f:history":{},"f:operationState":{".":{},"f:finishedAt":{},"f:message":{},"f:operation":{".":{},"f:initiatedBy":{".":{},"f:username":{}},"f:retry":{},"f:sync":{".":{},"f:revision":{},"f:syncOptions":{},"f:syncStrategy":{".":{},"f:hook":{}}}},"f:phase":{},"f:startedAt":{},"f:syncResult":{".":{},"f:resources":{},"f:revision":{},"f:source":{".":{},"f:path":{},"f:repoURL":{},"f:targetRevision":{}}}},"f:reconciledAt":{},"f:resources":{},"f:sourceType":{},"f:summary":{"f:externalURLs":{},"f:images":{}},"f:sync":{"f:comparedTo":{"f:destination":{"f:namespace":{},"f:server":{}},"f:source":{"f:path":{},"f:repoURL":{},"f:targetRevision":{}}},"f:revision":{},"f:status":{}}}},"manager":"argocd-application-controller","operation":"Update","time":"2024-07-19T16:52:20Z"}],"name":"argocd","namespace":"argocd","resourceVersion":"17435473","selfLink":"/apis/argoproj.io/v1alpha1/namespaces/argocd/applications/argocd","uid":"684753ea-9738-4b04-980e-f72d75e03b6d"},"spec":{"destination":{"namespace":"argocd","server":"https://kubernetes.default.svc"},"project":"infrastructure","source":{"path":"argocd/sources/argocd","repoURL":"git@github.com:Binesty/Automation.git","targetRevision":"main"},"syncPolicy":{"syncOptions":["CreateNamespace=true"]}},"status":{"controllerNamespace":"argocd","health":{"status":"Healthy"},"history":[{"deployStartedAt":"2024-07-03T12:25:39Z","deployedAt":"2024-07-03T12:26:02Z","id":0,"initiatedBy":{"username":"admin"},"revision":"d4855c38901ff3834fbd520307a93540f5f1fa96","source":{"path":"cluster/argocd/sources/argocd","repoURL":"git@github.com:Binesty/Kubernetes.git","targetRevision":"main"}}],"operationState":{"finishedAt":"2024-07-03T12:26:02Z","message":"successfully
+      synced (all tasks
+      run)","operation":{"initiatedBy":{"username":"admin"},"retry":{},"sync":{"revision":"d4855c38901ff3834fbd520307a93540f5f1fa96","syncOptions":["CreateNamespace=true"],"syncStrategy":{"hook":{}}}},"phase":"Succeeded","startedAt":"2024-07-03T12:25:39Z","syncResult":{"resources":[{"group":"networking.k8s.io","hookPhase":"Running","kind":"NetworkPolicy","message":"networkpolicy.networking.k8s.io/argocd-applicationset-controller-network-policy
+      unchanged","name":"argocd-applicationset-controller-network-policy","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"networking.k8s.io","hookPhase":"Running","kind":"NetworkPolicy","message":"networkpolicy.networking.k8s.io/argocd-application-controller-network-policy
+      configured","name":"argocd-application-controller-network-policy","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"networking.k8s.io","hookPhase":"Running","kind":"NetworkPolicy","message":"networkpolicy.networking.k8s.io/argocd-dex-server-network-policy
+      unchanged","name":"argocd-dex-server-network-policy","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"networking.k8s.io","hookPhase":"Running","kind":"NetworkPolicy","message":"networkpolicy.networking.k8s.io/argocd-server-network-policy
+      unchanged","name":"argocd-server-network-policy","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"networking.k8s.io","hookPhase":"Running","kind":"NetworkPolicy","message":"networkpolicy.networking.k8s.io/argocd-redis-network-policy
+      unchanged","name":"argocd-redis-network-policy","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"networking.k8s.io","hookPhase":"Running","kind":"NetworkPolicy","message":"networkpolicy.networking.k8s.io/argocd-notifications-controller-network-policy
+      unchanged","name":"argocd-notifications-controller-network-policy","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"networking.k8s.io","hookPhase":"Running","kind":"NetworkPolicy","message":"networkpolicy.networking.k8s.io/argocd-repo-server-network-policy
+      configured","name":"argocd-repo-server-network-policy","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"","hookPhase":"Running","kind":"ServiceAccount","message":"serviceaccount/argocd-dex-server
+      unchanged","name":"argocd-dex-server","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"","hookPhase":"Running","kind":"ServiceAccount","message":"serviceaccount/argocd-notifications-controller
+      unchanged","name":"argocd-notifications-controller","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"","hookPhase":"Running","kind":"ServiceAccount","message":"serviceaccount/argocd-application-controller
+      unchanged","name":"argocd-application-controller","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"","hookPhase":"Running","kind":"ServiceAccount","message":"serviceaccount/argocd-repo-server
+      unchanged","name":"argocd-repo-server","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"","hookPhase":"Running","kind":"ServiceAccount","message":"serviceaccount/argocd-server
+      unchanged","name":"argocd-server","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"","hookPhase":"Running","kind":"ServiceAccount","message":"serviceaccount/argocd-applicationset-controller
+      unchanged","name":"argocd-applicationset-controller","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"","hookPhase":"Running","kind":"ServiceAccount","message":"serviceaccount/argocd-redis
+      unchanged","name":"argocd-redis","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"","hookPhase":"Running","kind":"Secret","message":"secret/argocd-notifications-secret
+      unchanged","name":"argocd-notifications-secret","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"","hookPhase":"Running","kind":"Secret","message":"secret/argocd-secret
+      unchanged","name":"argocd-secret","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"","hookPhase":"Running","kind":"ConfigMap","message":"configmap/argocd-notifications-cm
+      unchanged","name":"argocd-notifications-cm","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"","hookPhase":"Running","kind":"ConfigMap","message":"configmap/argocd-rbac-cm
+      unchanged","name":"argocd-rbac-cm","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"","hookPhase":"Running","kind":"ConfigMap","message":"configmap/argocd-gpg-keys-cm
+      unchanged","name":"argocd-gpg-keys-cm","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"","hookPhase":"Running","kind":"ConfigMap","message":"configmap/argocd-cmd-params-cm
+      unchanged","name":"argocd-cmd-params-cm","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"","hookPhase":"Running","kind":"ConfigMap","message":"configmap/argocd-cm
+      unchanged","name":"argocd-cm","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"","hookPhase":"Running","kind":"ConfigMap","message":"configmap/argocd-tls-certs-cm
+      unchanged","name":"argocd-tls-certs-cm","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"","hookPhase":"Running","kind":"ConfigMap","message":"configmap/argocd-ssh-known-hosts-cm
+      unchanged","name":"argocd-ssh-known-hosts-cm","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"apiextensions.k8s.io","hookPhase":"Running","kind":"CustomResourceDefinition","message":"customresourcedefinition.apiextensions.k8s.io/appprojects.argoproj.io
+      unchanged","name":"appprojects.argoproj.io","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"apiextensions.k8s.io","hookPhase":"Running","kind":"CustomResourceDefinition","message":"customresourcedefinition.apiextensions.k8s.io/applications.argoproj.io
+      unchanged","name":"applications.argoproj.io","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"apiextensions.k8s.io","hookPhase":"Running","kind":"CustomResourceDefinition","message":"customresourcedefinition.apiextensions.k8s.io/applicationsets.argoproj.io
+      unchanged","name":"applicationsets.argoproj.io","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"rbac.authorization.k8s.io","hookPhase":"Running","kind":"ClusterRole","message":"clusterrole.rbac.authorization.k8s.io/argocd-application-controller
+      reconciled.
+      clusterrole.rbac.authorization.k8s.io/argocd-application-controller
+      unchanged","name":"argocd-application-controller","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"rbac.authorization.k8s.io","hookPhase":"Running","kind":"ClusterRole","message":"clusterrole.rbac.authorization.k8s.io/argocd-server
+      reconciled. clusterrole.rbac.authorization.k8s.io/argocd-server
+      unchanged","name":"argocd-server","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"rbac.authorization.k8s.io","hookPhase":"Running","kind":"ClusterRole","message":"clusterrole.rbac.authorization.k8s.io/argocd-applicationset-controller
+      reconciled.
+      clusterrole.rbac.authorization.k8s.io/argocd-applicationset-controller
+      unchanged","name":"argocd-applicationset-controller","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"rbac.authorization.k8s.io","hookPhase":"Running","kind":"ClusterRoleBinding","message":"clusterrolebinding.rbac.authorization.k8s.io/argocd-applicationset-controller
+      reconciled.
+      clusterrolebinding.rbac.authorization.k8s.io/argocd-applicationset-controller
+      unchanged","name":"argocd-applicationset-controller","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"rbac.authorization.k8s.io","hookPhase":"Running","kind":"ClusterRoleBinding","message":"clusterrolebinding.rbac.authorization.k8s.io/argocd-server
+      reconciled. clusterrolebinding.rbac.authorization.k8s.io/argocd-server
+      unchanged","name":"argocd-server","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"rbac.authorization.k8s.io","hookPhase":"Running","kind":"ClusterRoleBinding","message":"clusterrolebinding.rbac.authorization.k8s.io/argocd-application-controller
+      reconciled.
+      clusterrolebinding.rbac.authorization.k8s.io/argocd-application-controller
+      unchanged","name":"argocd-application-controller","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"rbac.authorization.k8s.io","hookPhase":"Running","kind":"Role","message":"role.rbac.authorization.k8s.io/argocd-application-controller
+      reconciled. role.rbac.authorization.k8s.io/argocd-application-controller
+      unchanged","name":"argocd-application-controller","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"rbac.authorization.k8s.io","hookPhase":"Running","kind":"Role","message":"role.rbac.authorization.k8s.io/argocd-dex-server
+      reconciled. role.rbac.authorization.k8s.io/argocd-dex-server
+      unchanged","name":"argocd-dex-server","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"rbac.authorization.k8s.io","hookPhase":"Running","kind":"Role","message":"role.rbac.authorization.k8s.io/argocd-server
+      reconciled. role.rbac.authorization.k8s.io/argocd-server
+      unchanged","name":"argocd-server","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"rbac.authorization.k8s.io","hookPhase":"Running","kind":"Role","message":"role.rbac.authorization.k8s.io/argocd-notifications-controller
+      reconciled. role.rbac.authorization.k8s.io/argocd-notifications-controller
+      unchanged","name":"argocd-notifications-controller","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"rbac.authorization.k8s.io","hookPhase":"Running","kind":"Role","message":"role.rbac.authorization.k8s.io/argocd-redis
+      reconciled. role.rbac.authorization.k8s.io/argocd-redis
+      unchanged","name":"argocd-redis","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"rbac.authorization.k8s.io","hookPhase":"Running","kind":"Role","message":"role.rbac.authorization.k8s.io/argocd-applicationset-controller
+      reconciled.
+      role.rbac.authorization.k8s.io/argocd-applicationset-controller
+      unchanged","name":"argocd-applicationset-controller","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"rbac.authorization.k8s.io","hookPhase":"Running","kind":"RoleBinding","message":"rolebinding.rbac.authorization.k8s.io/argocd-redis
+      reconciled. rolebinding.rbac.authorization.k8s.io/argocd-redis
+      unchanged","name":"argocd-redis","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"rbac.authorization.k8s.io","hookPhase":"Running","kind":"RoleBinding","message":"rolebinding.rbac.authorization.k8s.io/argocd-server
+      reconciled. rolebinding.rbac.authorization.k8s.io/argocd-server
+      unchanged","name":"argocd-server","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"rbac.authorization.k8s.io","hookPhase":"Running","kind":"RoleBinding","message":"rolebinding.rbac.authorization.k8s.io/argocd-dex-server
+      reconciled. rolebinding.rbac.authorization.k8s.io/argocd-dex-server
+      unchanged","name":"argocd-dex-server","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"rbac.authorization.k8s.io","hookPhase":"Running","kind":"RoleBinding","message":"rolebinding.rbac.authorization.k8s.io/argocd-applicationset-controller
+      reconciled.
+      rolebinding.rbac.authorization.k8s.io/argocd-applicationset-controller
+      unchanged","name":"argocd-applicationset-controller","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"rbac.authorization.k8s.io","hookPhase":"Running","kind":"RoleBinding","message":"rolebinding.rbac.authorization.k8s.io/argocd-notifications-controller
+      reconciled.
+      rolebinding.rbac.authorization.k8s.io/argocd-notifications-controller
+      unchanged","name":"argocd-notifications-controller","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"rbac.authorization.k8s.io","hookPhase":"Running","kind":"RoleBinding","message":"rolebinding.rbac.authorization.k8s.io/argocd-application-controller
+      reconciled.
+      rolebinding.rbac.authorization.k8s.io/argocd-application-controller
+      unchanged","name":"argocd-application-controller","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"","hookPhase":"Running","kind":"Service","message":"service/argocd-metrics
+      unchanged","name":"argocd-metrics","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"","hookPhase":"Running","kind":"Service","message":"service/argocd-redis
+      unchanged","name":"argocd-redis","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"","hookPhase":"Running","kind":"Service","message":"service/argocd-notifications-controller-metrics
+      unchanged","name":"argocd-notifications-controller-metrics","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"","hookPhase":"Running","kind":"Service","message":"service/argocd-applicationset-controller
+      unchanged","name":"argocd-applicationset-controller","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"","hookPhase":"Running","kind":"Service","message":"service/argocd-repo-server
+      unchanged","name":"argocd-repo-server","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"","hookPhase":"Running","kind":"Service","message":"service/argocd-dex-server
+      unchanged","name":"argocd-dex-server","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"","hookPhase":"Running","kind":"Service","message":"service/argocd-server-metrics
+      unchanged","name":"argocd-server-metrics","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"","hookPhase":"Running","kind":"Service","message":"service/argocd-server
+      unchanged","name":"argocd-server","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"apps","hookPhase":"Running","kind":"Deployment","message":"deployment.apps/argocd-notifications-controller
+      unchanged","name":"argocd-notifications-controller","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"apps","hookPhase":"Running","kind":"Deployment","message":"deployment.apps/argocd-redis
+      unchanged","name":"argocd-redis","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"apps","hookPhase":"Running","kind":"Deployment","message":"deployment.apps/argocd-dex-server
+      unchanged","name":"argocd-dex-server","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"apps","hookPhase":"Running","kind":"Deployment","message":"deployment.apps/argocd-applicationset-controller
+      unchanged","name":"argocd-applicationset-controller","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"apps","hookPhase":"Running","kind":"Deployment","message":"deployment.apps/argocd-server
+      unchanged","name":"argocd-server","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"apps","hookPhase":"Running","kind":"Deployment","message":"deployment.apps/argocd-repo-server
+      unchanged","name":"argocd-repo-server","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"apps","hookPhase":"Running","kind":"StatefulSet","message":"statefulset.apps/argocd-application-controller
+      unchanged","name":"argocd-application-controller","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"networking.k8s.io","hookPhase":"Running","kind":"Ingress","message":"ingress.networking.k8s.io/argocd-server-ingress
+      unchanged","name":"argocd-server-ingress","namespace":"argocd","status":"Synced","syncPhase":"Sync","version":"v1"}],"revision":"d4855c38901ff3834fbd520307a93540f5f1fa96","source":{"path":"cluster/argocd/sources/argocd","repoURL":"git@github.com:Binesty/Kubernetes.git","targetRevision":"main"}}},"reconciledAt":"2024-07-19T16:52:17Z","resources":[{"kind":"ConfigMap","name":"argocd-cm","namespace":"argocd","status":"Synced","version":"v1"},{"kind":"ConfigMap","name":"argocd-cmd-params-cm","namespace":"argocd","status":"Synced","version":"v1"},{"kind":"ConfigMap","name":"argocd-gpg-keys-cm","namespace":"argocd","status":"Synced","version":"v1"},{"kind":"ConfigMap","name":"argocd-notifications-cm","namespace":"argocd","status":"Synced","version":"v1"},{"kind":"ConfigMap","name":"argocd-rbac-cm","namespace":"argocd","status":"Synced","version":"v1"},{"kind":"ConfigMap","name":"argocd-ssh-known-hosts-cm","namespace":"argocd","status":"Synced","version":"v1"},{"kind":"ConfigMap","name":"argocd-tls-certs-cm","namespace":"argocd","status":"Synced","version":"v1"},{"kind":"Secret","name":"argocd-notifications-secret","namespace":"argocd","status":"Synced","version":"v1"},{"kind":"Secret","name":"argocd-secret","namespace":"argocd","status":"Synced","version":"v1"},{"health":{"status":"Healthy"},"kind":"Service","name":"argocd-applicationset-controller","namespace":"argocd","status":"Synced","version":"v1"},{"health":{"status":"Healthy"},"kind":"Service","name":"argocd-dex-server","namespace":"argocd","status":"Synced","version":"v1"},{"health":{"status":"Healthy"},"kind":"Service","name":"argocd-metrics","namespace":"argocd","status":"Synced","version":"v1"},{"health":{"status":"Healthy"},"kind":"Service","name":"argocd-notifications-controller-metrics","namespace":"argocd","status":"Synced","version":"v1"},{"health":{"status":"Healthy"},"kind":"Service","name":"argocd-redis","namespace":"argocd","status":"Synced","version":"v1"},{"health":{"status":"Healthy"},"kind":"Service","name":"argocd-repo-server","namespace":"argocd","status":"Synced","version":"v1"},{"health":{"status":"Healthy"},"kind":"Service","name":"argocd-server","namespace":"argocd","status":"Synced","version":"v1"},{"health":{"status":"Healthy"},"kind":"Service","name":"argocd-server-metrics","namespace":"argocd","status":"Synced","version":"v1"},{"kind":"ServiceAccount","name":"argocd-application-controller","namespace":"argocd","status":"Synced","version":"v1"},{"kind":"ServiceAccount","name":"argocd-applicationset-controller","namespace":"argocd","status":"Synced","version":"v1"},{"kind":"ServiceAccount","name":"argocd-dex-server","namespace":"argocd","status":"Synced","version":"v1"},{"kind":"ServiceAccount","name":"argocd-notifications-controller","namespace":"argocd","status":"Synced","version":"v1"},{"kind":"ServiceAccount","name":"argocd-redis","namespace":"argocd","status":"Synced","version":"v1"},{"kind":"ServiceAccount","name":"argocd-repo-server","namespace":"argocd","status":"Synced","version":"v1"},{"kind":"ServiceAccount","name":"argocd-server","namespace":"argocd","status":"Synced","version":"v1"},{"group":"apiextensions.k8s.io","kind":"CustomResourceDefinition","name":"applications.argoproj.io","status":"Synced","version":"v1"},{"group":"apiextensions.k8s.io","kind":"CustomResourceDefinition","name":"applicationsets.argoproj.io","status":"Synced","version":"v1"},{"group":"apiextensions.k8s.io","kind":"CustomResourceDefinition","name":"appprojects.argoproj.io","status":"Synced","version":"v1"},{"group":"apps","health":{"status":"Healthy"},"kind":"Deployment","name":"argocd-applicationset-controller","namespace":"argocd","status":"Synced","version":"v1"},{"group":"apps","health":{"status":"Healthy"},"kind":"Deployment","name":"argocd-dex-server","namespace":"argocd","status":"Synced","version":"v1"},{"group":"apps","health":{"status":"Healthy"},"kind":"Deployment","name":"argocd-notifications-controller","namespace":"argocd","status":"Synced","version":"v1"},{"group":"apps","health":{"status":"Healthy"},"kind":"Deployment","name":"argocd-redis","namespace":"argocd","status":"Synced","version":"v1"},{"group":"apps","health":{"status":"Healthy"},"kind":"Deployment","name":"argocd-repo-server","namespace":"argocd","status":"Synced","version":"v1"},{"group":"apps","health":{"status":"Healthy"},"kind":"Deployment","name":"argocd-server","namespace":"argocd","status":"Synced","version":"v1"},{"group":"apps","health":{"message":"partitioned
+      roll out complete: 1 new pods have been
+      updated...","status":"Healthy"},"kind":"StatefulSet","name":"argocd-application-controller","namespace":"argocd","status":"Synced","version":"v1"},{"group":"networking.k8s.io","health":{"status":"Healthy"},"kind":"Ingress","name":"argocd-server-ingress","namespace":"argocd","status":"Synced","version":"v1"},{"group":"networking.k8s.io","kind":"NetworkPolicy","name":"argocd-application-controller-network-policy","namespace":"argocd","status":"Synced","version":"v1"},{"group":"networking.k8s.io","kind":"NetworkPolicy","name":"argocd-applicationset-controller-network-policy","namespace":"argocd","status":"Synced","version":"v1"},{"group":"networking.k8s.io","kind":"NetworkPolicy","name":"argocd-dex-server-network-policy","namespace":"argocd","status":"Synced","version":"v1"},{"group":"networking.k8s.io","kind":"NetworkPolicy","name":"argocd-notifications-controller-network-policy","namespace":"argocd","status":"Synced","version":"v1"},{"group":"networking.k8s.io","kind":"NetworkPolicy","name":"argocd-redis-network-policy","namespace":"argocd","status":"Synced","version":"v1"},{"group":"networking.k8s.io","kind":"NetworkPolicy","name":"argocd-repo-server-network-policy","namespace":"argocd","status":"Synced","version":"v1"},{"group":"networking.k8s.io","kind":"NetworkPolicy","name":"argocd-server-network-policy","namespace":"argocd","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"argocd-application-controller","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"argocd-applicationset-controller","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"argocd-server","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"ClusterRoleBinding","name":"argocd-application-controller","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"ClusterRoleBinding","name":"argocd-applicationset-controller","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"ClusterRoleBinding","name":"argocd-server","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"Role","name":"argocd-application-controller","namespace":"argocd","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"Role","name":"argocd-applicationset-controller","namespace":"argocd","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"Role","name":"argocd-dex-server","namespace":"argocd","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"Role","name":"argocd-notifications-controller","namespace":"argocd","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"Role","name":"argocd-redis","namespace":"argocd","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"Role","name":"argocd-server","namespace":"argocd","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"RoleBinding","name":"argocd-application-controller","namespace":"argocd","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"RoleBinding","name":"argocd-applicationset-controller","namespace":"argocd","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"RoleBinding","name":"argocd-dex-server","namespace":"argocd","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"RoleBinding","name":"argocd-notifications-controller","namespace":"argocd","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"RoleBinding","name":"argocd-redis","namespace":"argocd","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"RoleBinding","name":"argocd-server","namespace":"argocd","status":"Synced","version":"v1"}],"sourceType":"Kustomize","summary":{"externalURLs":["https://argocd.binesty.io/"],"images":["ghcr.io/dexidp/dex:v2.38.0","quay.io/argoproj/argocd:v2.11.0","quay.io/argoproj/argocd:v2.11.2","redis:7.0.14-alpine"]},"sync":{"comparedTo":{"destination":{"namespace":"argocd","server":"https://kubernetes.default.svc"},"source":{"path":"argocd/sources/argocd","repoURL":"git@github.com:Binesty/Automation.git","targetRevision":"main"}},"revision":"2325df6152c42fe82976edd3eff16d40c0d39366","status":"Synced"}}}
+  creationTimestamp: '2024-07-22T14:50:54Z'
+  generation: 192
   labels:
     project: infrastructure
     source: internal
@@ -11,6 +104,9 @@ metadata:
       fieldsType: FieldsV1
       fieldsV1:
         f:metadata:
+          f:annotations:
+            .: {}
+            f:kubectl.kubernetes.io/last-applied-configuration: {}
           f:labels:
             .: {}
             f:project: {}
@@ -32,22 +128,30 @@ metadata:
             f:syncOptions: {}
         f:status:
           .: {}
+          f:controllerNamespace: {}
           f:health: {}
+          f:sourceType: {}
           f:summary: {}
           f:sync:
             .: {}
             f:comparedTo:
               .: {}
-              f:destination: {}
-              f:source: {}
-      manager: argocd-server
+              f:destination:
+                .: {}
+                f:namespace: {}
+                f:server: {}
+              f:source:
+                .: {}
+                f:path: {}
+                f:repoURL: {}
+                f:targetRevision: {}
+      manager: kubectl-client-side-apply
       operation: Update
-      time: '2024-07-19T14:50:30Z'
+      time: '2024-07-22T14:50:54Z'
     - apiVersion: argoproj.io/v1alpha1
       fieldsType: FieldsV1
       fieldsV1:
         f:status:
-          f:controllerNamespace: {}
           f:health:
             f:status: {}
           f:history: {}
@@ -81,28 +185,18 @@ metadata:
                 f:targetRevision: {}
           f:reconciledAt: {}
           f:resources: {}
-          f:sourceType: {}
           f:summary:
-            f:externalURLs: {}
             f:images: {}
           f:sync:
-            f:comparedTo:
-              f:destination:
-                f:namespace: {}
-                f:server: {}
-              f:source:
-                f:path: {}
-                f:repoURL: {}
-                f:targetRevision: {}
             f:revision: {}
             f:status: {}
       manager: argocd-application-controller
       operation: Update
-      time: '2024-07-19T16:52:20Z'
+      time: '2024-07-23T12:28:04Z'
   name: argocd
   namespace: argocd
-  resourceVersion: '17435473'
-  uid: 684753ea-9738-4b04-980e-f72d75e03b6d
+  resourceVersion: '232416'
+  uid: 3f1ea9ed-c062-4226-a1ef-f235a362b6a1
   selfLink: /apis/argoproj.io/v1alpha1/namespaces/argocd/applications/argocd
 status:
   controllerNamespace: argocd
@@ -119,23 +213,44 @@ status:
         path: cluster/argocd/sources/argocd
         repoURL: git@github.com:Binesty/Kubernetes.git
         targetRevision: main
+    - deployStartedAt: '2024-07-23T12:11:48Z'
+      deployedAt: '2024-07-23T12:13:09Z'
+      id: 1
+      initiatedBy:
+        username: admin
+      revision: 2261fa003c30651487a5b17d55126af95ba015d4
+      source:
+        path: argocd/sources/argocd
+        repoURL: git@github.com:Binesty/Automation.git
+        targetRevision: main
   operationState:
-    finishedAt: '2024-07-03T12:26:02Z'
+    finishedAt: '2024-07-23T12:13:09Z'
     message: successfully synced (all tasks run)
     operation:
       initiatedBy:
         username: admin
       retry: {}
       sync:
-        revision: d4855c38901ff3834fbd520307a93540f5f1fa96
+        revision: 2261fa003c30651487a5b17d55126af95ba015d4
         syncOptions:
           - CreateNamespace=true
         syncStrategy:
           hook: {}
     phase: Succeeded
-    startedAt: '2024-07-03T12:25:39Z'
+    startedAt: '2024-07-23T12:11:48Z'
     syncResult:
       resources:
+        - group: networking.k8s.io
+          hookPhase: Running
+          kind: NetworkPolicy
+          message: >-
+            networkpolicy.networking.k8s.io/argocd-notifications-controller-network-policy
+            unchanged
+          name: argocd-notifications-controller-network-policy
+          namespace: argocd
+          status: Synced
+          syncPhase: Sync
+          version: v1
         - group: networking.k8s.io
           hookPhase: Running
           kind: NetworkPolicy
@@ -143,6 +258,17 @@ status:
             networkpolicy.networking.k8s.io/argocd-applicationset-controller-network-policy
             unchanged
           name: argocd-applicationset-controller-network-policy
+          namespace: argocd
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: networking.k8s.io
+          hookPhase: Running
+          kind: NetworkPolicy
+          message: >-
+            networkpolicy.networking.k8s.io/argocd-repo-server-network-policy
+            configured
+          name: argocd-repo-server-network-policy
           namespace: argocd
           status: Synced
           syncPhase: Sync
@@ -162,9 +288,9 @@ status:
           hookPhase: Running
           kind: NetworkPolicy
           message: >-
-            networkpolicy.networking.k8s.io/argocd-dex-server-network-policy
+            networkpolicy.networking.k8s.io/argocd-redis-network-policy
             unchanged
-          name: argocd-dex-server-network-policy
+          name: argocd-redis-network-policy
           namespace: argocd
           status: Synced
           syncPhase: Sync
@@ -184,58 +310,9 @@ status:
           hookPhase: Running
           kind: NetworkPolicy
           message: >-
-            networkpolicy.networking.k8s.io/argocd-redis-network-policy
+            networkpolicy.networking.k8s.io/argocd-dex-server-network-policy
             unchanged
-          name: argocd-redis-network-policy
-          namespace: argocd
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: networking.k8s.io
-          hookPhase: Running
-          kind: NetworkPolicy
-          message: >-
-            networkpolicy.networking.k8s.io/argocd-notifications-controller-network-policy
-            unchanged
-          name: argocd-notifications-controller-network-policy
-          namespace: argocd
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: networking.k8s.io
-          hookPhase: Running
-          kind: NetworkPolicy
-          message: >-
-            networkpolicy.networking.k8s.io/argocd-repo-server-network-policy
-            configured
-          name: argocd-repo-server-network-policy
-          namespace: argocd
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: ''
-          hookPhase: Running
-          kind: ServiceAccount
-          message: serviceaccount/argocd-dex-server unchanged
-          name: argocd-dex-server
-          namespace: argocd
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: ''
-          hookPhase: Running
-          kind: ServiceAccount
-          message: serviceaccount/argocd-notifications-controller unchanged
-          name: argocd-notifications-controller
-          namespace: argocd
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: ''
-          hookPhase: Running
-          kind: ServiceAccount
-          message: serviceaccount/argocd-application-controller unchanged
-          name: argocd-application-controller
+          name: argocd-dex-server-network-policy
           namespace: argocd
           status: Synced
           syncPhase: Sync
@@ -252,8 +329,17 @@ status:
         - group: ''
           hookPhase: Running
           kind: ServiceAccount
-          message: serviceaccount/argocd-server unchanged
-          name: argocd-server
+          message: serviceaccount/argocd-application-controller unchanged
+          name: argocd-application-controller
+          namespace: argocd
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: ''
+          hookPhase: Running
+          kind: ServiceAccount
+          message: serviceaccount/argocd-notifications-controller unchanged
+          name: argocd-notifications-controller
           namespace: argocd
           status: Synced
           syncPhase: Sync
@@ -270,8 +356,26 @@ status:
         - group: ''
           hookPhase: Running
           kind: ServiceAccount
+          message: serviceaccount/argocd-dex-server unchanged
+          name: argocd-dex-server
+          namespace: argocd
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: ''
+          hookPhase: Running
+          kind: ServiceAccount
           message: serviceaccount/argocd-redis unchanged
           name: argocd-redis
+          namespace: argocd
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: ''
+          hookPhase: Running
+          kind: ServiceAccount
+          message: serviceaccount/argocd-server unchanged
+          name: argocd-server
           namespace: argocd
           status: Synced
           syncPhase: Sync
@@ -297,15 +401,6 @@ status:
         - group: ''
           hookPhase: Running
           kind: ConfigMap
-          message: configmap/argocd-notifications-cm unchanged
-          name: argocd-notifications-cm
-          namespace: argocd
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: ''
-          hookPhase: Running
-          kind: ConfigMap
           message: configmap/argocd-rbac-cm unchanged
           name: argocd-rbac-cm
           namespace: argocd
@@ -315,8 +410,8 @@ status:
         - group: ''
           hookPhase: Running
           kind: ConfigMap
-          message: configmap/argocd-gpg-keys-cm unchanged
-          name: argocd-gpg-keys-cm
+          message: configmap/argocd-notifications-cm unchanged
+          name: argocd-notifications-cm
           namespace: argocd
           status: Synced
           syncPhase: Sync
@@ -342,8 +437,8 @@ status:
         - group: ''
           hookPhase: Running
           kind: ConfigMap
-          message: configmap/argocd-tls-certs-cm unchanged
-          name: argocd-tls-certs-cm
+          message: configmap/argocd-ssh-known-hosts-cm unchanged
+          name: argocd-ssh-known-hosts-cm
           namespace: argocd
           status: Synced
           syncPhase: Sync
@@ -351,8 +446,17 @@ status:
         - group: ''
           hookPhase: Running
           kind: ConfigMap
-          message: configmap/argocd-ssh-known-hosts-cm unchanged
-          name: argocd-ssh-known-hosts-cm
+          message: configmap/argocd-gpg-keys-cm unchanged
+          name: argocd-gpg-keys-cm
+          namespace: argocd
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: ''
+          hookPhase: Running
+          kind: ConfigMap
+          message: configmap/argocd-tls-certs-cm unchanged
+          name: argocd-tls-certs-cm
           namespace: argocd
           status: Synced
           syncPhase: Sync
@@ -394,11 +498,9 @@ status:
           hookPhase: Running
           kind: ClusterRole
           message: >-
-            clusterrole.rbac.authorization.k8s.io/argocd-application-controller
-            reconciled.
-            clusterrole.rbac.authorization.k8s.io/argocd-application-controller
-            unchanged
-          name: argocd-application-controller
+            clusterrole.rbac.authorization.k8s.io/argocd-server reconciled.
+            clusterrole.rbac.authorization.k8s.io/argocd-server unchanged
+          name: argocd-server
           namespace: argocd
           status: Synced
           syncPhase: Sync
@@ -407,9 +509,11 @@ status:
           hookPhase: Running
           kind: ClusterRole
           message: >-
-            clusterrole.rbac.authorization.k8s.io/argocd-server reconciled.
-            clusterrole.rbac.authorization.k8s.io/argocd-server unchanged
-          name: argocd-server
+            clusterrole.rbac.authorization.k8s.io/argocd-application-controller
+            reconciled.
+            clusterrole.rbac.authorization.k8s.io/argocd-application-controller
+            unchanged
+          name: argocd-application-controller
           namespace: argocd
           status: Synced
           syncPhase: Sync
@@ -431,11 +535,11 @@ status:
           hookPhase: Running
           kind: ClusterRoleBinding
           message: >-
-            clusterrolebinding.rbac.authorization.k8s.io/argocd-applicationset-controller
+            clusterrolebinding.rbac.authorization.k8s.io/argocd-application-controller
             reconciled.
-            clusterrolebinding.rbac.authorization.k8s.io/argocd-applicationset-controller
+            clusterrolebinding.rbac.authorization.k8s.io/argocd-application-controller
             unchanged
-          name: argocd-applicationset-controller
+          name: argocd-application-controller
           namespace: argocd
           status: Synced
           syncPhase: Sync
@@ -456,35 +560,11 @@ status:
           hookPhase: Running
           kind: ClusterRoleBinding
           message: >-
-            clusterrolebinding.rbac.authorization.k8s.io/argocd-application-controller
+            clusterrolebinding.rbac.authorization.k8s.io/argocd-applicationset-controller
             reconciled.
-            clusterrolebinding.rbac.authorization.k8s.io/argocd-application-controller
+            clusterrolebinding.rbac.authorization.k8s.io/argocd-applicationset-controller
             unchanged
-          name: argocd-application-controller
-          namespace: argocd
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: rbac.authorization.k8s.io
-          hookPhase: Running
-          kind: Role
-          message: >-
-            role.rbac.authorization.k8s.io/argocd-application-controller
-            reconciled.
-            role.rbac.authorization.k8s.io/argocd-application-controller
-            unchanged
-          name: argocd-application-controller
-          namespace: argocd
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: rbac.authorization.k8s.io
-          hookPhase: Running
-          kind: Role
-          message: >-
-            role.rbac.authorization.k8s.io/argocd-dex-server reconciled.
-            role.rbac.authorization.k8s.io/argocd-dex-server unchanged
-          name: argocd-dex-server
+          name: argocd-applicationset-controller
           namespace: argocd
           status: Synced
           syncPhase: Sync
@@ -496,6 +576,28 @@ status:
             role.rbac.authorization.k8s.io/argocd-server reconciled.
             role.rbac.authorization.k8s.io/argocd-server unchanged
           name: argocd-server
+          namespace: argocd
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: rbac.authorization.k8s.io
+          hookPhase: Running
+          kind: Role
+          message: >-
+            role.rbac.authorization.k8s.io/argocd-redis reconciled.
+            role.rbac.authorization.k8s.io/argocd-redis unchanged
+          name: argocd-redis
+          namespace: argocd
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: rbac.authorization.k8s.io
+          hookPhase: Running
+          kind: Role
+          message: >-
+            role.rbac.authorization.k8s.io/argocd-dex-server reconciled.
+            role.rbac.authorization.k8s.io/argocd-dex-server unchanged
+          name: argocd-dex-server
           namespace: argocd
           status: Synced
           syncPhase: Sync
@@ -517,9 +619,11 @@ status:
           hookPhase: Running
           kind: Role
           message: >-
-            role.rbac.authorization.k8s.io/argocd-redis reconciled.
-            role.rbac.authorization.k8s.io/argocd-redis unchanged
-          name: argocd-redis
+            role.rbac.authorization.k8s.io/argocd-applicationset-controller
+            reconciled.
+            role.rbac.authorization.k8s.io/argocd-applicationset-controller
+            unchanged
+          name: argocd-applicationset-controller
           namespace: argocd
           status: Synced
           syncPhase: Sync
@@ -528,9 +632,35 @@ status:
           hookPhase: Running
           kind: Role
           message: >-
-            role.rbac.authorization.k8s.io/argocd-applicationset-controller
+            role.rbac.authorization.k8s.io/argocd-application-controller
             reconciled.
-            role.rbac.authorization.k8s.io/argocd-applicationset-controller
+            role.rbac.authorization.k8s.io/argocd-application-controller
+            unchanged
+          name: argocd-application-controller
+          namespace: argocd
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: rbac.authorization.k8s.io
+          hookPhase: Running
+          kind: RoleBinding
+          message: >-
+            rolebinding.rbac.authorization.k8s.io/argocd-application-controller
+            reconciled.
+            rolebinding.rbac.authorization.k8s.io/argocd-application-controller
+            unchanged
+          name: argocd-application-controller
+          namespace: argocd
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: rbac.authorization.k8s.io
+          hookPhase: Running
+          kind: RoleBinding
+          message: >-
+            rolebinding.rbac.authorization.k8s.io/argocd-applicationset-controller
+            reconciled.
+            rolebinding.rbac.authorization.k8s.io/argocd-applicationset-controller
             unchanged
           name: argocd-applicationset-controller
           namespace: argocd
@@ -544,6 +674,19 @@ status:
             rolebinding.rbac.authorization.k8s.io/argocd-redis reconciled.
             rolebinding.rbac.authorization.k8s.io/argocd-redis unchanged
           name: argocd-redis
+          namespace: argocd
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: rbac.authorization.k8s.io
+          hookPhase: Running
+          kind: RoleBinding
+          message: >-
+            rolebinding.rbac.authorization.k8s.io/argocd-notifications-controller
+            reconciled.
+            rolebinding.rbac.authorization.k8s.io/argocd-notifications-controller
+            unchanged
+          name: argocd-notifications-controller
           namespace: argocd
           status: Synced
           syncPhase: Sync
@@ -570,90 +713,6 @@ status:
           status: Synced
           syncPhase: Sync
           version: v1
-        - group: rbac.authorization.k8s.io
-          hookPhase: Running
-          kind: RoleBinding
-          message: >-
-            rolebinding.rbac.authorization.k8s.io/argocd-applicationset-controller
-            reconciled.
-            rolebinding.rbac.authorization.k8s.io/argocd-applicationset-controller
-            unchanged
-          name: argocd-applicationset-controller
-          namespace: argocd
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: rbac.authorization.k8s.io
-          hookPhase: Running
-          kind: RoleBinding
-          message: >-
-            rolebinding.rbac.authorization.k8s.io/argocd-notifications-controller
-            reconciled.
-            rolebinding.rbac.authorization.k8s.io/argocd-notifications-controller
-            unchanged
-          name: argocd-notifications-controller
-          namespace: argocd
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: rbac.authorization.k8s.io
-          hookPhase: Running
-          kind: RoleBinding
-          message: >-
-            rolebinding.rbac.authorization.k8s.io/argocd-application-controller
-            reconciled.
-            rolebinding.rbac.authorization.k8s.io/argocd-application-controller
-            unchanged
-          name: argocd-application-controller
-          namespace: argocd
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: ''
-          hookPhase: Running
-          kind: Service
-          message: service/argocd-metrics unchanged
-          name: argocd-metrics
-          namespace: argocd
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: ''
-          hookPhase: Running
-          kind: Service
-          message: service/argocd-redis unchanged
-          name: argocd-redis
-          namespace: argocd
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: ''
-          hookPhase: Running
-          kind: Service
-          message: service/argocd-notifications-controller-metrics unchanged
-          name: argocd-notifications-controller-metrics
-          namespace: argocd
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: ''
-          hookPhase: Running
-          kind: Service
-          message: service/argocd-applicationset-controller unchanged
-          name: argocd-applicationset-controller
-          namespace: argocd
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: ''
-          hookPhase: Running
-          kind: Service
-          message: service/argocd-repo-server unchanged
-          name: argocd-repo-server
-          namespace: argocd
-          status: Synced
-          syncPhase: Sync
-          version: v1
         - group: ''
           hookPhase: Running
           kind: Service
@@ -675,8 +734,53 @@ status:
         - group: ''
           hookPhase: Running
           kind: Service
+          message: service/argocd-metrics unchanged
+          name: argocd-metrics
+          namespace: argocd
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: ''
+          hookPhase: Running
+          kind: Service
+          message: service/argocd-notifications-controller-metrics unchanged
+          name: argocd-notifications-controller-metrics
+          namespace: argocd
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: ''
+          hookPhase: Running
+          kind: Service
+          message: service/argocd-redis unchanged
+          name: argocd-redis
+          namespace: argocd
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: ''
+          hookPhase: Running
+          kind: Service
+          message: service/argocd-applicationset-controller unchanged
+          name: argocd-applicationset-controller
+          namespace: argocd
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: ''
+          hookPhase: Running
+          kind: Service
           message: service/argocd-server unchanged
           name: argocd-server
+          namespace: argocd
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: ''
+          hookPhase: Running
+          kind: Service
+          message: service/argocd-repo-server unchanged
+          name: argocd-repo-server
           namespace: argocd
           status: Synced
           syncPhase: Sync
@@ -684,8 +788,8 @@ status:
         - group: apps
           hookPhase: Running
           kind: Deployment
-          message: deployment.apps/argocd-notifications-controller unchanged
-          name: argocd-notifications-controller
+          message: deployment.apps/argocd-dex-server unchanged
+          name: argocd-dex-server
           namespace: argocd
           status: Synced
           syncPhase: Sync
@@ -702,8 +806,8 @@ status:
         - group: apps
           hookPhase: Running
           kind: Deployment
-          message: deployment.apps/argocd-dex-server unchanged
-          name: argocd-dex-server
+          message: deployment.apps/argocd-notifications-controller unchanged
+          name: argocd-notifications-controller
           namespace: argocd
           status: Synced
           syncPhase: Sync
@@ -744,21 +848,12 @@ status:
           status: Synced
           syncPhase: Sync
           version: v1
-        - group: networking.k8s.io
-          hookPhase: Running
-          kind: Ingress
-          message: ingress.networking.k8s.io/argocd-server-ingress unchanged
-          name: argocd-server-ingress
-          namespace: argocd
-          status: Synced
-          syncPhase: Sync
-          version: v1
-      revision: d4855c38901ff3834fbd520307a93540f5f1fa96
+      revision: 2261fa003c30651487a5b17d55126af95ba015d4
       source:
-        path: cluster/argocd/sources/argocd
-        repoURL: git@github.com:Binesty/Kubernetes.git
+        path: argocd/sources/argocd
+        repoURL: git@github.com:Binesty/Automation.git
         targetRevision: main
-  reconciledAt: '2024-07-19T16:52:17Z'
+  reconciledAt: '2024-07-23T12:27:57Z'
   resources:
     - kind: ConfigMap
       name: argocd-cm
@@ -969,14 +1064,6 @@ status:
       status: Synced
       version: v1
     - group: networking.k8s.io
-      health:
-        status: Healthy
-      kind: Ingress
-      name: argocd-server-ingress
-      namespace: argocd
-      status: Synced
-      version: v1
-    - group: networking.k8s.io
       kind: NetworkPolicy
       name: argocd-application-controller-network-policy
       namespace: argocd
@@ -1122,11 +1209,8 @@ status:
       version: v1
   sourceType: Kustomize
   summary:
-    externalURLs:
-      - https://argocd.binesty.io/
     images:
       - ghcr.io/dexidp/dex:v2.38.0
-      - quay.io/argoproj/argocd:v2.11.0
       - quay.io/argoproj/argocd:v2.11.2
       - redis:7.0.14-alpine
   sync:
@@ -1138,7 +1222,7 @@ status:
         path: argocd/sources/argocd
         repoURL: git@github.com:Binesty/Automation.git
         targetRevision: main
-    revision: 2325df6152c42fe82976edd3eff16d40c0d39366
+    revision: e5d794e616b52162b76b97d41c8ca39fd6f171f2
     status: Synced
 spec:
   destination:
