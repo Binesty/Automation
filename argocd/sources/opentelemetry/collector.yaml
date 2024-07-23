@@ -14,11 +14,11 @@ data:
     exporters:
       logging:
       prometheus:
-        endpoint: "0.0.0.0:8889"
+        endpoint: "monitoring-kube-prometheus-prometheus.monitoring.svc.binesty:9090"
       loki:
-        endpoint: "http://loki:3100/loki/api/v1/push"
+        endpoint: "http://loki.observability.svc.binesty:3100/loki/api/v1/push"
       tempo:
-        endpoint: "http://tempo:14268/api/traces"
+        endpoint: "http://tempo.observability.svc.binesty:14268/api/traces"
 
     service:
       pipelines:
@@ -52,12 +52,12 @@ spec:
         - name: otel-collector
           image: otel/opentelemetry-collector:latest
           resources:
-          limits:
-            cpu: 500m
-            memory: 800Mi
-          requests:
-            cpu: 200m
-            memory: 400Mi
+            limits:
+              cpu: 500m
+              memory: 800Mi
+            requests:
+              cpu: 200m
+              memory: 400Mi
           command:
             - "/otelcol"
             - "--config"
