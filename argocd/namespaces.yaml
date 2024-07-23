@@ -83,3 +83,9 @@ metadata:
     use-vault: "true"    
     use-root-certificate: "true"
 ---
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: observability
+---

@@ -1,0 +1,28 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:  
+    cert-manager.io/cluster-issuer: binesty-ca-issuer
+    cert-manager.io/duration: 2160h # 90d
+    cert-manager.io/renew-before: 360h # 15d        
+    nginx.ingress.kubernetes.io/rewrite-target: /
+  name: minio-ingress
+  namespace: minio
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: minio.binesty.io
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: minio-service-console
+            port:
+              number: 9090
+  tls:
+    - hosts:
+        - minio.binesty.io
+      secretName: minio-binesty-certificate-key-pair              
+---
