@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   creationTimestamp: '2024-07-22T12:24:41Z'
-  generation: 301
+  generation: 2032
   labels:
     project: infrastructure
     source: external
@@ -45,7 +45,7 @@ metadata:
               f:source: {}
       manager: argocd-server
       operation: Update
-      time: '2024-07-23T12:38:01Z'
+      time: '2024-10-02T14:03:02Z'
     - apiVersion: argoproj.io/v1alpha1
       fieldsType: FieldsV1
       fieldsV1:
@@ -106,10 +106,10 @@ metadata:
             f:status: {}
       manager: argocd-application-controller
       operation: Update
-      time: '2024-07-23T12:38:17Z'
+      time: '2024-10-03T14:57:36Z'
   name: longhorn
   namespace: argocd
-  resourceVersion: '236385'
+  resourceVersion: '2133154'
   uid: 4015b575-bb7f-4494-bf3f-fce40bef5db5
   selfLink: /apis/argoproj.io/v1alpha1/namespaces/argocd/applications/longhorn
 status:
@@ -141,21 +141,35 @@ status:
               value: Retain
         repoURL: https://charts.longhorn.io
         targetRevision: 1.6.2
+    - deployStartedAt: '2024-10-02T14:03:02Z'
+      deployedAt: '2024-10-02T14:03:42Z'
+      id: 2
+      initiatedBy:
+        username: admin
+      revision: 1.7.1
+      source:
+        chart: longhorn
+        helm:
+          parameters:
+            - name: persistence.reclaimPolicy
+              value: Retain
+        repoURL: https://charts.longhorn.io
+        targetRevision: 1.7.1
   operationState:
-    finishedAt: '2024-07-23T12:38:16Z'
+    finishedAt: '2024-10-02T14:03:42Z'
     message: successfully synced (no more tasks)
     operation:
       initiatedBy:
         username: admin
       retry: {}
       sync:
-        revision: 1.6.2
+        revision: 1.7.1
         syncOptions:
           - CreateNamespace=true
         syncStrategy:
           hook: {}
     phase: Succeeded
-    startedAt: '2024-07-23T12:38:01Z'
+    startedAt: '2024-10-02T14:03:02Z'
     syncResult:
       resources:
         - group: batch
@@ -169,8 +183,35 @@ status:
           version: v1
         - group: ''
           hookPhase: Succeeded
+          kind: Service
+          message: ignored (requires pruning)
+          name: longhorn-replica-manager
+          namespace: longhorn-system
+          status: PruneSkipped
+          syncPhase: Sync
+          version: v1
+        - group: ''
+          hookPhase: Succeeded
+          kind: Service
+          message: ignored (requires pruning)
+          name: longhorn-engine-manager
+          namespace: longhorn-system
+          status: PruneSkipped
+          syncPhase: Sync
+          version: v1
+        - group: ''
+          hookPhase: Succeeded
           kind: ServiceAccount
-          message: serviceaccount/longhorn-support-bundle unchanged
+          message: serviceaccount/longhorn-service-account configured
+          name: longhorn-service-account
+          namespace: longhorn-system
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: ''
+          hookPhase: Succeeded
+          kind: ServiceAccount
+          message: serviceaccount/longhorn-support-bundle configured
           name: longhorn-support-bundle
           namespace: longhorn-system
           status: Synced
@@ -179,7 +220,7 @@ status:
         - group: ''
           hookPhase: Succeeded
           kind: ServiceAccount
-          message: serviceaccount/longhorn-ui-service-account unchanged
+          message: serviceaccount/longhorn-ui-service-account configured
           name: longhorn-ui-service-account
           namespace: longhorn-system
           status: Synced
@@ -187,17 +228,8 @@ status:
           version: v1
         - group: ''
           hookPhase: Succeeded
-          kind: ServiceAccount
-          message: serviceaccount/longhorn-service-account unchanged
-          name: longhorn-service-account
-          namespace: longhorn-system
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: ''
-          hookPhase: Succeeded
           kind: ConfigMap
-          message: configmap/longhorn-default-setting unchanged
+          message: configmap/longhorn-default-setting configured
           name: longhorn-default-setting
           namespace: longhorn-system
           status: Synced
@@ -208,61 +240,6 @@ status:
           kind: ConfigMap
           message: configmap/longhorn-storageclass configured
           name: longhorn-storageclass
-          namespace: longhorn-system
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: apiextensions.k8s.io
-          hookPhase: Succeeded
-          kind: CustomResourceDefinition
-          message: >-
-            customresourcedefinition.apiextensions.k8s.io/snapshots.longhorn.io
-            configured
-          name: snapshots.longhorn.io
-          namespace: longhorn-system
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: apiextensions.k8s.io
-          hookPhase: Succeeded
-          kind: CustomResourceDefinition
-          message: >-
-            customresourcedefinition.apiextensions.k8s.io/backingimagemanagers.longhorn.io
-            configured
-          name: backingimagemanagers.longhorn.io
-          namespace: longhorn-system
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: apiextensions.k8s.io
-          hookPhase: Succeeded
-          kind: CustomResourceDefinition
-          message: >-
-            customresourcedefinition.apiextensions.k8s.io/backingimagedatasources.longhorn.io
-            configured
-          name: backingimagedatasources.longhorn.io
-          namespace: longhorn-system
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: apiextensions.k8s.io
-          hookPhase: Succeeded
-          kind: CustomResourceDefinition
-          message: >-
-            customresourcedefinition.apiextensions.k8s.io/systembackups.longhorn.io
-            configured
-          name: systembackups.longhorn.io
-          namespace: longhorn-system
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: apiextensions.k8s.io
-          hookPhase: Succeeded
-          kind: CustomResourceDefinition
-          message: >-
-            customresourcedefinition.apiextensions.k8s.io/backupbackingimages.longhorn.io
-            configured
-          name: backupbackingimages.longhorn.io
           namespace: longhorn-system
           status: Synced
           syncPhase: Sync
@@ -282,9 +259,9 @@ status:
           hookPhase: Succeeded
           kind: CustomResourceDefinition
           message: >-
-            customresourcedefinition.apiextensions.k8s.io/nodes.longhorn.io
+            customresourcedefinition.apiextensions.k8s.io/backupbackingimages.longhorn.io
             configured
-          name: nodes.longhorn.io
+          name: backupbackingimages.longhorn.io
           namespace: longhorn-system
           status: Synced
           syncPhase: Sync
@@ -293,42 +270,9 @@ status:
           hookPhase: Succeeded
           kind: CustomResourceDefinition
           message: >-
-            customresourcedefinition.apiextensions.k8s.io/backuptargets.longhorn.io
+            customresourcedefinition.apiextensions.k8s.io/backingimagemanagers.longhorn.io
             configured
-          name: backuptargets.longhorn.io
-          namespace: longhorn-system
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: apiextensions.k8s.io
-          hookPhase: Succeeded
-          kind: CustomResourceDefinition
-          message: >-
-            customresourcedefinition.apiextensions.k8s.io/instancemanagers.longhorn.io
-            configured
-          name: instancemanagers.longhorn.io
-          namespace: longhorn-system
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: apiextensions.k8s.io
-          hookPhase: Succeeded
-          kind: CustomResourceDefinition
-          message: >-
-            customresourcedefinition.apiextensions.k8s.io/engineimages.longhorn.io
-            configured
-          name: engineimages.longhorn.io
-          namespace: longhorn-system
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: apiextensions.k8s.io
-          hookPhase: Succeeded
-          kind: CustomResourceDefinition
-          message: >-
-            customresourcedefinition.apiextensions.k8s.io/recurringjobs.longhorn.io
-            configured
-          name: recurringjobs.longhorn.io
+          name: backingimagemanagers.longhorn.io
           namespace: longhorn-system
           status: Synced
           syncPhase: Sync
@@ -348,9 +292,53 @@ status:
           hookPhase: Succeeded
           kind: CustomResourceDefinition
           message: >-
+            customresourcedefinition.apiextensions.k8s.io/settings.longhorn.io
+            configured
+          name: settings.longhorn.io
+          namespace: longhorn-system
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: apiextensions.k8s.io
+          hookPhase: Succeeded
+          kind: CustomResourceDefinition
+          message: >-
+            customresourcedefinition.apiextensions.k8s.io/instancemanagers.longhorn.io
+            configured
+          name: instancemanagers.longhorn.io
+          namespace: longhorn-system
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: apiextensions.k8s.io
+          hookPhase: Succeeded
+          kind: CustomResourceDefinition
+          message: >-
+            customresourcedefinition.apiextensions.k8s.io/recurringjobs.longhorn.io
+            configured
+          name: recurringjobs.longhorn.io
+          namespace: longhorn-system
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: apiextensions.k8s.io
+          hookPhase: Succeeded
+          kind: CustomResourceDefinition
+          message: >-
             customresourcedefinition.apiextensions.k8s.io/volumeattachments.longhorn.io
             configured
           name: volumeattachments.longhorn.io
+          namespace: longhorn-system
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: apiextensions.k8s.io
+          hookPhase: Succeeded
+          kind: CustomResourceDefinition
+          message: >-
+            customresourcedefinition.apiextensions.k8s.io/backingimagedatasources.longhorn.io
+            configured
+          name: backingimagedatasources.longhorn.io
           namespace: longhorn-system
           status: Synced
           syncPhase: Sync
@@ -370,64 +358,9 @@ status:
           hookPhase: Succeeded
           kind: CustomResourceDefinition
           message: >-
-            customresourcedefinition.apiextensions.k8s.io/supportbundles.longhorn.io
-            configured
-          name: supportbundles.longhorn.io
-          namespace: longhorn-system
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: apiextensions.k8s.io
-          hookPhase: Succeeded
-          kind: CustomResourceDefinition
-          message: >-
-            customresourcedefinition.apiextensions.k8s.io/systemrestores.longhorn.io
-            configured
-          name: systemrestores.longhorn.io
-          namespace: longhorn-system
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: apiextensions.k8s.io
-          hookPhase: Succeeded
-          kind: CustomResourceDefinition
-          message: >-
-            customresourcedefinition.apiextensions.k8s.io/backupvolumes.longhorn.io
-            configured
-          name: backupvolumes.longhorn.io
-          namespace: longhorn-system
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: apiextensions.k8s.io
-          hookPhase: Succeeded
-          kind: CustomResourceDefinition
-          message: >-
             customresourcedefinition.apiextensions.k8s.io/backingimages.longhorn.io
             configured
           name: backingimages.longhorn.io
-          namespace: longhorn-system
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: apiextensions.k8s.io
-          hookPhase: Succeeded
-          kind: CustomResourceDefinition
-          message: >-
-            customresourcedefinition.apiextensions.k8s.io/settings.longhorn.io
-            configured
-          name: settings.longhorn.io
-          namespace: longhorn-system
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: apiextensions.k8s.io
-          hookPhase: Succeeded
-          kind: CustomResourceDefinition
-          message: >-
-            customresourcedefinition.apiextensions.k8s.io/engines.longhorn.io
-            configured
-          name: engines.longhorn.io
           namespace: longhorn-system
           status: Synced
           syncPhase: Sync
@@ -447,6 +380,50 @@ status:
           hookPhase: Succeeded
           kind: CustomResourceDefinition
           message: >-
+            customresourcedefinition.apiextensions.k8s.io/systembackups.longhorn.io
+            configured
+          name: systembackups.longhorn.io
+          namespace: longhorn-system
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: apiextensions.k8s.io
+          hookPhase: Succeeded
+          kind: CustomResourceDefinition
+          message: >-
+            customresourcedefinition.apiextensions.k8s.io/engineimages.longhorn.io
+            configured
+          name: engineimages.longhorn.io
+          namespace: longhorn-system
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: apiextensions.k8s.io
+          hookPhase: Succeeded
+          kind: CustomResourceDefinition
+          message: >-
+            customresourcedefinition.apiextensions.k8s.io/backupvolumes.longhorn.io
+            configured
+          name: backupvolumes.longhorn.io
+          namespace: longhorn-system
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: apiextensions.k8s.io
+          hookPhase: Succeeded
+          kind: CustomResourceDefinition
+          message: >-
+            customresourcedefinition.apiextensions.k8s.io/backuptargets.longhorn.io
+            configured
+          name: backuptargets.longhorn.io
+          namespace: longhorn-system
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: apiextensions.k8s.io
+          hookPhase: Succeeded
+          kind: CustomResourceDefinition
+          message: >-
             customresourcedefinition.apiextensions.k8s.io/volumes.longhorn.io
             configured
           name: volumes.longhorn.io
@@ -454,26 +431,66 @@ status:
           status: Synced
           syncPhase: Sync
           version: v1
-        - group: rbac.authorization.k8s.io
+        - group: apiextensions.k8s.io
           hookPhase: Succeeded
-          kind: ClusterRole
+          kind: CustomResourceDefinition
           message: >-
-            clusterrole.rbac.authorization.k8s.io/longhorn-role reconciled.
-            clusterrole.rbac.authorization.k8s.io/longhorn-role unchanged
-          name: longhorn-role
+            customresourcedefinition.apiextensions.k8s.io/supportbundles.longhorn.io
+            configured
+          name: supportbundles.longhorn.io
+          namespace: longhorn-system
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: apiextensions.k8s.io
+          hookPhase: Succeeded
+          kind: CustomResourceDefinition
+          message: >-
+            customresourcedefinition.apiextensions.k8s.io/nodes.longhorn.io
+            configured
+          name: nodes.longhorn.io
+          namespace: longhorn-system
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: apiextensions.k8s.io
+          hookPhase: Succeeded
+          kind: CustomResourceDefinition
+          message: >-
+            customresourcedefinition.apiextensions.k8s.io/engines.longhorn.io
+            configured
+          name: engines.longhorn.io
+          namespace: longhorn-system
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: apiextensions.k8s.io
+          hookPhase: Succeeded
+          kind: CustomResourceDefinition
+          message: >-
+            customresourcedefinition.apiextensions.k8s.io/snapshots.longhorn.io
+            configured
+          name: snapshots.longhorn.io
+          namespace: longhorn-system
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: apiextensions.k8s.io
+          hookPhase: Succeeded
+          kind: CustomResourceDefinition
+          message: >-
+            customresourcedefinition.apiextensions.k8s.io/systemrestores.longhorn.io
+            configured
+          name: systemrestores.longhorn.io
           namespace: longhorn-system
           status: Synced
           syncPhase: Sync
           version: v1
         - group: rbac.authorization.k8s.io
           hookPhase: Succeeded
-          kind: ClusterRoleBinding
-          message: >-
-            clusterrolebinding.rbac.authorization.k8s.io/longhorn-support-bundle
-            reconciled.
-            clusterrolebinding.rbac.authorization.k8s.io/longhorn-support-bundle
-            unchanged
-          name: longhorn-support-bundle
+          kind: ClusterRole
+          message: "clusterrole.rbac.authorization.k8s.io/longhorn-role reconciled. reconciliation required update\n\tmissing rules added:\n\t\t{Verbs:[*] APIGroups:[longhorn.io] Resources:[settings/status] ResourceNames:[] NonResourceURLs:[]}. clusterrole.rbac.authorization.k8s.io/longhorn-role configured"
+          name: longhorn-role
           namespace: longhorn-system
           status: Synced
           syncPhase: Sync
@@ -484,17 +501,22 @@ status:
           message: >-
             clusterrolebinding.rbac.authorization.k8s.io/longhorn-bind
             reconciled.
-            clusterrolebinding.rbac.authorization.k8s.io/longhorn-bind unchanged
+            clusterrolebinding.rbac.authorization.k8s.io/longhorn-bind
+            configured
           name: longhorn-bind
           namespace: longhorn-system
           status: Synced
           syncPhase: Sync
           version: v1
-        - group: ''
+        - group: rbac.authorization.k8s.io
           hookPhase: Succeeded
-          kind: Service
-          message: service/longhorn-recovery-backend unchanged
-          name: longhorn-recovery-backend
+          kind: ClusterRoleBinding
+          message: >-
+            clusterrolebinding.rbac.authorization.k8s.io/longhorn-support-bundle
+            reconciled.
+            clusterrolebinding.rbac.authorization.k8s.io/longhorn-support-bundle
+            configured
+          name: longhorn-support-bundle
           namespace: longhorn-system
           status: Synced
           syncPhase: Sync
@@ -502,16 +524,7 @@ status:
         - group: ''
           hookPhase: Succeeded
           kind: Service
-          message: service/longhorn-admission-webhook unchanged
-          name: longhorn-admission-webhook
-          namespace: longhorn-system
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: ''
-          hookPhase: Succeeded
-          kind: Service
-          message: service/longhorn-conversion-webhook unchanged
+          message: service/longhorn-conversion-webhook configured
           name: longhorn-conversion-webhook
           namespace: longhorn-system
           status: Synced
@@ -520,26 +533,8 @@ status:
         - group: ''
           hookPhase: Succeeded
           kind: Service
-          message: service/longhorn-engine-manager unchanged
-          name: longhorn-engine-manager
-          namespace: longhorn-system
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: ''
-          hookPhase: Succeeded
-          kind: Service
-          message: service/longhorn-backend unchanged
+          message: service/longhorn-backend configured
           name: longhorn-backend
-          namespace: longhorn-system
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: ''
-          hookPhase: Succeeded
-          kind: Service
-          message: service/longhorn-replica-manager unchanged
-          name: longhorn-replica-manager
           namespace: longhorn-system
           status: Synced
           syncPhase: Sync
@@ -553,10 +548,28 @@ status:
           status: Synced
           syncPhase: Sync
           version: v1
+        - group: ''
+          hookPhase: Succeeded
+          kind: Service
+          message: service/longhorn-recovery-backend configured
+          name: longhorn-recovery-backend
+          namespace: longhorn-system
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: ''
+          hookPhase: Succeeded
+          kind: Service
+          message: service/longhorn-admission-webhook configured
+          name: longhorn-admission-webhook
+          namespace: longhorn-system
+          status: Synced
+          syncPhase: Sync
+          version: v1
         - group: apps
           hookPhase: Succeeded
           kind: DaemonSet
-          message: daemonset.apps/longhorn-manager unchanged
+          message: daemonset.apps/longhorn-manager configured
           name: longhorn-manager
           namespace: longhorn-system
           status: Synced
@@ -565,7 +578,7 @@ status:
         - group: apps
           hookPhase: Succeeded
           kind: Deployment
-          message: deployment.apps/longhorn-ui unchanged
+          message: deployment.apps/longhorn-ui configured
           name: longhorn-ui
           namespace: longhorn-system
           status: Synced
@@ -574,7 +587,7 @@ status:
         - group: apps
           hookPhase: Succeeded
           kind: Deployment
-          message: deployment.apps/longhorn-driver-deployer unchanged
+          message: deployment.apps/longhorn-driver-deployer configured
           name: longhorn-driver-deployer
           namespace: longhorn-system
           status: Synced
@@ -598,7 +611,7 @@ status:
           namespace: longhorn-system
           syncPhase: PostSync
           version: v1
-      revision: 1.6.2
+      revision: 1.7.1
       source:
         chart: longhorn
         helm:
@@ -606,8 +619,8 @@ status:
             - name: persistence.reclaimPolicy
               value: Retain
         repoURL: https://charts.longhorn.io
-        targetRevision: 1.6.2
-  reconciledAt: '2024-07-23T12:38:16Z'
+        targetRevision: 1.7.1
+  reconciledAt: '2024-10-03T14:57:35Z'
   resources:
     - kind: ConfigMap
       name: longhorn-default-setting
@@ -643,13 +656,6 @@ status:
     - health:
         status: Healthy
       kind: Service
-      name: longhorn-engine-manager
-      namespace: longhorn-system
-      status: Synced
-      version: v1
-    - health:
-        status: Healthy
-      kind: Service
       name: longhorn-frontend
       namespace: longhorn-system
       status: Synced
@@ -658,13 +664,6 @@ status:
         status: Healthy
       kind: Service
       name: longhorn-recovery-backend
-      namespace: longhorn-system
-      status: Synced
-      version: v1
-    - health:
-        status: Healthy
-      kind: Service
-      name: longhorn-replica-manager
       namespace: longhorn-system
       status: Synced
       version: v1
@@ -840,8 +839,9 @@ status:
   sourceType: Helm
   summary:
     images:
-      - longhornio/longhorn-manager:v1.6.2
-      - longhornio/longhorn-ui:v1.6.2
+      - longhornio/longhorn-manager:v1.7.1
+      - longhornio/longhorn-share-manager:v1.7.1
+      - longhornio/longhorn-ui:v1.7.1
   sync:
     comparedTo:
       destination:
@@ -854,8 +854,8 @@ status:
             - name: persistence.reclaimPolicy
               value: Retain
         repoURL: https://charts.longhorn.io
-        targetRevision: 1.6.2
-    revision: 1.6.2
+        targetRevision: 1.7.1
+    revision: 1.7.1
     status: Synced
 spec:
   destination:
@@ -869,7 +869,7 @@ spec:
         - name: persistence.reclaimPolicy
           value: Retain
     repoURL: https://charts.longhorn.io
-    targetRevision: 1.6.2
+    targetRevision: 1.7.1
   syncPolicy:
     syncOptions:
       - CreateNamespace=true

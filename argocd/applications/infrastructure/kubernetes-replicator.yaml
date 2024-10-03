@@ -34,7 +34,7 @@ metadata:
       automatically.","name":"kubernetes-replicator","namespace":"kubernetes-replicator","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"apps","hookPhase":"Running","kind":"Deployment","message":"deployment.apps/kubernetes-replicator
       created","name":"kubernetes-replicator","namespace":"kubernetes-replicator","status":"Synced","syncPhase":"Sync","version":"v1"}],"revision":"2.9.2","source":{"chart":"kubernetes-replicator","repoURL":"https://helm.mittwald.de","targetRevision":"2.9.2"}}},"reconciledAt":"2024-05-03T17:01:38Z","resources":[{"kind":"ServiceAccount","name":"kubernetes-replicator","namespace":"kubernetes-replicator","status":"Synced","version":"v1"},{"group":"apps","health":{"status":"Healthy"},"kind":"Deployment","name":"kubernetes-replicator","namespace":"kubernetes-replicator","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"kubernetes-replicator","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"ClusterRoleBinding","name":"kubernetes-replicator","status":"Synced","version":"v1"}],"sourceType":"Helm","summary":{"images":["quay.io/mittwald/kubernetes-replicator:v2.9.2"]},"sync":{"comparedTo":{"destination":{"namespace":"kubernetes-replicator","server":"https://kubernetes.default.svc"},"source":{"chart":"kubernetes-replicator","repoURL":"https://helm.mittwald.de","targetRevision":"2.9.2"}},"revision":"2.9.2","status":"Synced"}}}
   creationTimestamp: '2024-07-22T12:18:29Z'
-  generation: 245
+  generation: 1873
   labels:
     project: infrastructure
     source: external
@@ -61,7 +61,6 @@ metadata:
             .: {}
             f:chart: {}
             f:repoURL: {}
-            f:targetRevision: {}
           f:syncPolicy:
             .: {}
             f:syncOptions: {}
@@ -69,7 +68,6 @@ metadata:
           .: {}
           f:controllerNamespace: {}
           f:health: {}
-          f:sourceType: {}
           f:summary: {}
           f:sync:
             .: {}
@@ -83,11 +81,18 @@ metadata:
                 .: {}
                 f:chart: {}
                 f:repoURL: {}
-                f:targetRevision: {}
-            f:revision: {}
       manager: kubectl-client-side-apply
       operation: Update
       time: '2024-07-22T12:18:29Z'
+    - apiVersion: argoproj.io/v1alpha1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          f:source:
+            f:targetRevision: {}
+      manager: argocd-server
+      operation: Update
+      time: '2024-10-03T14:38:29Z'
     - apiVersion: argoproj.io/v1alpha1
       fieldsType: FieldsV1
       fieldsV1:
@@ -111,9 +116,7 @@ metadata:
                 f:syncOptions: {}
                 f:syncStrategy:
                   .: {}
-                  f:hook:
-                    .: {}
-                    f:force: {}
+                  f:hook: {}
             f:phase: {}
             f:startedAt: {}
             f:syncResult:
@@ -127,16 +130,21 @@ metadata:
                 f:targetRevision: {}
           f:reconciledAt: {}
           f:resources: {}
+          f:sourceType: {}
           f:summary:
             f:images: {}
           f:sync:
+            f:comparedTo:
+              f:source:
+                f:targetRevision: {}
+            f:revision: {}
             f:status: {}
       manager: argocd-application-controller
       operation: Update
-      time: '2024-07-23T12:30:57Z'
+      time: '2024-10-03T14:54:36Z'
   name: kubernetes-replicator
   namespace: argocd
-  resourceVersion: '233462'
+  resourceVersion: '2132098'
   uid: 81df4e8b-c227-46e3-9932-2759dc7a8097
   selfLink: >-
     /apis/argoproj.io/v1alpha1/namespaces/argocd/applications/kubernetes-replicator
@@ -182,37 +190,37 @@ status:
         chart: kubernetes-replicator
         repoURL: https://helm.mittwald.de
         targetRevision: 2.9.2
+    - deployStartedAt: '2024-10-03T14:38:29Z'
+      deployedAt: '2024-10-03T14:38:29Z'
+      id: 4
+      initiatedBy:
+        username: admin
+      revision: 2.10.2
+      source:
+        chart: kubernetes-replicator
+        repoURL: https://helm.mittwald.de
+        targetRevision: 2.10.2
   operationState:
-    finishedAt: '2024-07-22T13:37:05Z'
+    finishedAt: '2024-10-03T14:38:29Z'
     message: successfully synced (all tasks run)
     operation:
       initiatedBy:
         username: admin
       retry: {}
       sync:
-        revision: 2.9.2
+        revision: 2.10.2
         syncOptions:
           - CreateNamespace=true
         syncStrategy:
-          hook:
-            force: true
+          hook: {}
     phase: Succeeded
-    startedAt: '2024-07-22T13:37:01Z'
+    startedAt: '2024-10-03T14:38:29Z'
     syncResult:
       resources:
         - group: ''
           hookPhase: Running
-          kind: Namespace
-          message: namespace/kubernetes-replicator created
-          name: kubernetes-replicator
-          namespace: ''
-          status: Synced
-          syncPhase: PreSync
-          version: v1
-        - group: ''
-          hookPhase: Running
           kind: ServiceAccount
-          message: serviceaccount/kubernetes-replicator created
+          message: serviceaccount/kubernetes-replicator configured
           name: kubernetes-replicator
           namespace: kubernetes-replicator
           status: Synced
@@ -221,7 +229,11 @@ status:
         - group: rbac.authorization.k8s.io
           hookPhase: Running
           kind: ClusterRole
-          message: "clusterrole.rbac.authorization.k8s.io/kubernetes-replicator reconciled. reconciliation required create\n\tmissing rules added:\n\t\t{Verbs:[get watch list] APIGroups:[] Resources:[namespaces] ResourceNames:[] NonResourceURLs:[]}\n\t\t{Verbs:[get watch list create update patch delete] APIGroups:[] Resources:[secrets configmaps serviceaccounts] ResourceNames:[] NonResourceURLs:[]}\n\t\t{Verbs:[get watch list create update patch delete] APIGroups:[rbac.authorization.k8s.io] Resources:[roles rolebindings] ResourceNames:[] NonResourceURLs:[]}. clusterrole.rbac.authorization.k8s.io/kubernetes-replicator configured. Warning: resource clusterroles/kubernetes-replicator is missing the kubectl.kubernetes.io/last-applied-configuration annotation which is required by  apply.  apply should only be used on resources created declaratively by either  create --save-config or  apply. The missing annotation will be patched automatically."
+          message: >-
+            clusterrole.rbac.authorization.k8s.io/kubernetes-replicator
+            reconciled.
+            clusterrole.rbac.authorization.k8s.io/kubernetes-replicator
+            configured
           name: kubernetes-replicator
           namespace: kubernetes-replicator
           status: Synced
@@ -230,7 +242,11 @@ status:
         - group: rbac.authorization.k8s.io
           hookPhase: Running
           kind: ClusterRoleBinding
-          message: "clusterrolebinding.rbac.authorization.k8s.io/kubernetes-replicator reconciled. reconciliation required create\n\tmissing subjects added:\n\t\t{Kind:ServiceAccount APIGroup: Name:kubernetes-replicator Namespace:kubernetes-replicator}. clusterrolebinding.rbac.authorization.k8s.io/kubernetes-replicator configured. Warning: resource clusterrolebindings/kubernetes-replicator is missing the kubectl.kubernetes.io/last-applied-configuration annotation which is required by  apply.  apply should only be used on resources created declaratively by either  create --save-config or  apply. The missing annotation will be patched automatically."
+          message: >-
+            clusterrolebinding.rbac.authorization.k8s.io/kubernetes-replicator
+            reconciled.
+            clusterrolebinding.rbac.authorization.k8s.io/kubernetes-replicator
+            configured
           name: kubernetes-replicator
           namespace: kubernetes-replicator
           status: Synced
@@ -239,18 +255,18 @@ status:
         - group: apps
           hookPhase: Running
           kind: Deployment
-          message: deployment.apps/kubernetes-replicator created
+          message: deployment.apps/kubernetes-replicator configured
           name: kubernetes-replicator
           namespace: kubernetes-replicator
           status: Synced
           syncPhase: Sync
           version: v1
-      revision: 2.9.2
+      revision: 2.10.2
       source:
         chart: kubernetes-replicator
         repoURL: https://helm.mittwald.de
-        targetRevision: 2.9.2
-  reconciledAt: '2024-07-23T12:30:57Z'
+        targetRevision: 2.10.2
+  reconciledAt: '2024-10-03T14:54:36Z'
   resources:
     - kind: ServiceAccount
       name: kubernetes-replicator
@@ -278,7 +294,7 @@ status:
   sourceType: Helm
   summary:
     images:
-      - quay.io/mittwald/kubernetes-replicator:v2.9.2
+      - quay.io/mittwald/kubernetes-replicator:v2.10.2
   sync:
     comparedTo:
       destination:
@@ -287,8 +303,8 @@ status:
       source:
         chart: kubernetes-replicator
         repoURL: https://helm.mittwald.de
-        targetRevision: 2.9.2
-    revision: 2.9.2
+        targetRevision: 2.10.2
+    revision: 2.10.2
     status: Synced
 spec:
   destination:
@@ -298,7 +314,7 @@ spec:
   source:
     chart: kubernetes-replicator
     repoURL: https://helm.mittwald.de
-    targetRevision: 2.9.2
+    targetRevision: 2.10.2
   syncPolicy:
     syncOptions:
       - CreateNamespace=true

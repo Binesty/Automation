@@ -30,7 +30,7 @@ metadata:
       \"local-path-provisioner\" deleted\ndeployment.apps/local-path-provisioner
       replaced","name":"local-path-provisioner","namespace":"local-path-provisioner","status":"Synced","syncPhase":"Sync","version":"v1"}],"revision":"0.0.26","source":{"chart":"local-path-provisioner","helm":{"parameters":[{"name":"storageClass.reclaimPolicy","value":"Delete"},{"name":"nodePathMap[0].paths[0]","value":"/data/local-path-provisioner"},{"name":"nodePathMap[0].node","value":"DEFAULT_PATH_FOR_NON_LISTED_NODES"}]},"repoURL":"https://charts.containeroo.ch","targetRevision":"0.0.26"}}},"reconciledAt":"2024-05-10T20:57:59Z","resources":[{"kind":"ConfigMap","name":"local-path-config","namespace":"local-path-provisioner","status":"Synced","version":"v1"},{"kind":"ServiceAccount","name":"local-path-provisioner","namespace":"local-path-provisioner","status":"Synced","version":"v1"},{"group":"apps","health":{"status":"Healthy"},"kind":"Deployment","name":"local-path-provisioner","namespace":"local-path-provisioner","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"local-path-provisioner","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"ClusterRoleBinding","name":"local-path-provisioner","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"Role","name":"local-path-provisioner","namespace":"local-path-provisioner","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"RoleBinding","name":"local-path-provisioner","namespace":"local-path-provisioner","status":"Synced","version":"v1"},{"group":"storage.k8s.io","kind":"StorageClass","name":"local-path","status":"Synced","version":"v1"}],"sourceType":"Helm","summary":{"images":["rancher/local-path-provisioner:v0.0.26"]},"sync":{"comparedTo":{"destination":{"namespace":"local-path-provisioner","server":"https://kubernetes.default.svc"},"source":{"chart":"local-path-provisioner","helm":{"parameters":[{"name":"storageClass.reclaimPolicy","value":"Delete"},{"name":"nodePathMap[0].paths[0]","value":"/data/local-path-provisioner"},{"name":"nodePathMap[0].node","value":"DEFAULT_PATH_FOR_NON_LISTED_NODES"}]},"repoURL":"https://charts.containeroo.ch","targetRevision":"0.0.26"}},"revision":"0.0.26","status":"Synced"}}}
   creationTimestamp: '2024-07-22T12:18:29Z'
-  generation: 246
+  generation: 1881
   labels:
     project: infrastructure
     source: external
@@ -60,7 +60,6 @@ metadata:
               .: {}
               f:parameters: {}
             f:repoURL: {}
-            f:targetRevision: {}
           f:syncPolicy:
             .: {}
             f:syncOptions: {}
@@ -68,7 +67,6 @@ metadata:
           .: {}
           f:controllerNamespace: {}
           f:health: {}
-          f:sourceType: {}
           f:summary: {}
           f:sync:
             .: {}
@@ -85,11 +83,18 @@ metadata:
                   .: {}
                   f:parameters: {}
                 f:repoURL: {}
-                f:targetRevision: {}
-            f:revision: {}
       manager: kubectl-client-side-apply
       operation: Update
       time: '2024-07-22T12:18:29Z'
+    - apiVersion: argoproj.io/v1alpha1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          f:source:
+            f:targetRevision: {}
+      manager: argocd-server
+      operation: Update
+      time: '2024-10-03T14:41:04Z'
     - apiVersion: argoproj.io/v1alpha1
       fieldsType: FieldsV1
       fieldsV1:
@@ -130,16 +135,21 @@ metadata:
                 f:targetRevision: {}
           f:reconciledAt: {}
           f:resources: {}
+          f:sourceType: {}
           f:summary:
             f:images: {}
           f:sync:
+            f:comparedTo:
+              f:source:
+                f:targetRevision: {}
+            f:revision: {}
             f:status: {}
       manager: argocd-application-controller
       operation: Update
-      time: '2024-07-23T12:30:57Z'
+      time: '2024-10-03T14:57:36Z'
   name: local-path-provisioner
   namespace: argocd
-  resourceVersion: '233465'
+  resourceVersion: '2133144'
   uid: c96b5e53-2d57-40a1-b974-d63aadedcdeb
   selfLink: >-
     /apis/argoproj.io/v1alpha1/namespaces/argocd/applications/local-path-provisioner
@@ -269,105 +279,12 @@ status:
               value: DEFAULT_PATH_FOR_NON_LISTED_NODES
         repoURL: https://charts.containeroo.ch
         targetRevision: 0.0.26
-  operationState:
-    finishedAt: '2024-07-22T13:12:22Z'
-    message: successfully synced (all tasks run)
-    operation:
+    - deployStartedAt: '2024-10-03T14:41:04Z'
+      deployedAt: '2024-10-03T14:41:05Z'
+      id: 8
       initiatedBy:
         username: admin
-      retry: {}
-      sync:
-        revision: 0.0.26
-        syncOptions:
-          - CreateNamespace=true
-        syncStrategy:
-          hook: {}
-    phase: Succeeded
-    startedAt: '2024-07-22T13:12:17Z'
-    syncResult:
-      resources:
-        - group: ''
-          hookPhase: Running
-          kind: Namespace
-          message: namespace/local-path-provisioner created
-          name: local-path-provisioner
-          namespace: ''
-          status: Synced
-          syncPhase: PreSync
-          version: v1
-        - group: ''
-          hookPhase: Running
-          kind: ServiceAccount
-          message: serviceaccount/local-path-provisioner created
-          name: local-path-provisioner
-          namespace: local-path-provisioner
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: ''
-          hookPhase: Running
-          kind: ConfigMap
-          message: configmap/local-path-config created
-          name: local-path-config
-          namespace: local-path-provisioner
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: storage.k8s.io
-          hookPhase: Running
-          kind: StorageClass
-          message: storageclass.storage.k8s.io/local-path created
-          name: local-path
-          namespace: local-path-provisioner
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: rbac.authorization.k8s.io
-          hookPhase: Running
-          kind: ClusterRole
-          message: "clusterrole.rbac.authorization.k8s.io/local-path-provisioner reconciled. reconciliation required create\n\tmissing rules added:\n\t\t{Verbs:[get list watch] APIGroups:[] Resources:[nodes persistentvolumeclaims configmaps pods pods/log] ResourceNames:[] NonResourceURLs:[]}\n\t\t{Verbs:[get list watch create patch update delete] APIGroups:[] Resources:[persistentvolumes] ResourceNames:[] NonResourceURLs:[]}\n\t\t{Verbs:[create patch] APIGroups:[] Resources:[events] ResourceNames:[] NonResourceURLs:[]}\n\t\t{Verbs:[get list watch] APIGroups:[storage.k8s.io] Resources:[storageclasses] ResourceNames:[] NonResourceURLs:[]}. clusterrole.rbac.authorization.k8s.io/local-path-provisioner configured. Warning: resource clusterroles/local-path-provisioner is missing the kubectl.kubernetes.io/last-applied-configuration annotation which is required by  apply.  apply should only be used on resources created declaratively by either  create --save-config or  apply. The missing annotation will be patched automatically."
-          name: local-path-provisioner
-          namespace: local-path-provisioner
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: rbac.authorization.k8s.io
-          hookPhase: Running
-          kind: ClusterRoleBinding
-          message: "clusterrolebinding.rbac.authorization.k8s.io/local-path-provisioner reconciled. reconciliation required create\n\tmissing subjects added:\n\t\t{Kind:ServiceAccount APIGroup: Name:local-path-provisioner Namespace:local-path-provisioner}. clusterrolebinding.rbac.authorization.k8s.io/local-path-provisioner configured. Warning: resource clusterrolebindings/local-path-provisioner is missing the kubectl.kubernetes.io/last-applied-configuration annotation which is required by  apply.  apply should only be used on resources created declaratively by either  create --save-config or  apply. The missing annotation will be patched automatically."
-          name: local-path-provisioner
-          namespace: local-path-provisioner
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: rbac.authorization.k8s.io
-          hookPhase: Running
-          kind: Role
-          message: "role.rbac.authorization.k8s.io/local-path-provisioner reconciled. reconciliation required create\n\tmissing rules added:\n\t\t{Verbs:[get list watch create patch update delete] APIGroups:[] Resources:[pods] ResourceNames:[] NonResourceURLs:[]}. role.rbac.authorization.k8s.io/local-path-provisioner configured. Warning: resource roles/local-path-provisioner is missing the kubectl.kubernetes.io/last-applied-configuration annotation which is required by  apply.  apply should only be used on resources created declaratively by either  create --save-config or  apply. The missing annotation will be patched automatically."
-          name: local-path-provisioner
-          namespace: local-path-provisioner
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: rbac.authorization.k8s.io
-          hookPhase: Running
-          kind: RoleBinding
-          message: "rolebinding.rbac.authorization.k8s.io/local-path-provisioner reconciled. reconciliation required create\n\tmissing subjects added:\n\t\t{Kind:ServiceAccount APIGroup: Name:local-path-provisioner Namespace:local-path-provisioner}. rolebinding.rbac.authorization.k8s.io/local-path-provisioner configured. Warning: resource rolebindings/local-path-provisioner is missing the kubectl.kubernetes.io/last-applied-configuration annotation which is required by  apply.  apply should only be used on resources created declaratively by either  create --save-config or  apply. The missing annotation will be patched automatically."
-          name: local-path-provisioner
-          namespace: local-path-provisioner
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: apps
-          hookPhase: Running
-          kind: Deployment
-          message: deployment.apps/local-path-provisioner created
-          name: local-path-provisioner
-          namespace: local-path-provisioner
-          status: Synced
-          syncPhase: Sync
-          version: v1
-      revision: 0.0.26
+      revision: 0.0.30
       source:
         chart: local-path-provisioner
         helm:
@@ -379,8 +296,124 @@ status:
             - name: nodePathMap[0].node
               value: DEFAULT_PATH_FOR_NON_LISTED_NODES
         repoURL: https://charts.containeroo.ch
-        targetRevision: 0.0.26
-  reconciledAt: '2024-07-23T12:30:57Z'
+        targetRevision: 0.0.30
+  operationState:
+    finishedAt: '2024-10-03T14:41:05Z'
+    message: successfully synced (all tasks run)
+    operation:
+      initiatedBy:
+        username: admin
+      retry: {}
+      sync:
+        revision: 0.0.30
+        syncOptions:
+          - CreateNamespace=true
+        syncStrategy:
+          hook: {}
+    phase: Succeeded
+    startedAt: '2024-10-03T14:41:04Z'
+    syncResult:
+      resources:
+        - group: ''
+          hookPhase: Running
+          kind: ServiceAccount
+          message: serviceaccount/local-path-provisioner configured
+          name: local-path-provisioner
+          namespace: local-path-provisioner
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: ''
+          hookPhase: Running
+          kind: ConfigMap
+          message: configmap/local-path-config configured
+          name: local-path-config
+          namespace: local-path-provisioner
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: storage.k8s.io
+          hookPhase: Running
+          kind: StorageClass
+          message: storageclass.storage.k8s.io/local-path configured
+          name: local-path
+          namespace: local-path-provisioner
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: rbac.authorization.k8s.io
+          hookPhase: Running
+          kind: ClusterRole
+          message: >-
+            clusterrole.rbac.authorization.k8s.io/local-path-provisioner
+            reconciled.
+            clusterrole.rbac.authorization.k8s.io/local-path-provisioner
+            configured
+          name: local-path-provisioner
+          namespace: local-path-provisioner
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: rbac.authorization.k8s.io
+          hookPhase: Running
+          kind: ClusterRoleBinding
+          message: >-
+            clusterrolebinding.rbac.authorization.k8s.io/local-path-provisioner
+            reconciled.
+            clusterrolebinding.rbac.authorization.k8s.io/local-path-provisioner
+            configured
+          name: local-path-provisioner
+          namespace: local-path-provisioner
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: rbac.authorization.k8s.io
+          hookPhase: Running
+          kind: Role
+          message: >-
+            role.rbac.authorization.k8s.io/local-path-provisioner reconciled.
+            role.rbac.authorization.k8s.io/local-path-provisioner configured
+          name: local-path-provisioner
+          namespace: local-path-provisioner
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: rbac.authorization.k8s.io
+          hookPhase: Running
+          kind: RoleBinding
+          message: >-
+            rolebinding.rbac.authorization.k8s.io/local-path-provisioner
+            reconciled.
+            rolebinding.rbac.authorization.k8s.io/local-path-provisioner
+            configured
+          name: local-path-provisioner
+          namespace: local-path-provisioner
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: apps
+          hookPhase: Running
+          kind: Deployment
+          message: deployment.apps/local-path-provisioner configured
+          name: local-path-provisioner
+          namespace: local-path-provisioner
+          status: Synced
+          syncPhase: Sync
+          version: v1
+      revision: 0.0.30
+      source:
+        chart: local-path-provisioner
+        helm:
+          parameters:
+            - name: storageClass.reclaimPolicy
+              value: Delete
+            - name: nodePathMap[0].paths[0]
+              value: /data/local-path-provisioner
+            - name: nodePathMap[0].node
+              value: DEFAULT_PATH_FOR_NON_LISTED_NODES
+        repoURL: https://charts.containeroo.ch
+        targetRevision: 0.0.30
+  reconciledAt: '2024-10-03T14:57:35Z'
   resources:
     - kind: ConfigMap
       name: local-path-config
@@ -430,7 +463,7 @@ status:
   sourceType: Helm
   summary:
     images:
-      - rancher/local-path-provisioner:v0.0.26
+      - rancher/local-path-provisioner:v0.0.28
   sync:
     comparedTo:
       destination:
@@ -447,8 +480,8 @@ status:
             - name: nodePathMap[0].node
               value: DEFAULT_PATH_FOR_NON_LISTED_NODES
         repoURL: https://charts.containeroo.ch
-        targetRevision: 0.0.26
-    revision: 0.0.26
+        targetRevision: 0.0.30
+    revision: 0.0.30
     status: Synced
 spec:
   destination:
@@ -466,7 +499,7 @@ spec:
         - name: nodePathMap[0].node
           value: DEFAULT_PATH_FOR_NON_LISTED_NODES
     repoURL: https://charts.containeroo.ch
-    targetRevision: 0.0.26
+    targetRevision: 0.0.30
   syncPolicy:
     syncOptions:
       - CreateNamespace=true

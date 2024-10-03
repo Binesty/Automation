@@ -12,7 +12,7 @@ metadata:
       instances are
       available","status":"Healthy"},"kind":"Prometheus","name":"monitoring-kube-prometheus-prometheus","namespace":"monitoring","status":"Synced","version":"v1"},{"group":"monitoring.coreos.com","kind":"PrometheusRule","name":"monitoring-kube-prometheus-alertmanager.rules","namespace":"monitoring","status":"Synced","version":"v1"},{"group":"monitoring.coreos.com","kind":"PrometheusRule","name":"monitoring-kube-prometheus-config-reloaders","namespace":"monitoring","status":"Synced","version":"v1"},{"group":"monitoring.coreos.com","kind":"PrometheusRule","name":"monitoring-kube-prometheus-etcd","namespace":"monitoring","status":"Synced","version":"v1"},{"group":"monitoring.coreos.com","kind":"PrometheusRule","name":"monitoring-kube-prometheus-general.rules","namespace":"monitoring","status":"Synced","version":"v1"},{"group":"monitoring.coreos.com","kind":"PrometheusRule","name":"monitoring-kube-prometheus-k8s.rules.container-cpu-usage-second","namespace":"monitoring","status":"Synced","version":"v1"},{"group":"monitoring.coreos.com","kind":"PrometheusRule","name":"monitoring-kube-prometheus-k8s.rules.container-memory-cache","namespace":"monitoring","status":"Synced","version":"v1"},{"group":"monitoring.coreos.com","kind":"PrometheusRule","name":"monitoring-kube-prometheus-k8s.rules.container-memory-rss","namespace":"monitoring","status":"Synced","version":"v1"},{"group":"monitoring.coreos.com","kind":"PrometheusRule","name":"monitoring-kube-prometheus-k8s.rules.container-memory-swap","namespace":"monitoring","status":"Synced","version":"v1"},{"group":"monitoring.coreos.com","kind":"PrometheusRule","name":"monitoring-kube-prometheus-k8s.rules.container-memory-working-s","namespace":"monitoring","status":"Synced","version":"v1"},{"group":"monitoring.coreos.com","kind":"PrometheusRule","name":"monitoring-kube-prometheus-k8s.rules.container-resource","namespace":"monitoring","status":"Synced","version":"v1"},{"group":"monitoring.coreos.com","kind":"PrometheusRule","name":"monitoring-kube-prometheus-k8s.rules.pod-owner","namespace":"monitoring","status":"Synced","version":"v1"},{"group":"monitoring.coreos.com","kind":"PrometheusRule","name":"monitoring-kube-prometheus-kube-apiserver-availability.rules","namespace":"monitoring","status":"Synced","version":"v1"},{"group":"monitoring.coreos.com","kind":"PrometheusRule","name":"monitoring-kube-prometheus-kube-apiserver-burnrate.rules","namespace":"monitoring","status":"Synced","version":"v1"},{"group":"monitoring.coreos.com","kind":"PrometheusRule","name":"monitoring-kube-prometheus-kube-apiserver-histogram.rules","namespace":"monitoring","status":"Synced","version":"v1"},{"group":"monitoring.coreos.com","kind":"PrometheusRule","name":"monitoring-kube-prometheus-kube-apiserver-slos","namespace":"monitoring","status":"Synced","version":"v1"},{"group":"monitoring.coreos.com","kind":"PrometheusRule","name":"monitoring-kube-prometheus-kube-prometheus-general.rules","namespace":"monitoring","status":"Synced","version":"v1"},{"group":"monitoring.coreos.com","kind":"PrometheusRule","name":"monitoring-kube-prometheus-kube-prometheus-node-recording.rules","namespace":"monitoring","status":"Synced","version":"v1"},{"group":"monitoring.coreos.com","kind":"PrometheusRule","name":"monitoring-kube-prometheus-kube-scheduler.rules","namespace":"monitoring","status":"Synced","version":"v1"},{"group":"monitoring.coreos.com","kind":"PrometheusRule","name":"monitoring-kube-prometheus-kube-state-metrics","namespace":"monitoring","status":"Synced","version":"v1"},{"group":"monitoring.coreos.com","kind":"PrometheusRule","name":"monitoring-kube-prometheus-kubelet.rules","namespace":"monitoring","status":"Synced","version":"v1"},{"group":"monitoring.coreos.com","kind":"PrometheusRule","name":"monitoring-kube-prometheus-kubernetes-apps","namespace":"monitoring","status":"Synced","version":"v1"},{"group":"monitoring.coreos.com","kind":"PrometheusRule","name":"monitoring-kube-prometheus-kubernetes-resources","namespace":"monitoring","status":"Synced","version":"v1"},{"group":"monitoring.coreos.com","kind":"PrometheusRule","name":"monitoring-kube-prometheus-kubernetes-storage","namespace":"monitoring","status":"Synced","version":"v1"},{"group":"monitoring.coreos.com","kind":"PrometheusRule","name":"monitoring-kube-prometheus-kubernetes-system","namespace":"monitoring","status":"Synced","version":"v1"},{"group":"monitoring.coreos.com","kind":"PrometheusRule","name":"monitoring-kube-prometheus-kubernetes-system-apiserver","namespace":"monitoring","status":"Synced","version":"v1"},{"group":"monitoring.coreos.com","kind":"PrometheusRule","name":"monitoring-kube-prometheus-kubernetes-system-controller-manager","namespace":"monitoring","status":"Synced","version":"v1"},{"group":"monitoring.coreos.com","kind":"PrometheusRule","name":"monitoring-kube-prometheus-kubernetes-system-kube-proxy","namespace":"monitoring","status":"Synced","version":"v1"},{"group":"monitoring.coreos.com","kind":"PrometheusRule","name":"monitoring-kube-prometheus-kubernetes-system-kubelet","namespace":"monitoring","status":"Synced","version":"v1"},{"group":"monitoring.coreos.com","kind":"PrometheusRule","name":"monitoring-kube-prometheus-kubernetes-system-scheduler","namespace":"monitoring","status":"Synced","version":"v1"},{"group":"monitoring.coreos.com","kind":"PrometheusRule","name":"monitoring-kube-prometheus-node-exporter","namespace":"monitoring","status":"Synced","version":"v1"},{"group":"monitoring.coreos.com","kind":"PrometheusRule","name":"monitoring-kube-prometheus-node-exporter.rules","namespace":"monitoring","status":"Synced","version":"v1"},{"group":"monitoring.coreos.com","kind":"PrometheusRule","name":"monitoring-kube-prometheus-node-network","namespace":"monitoring","status":"Synced","version":"v1"},{"group":"monitoring.coreos.com","kind":"PrometheusRule","name":"monitoring-kube-prometheus-node.rules","namespace":"monitoring","status":"Synced","version":"v1"},{"group":"monitoring.coreos.com","kind":"PrometheusRule","name":"monitoring-kube-prometheus-prometheus","namespace":"monitoring","status":"Synced","version":"v1"},{"group":"monitoring.coreos.com","kind":"PrometheusRule","name":"monitoring-kube-prometheus-prometheus-operator","namespace":"monitoring","status":"Synced","version":"v1"},{"group":"monitoring.coreos.com","kind":"ServiceMonitor","name":"monitoring-grafana","namespace":"monitoring","status":"Synced","version":"v1"},{"group":"monitoring.coreos.com","kind":"ServiceMonitor","name":"monitoring-kube-prometheus-alertmanager","namespace":"monitoring","status":"Synced","version":"v1"},{"group":"monitoring.coreos.com","kind":"ServiceMonitor","name":"monitoring-kube-prometheus-apiserver","namespace":"monitoring","status":"Synced","version":"v1"},{"group":"monitoring.coreos.com","kind":"ServiceMonitor","name":"monitoring-kube-prometheus-coredns","namespace":"monitoring","status":"Synced","version":"v1"},{"group":"monitoring.coreos.com","kind":"ServiceMonitor","name":"monitoring-kube-prometheus-kube-controller-manager","namespace":"monitoring","status":"Synced","version":"v1"},{"group":"monitoring.coreos.com","kind":"ServiceMonitor","name":"monitoring-kube-prometheus-kube-etcd","namespace":"monitoring","status":"Synced","version":"v1"},{"group":"monitoring.coreos.com","kind":"ServiceMonitor","name":"monitoring-kube-prometheus-kube-proxy","namespace":"monitoring","status":"Synced","version":"v1"},{"group":"monitoring.coreos.com","kind":"ServiceMonitor","name":"monitoring-kube-prometheus-kube-scheduler","namespace":"monitoring","status":"Synced","version":"v1"},{"group":"monitoring.coreos.com","kind":"ServiceMonitor","name":"monitoring-kube-prometheus-kubelet","namespace":"monitoring","status":"Synced","version":"v1"},{"group":"monitoring.coreos.com","kind":"ServiceMonitor","name":"monitoring-kube-prometheus-operator","namespace":"monitoring","status":"Synced","version":"v1"},{"group":"monitoring.coreos.com","kind":"ServiceMonitor","name":"monitoring-kube-prometheus-prometheus","namespace":"monitoring","status":"Synced","version":"v1"},{"group":"monitoring.coreos.com","kind":"ServiceMonitor","name":"monitoring-kube-state-metrics","namespace":"monitoring","status":"Synced","version":"v1"},{"group":"monitoring.coreos.com","kind":"ServiceMonitor","name":"monitoring-prometheus-node-exporter","namespace":"monitoring","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"monitoring-grafana-clusterrole","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"monitoring-kube-prometheus-operator","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"monitoring-kube-prometheus-prometheus","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"monitoring-kube-state-metrics","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"ClusterRoleBinding","name":"monitoring-grafana-clusterrolebinding","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"ClusterRoleBinding","name":"monitoring-kube-prometheus-operator","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"ClusterRoleBinding","name":"monitoring-kube-prometheus-prometheus","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"ClusterRoleBinding","name":"monitoring-kube-state-metrics","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"Role","name":"monitoring-grafana","namespace":"monitoring","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"RoleBinding","name":"monitoring-grafana","namespace":"monitoring","status":"Synced","version":"v1"}],"sourceType":"Helm","summary":{"images":["docker.io/grafana/grafana:10.4.1","quay.io/kiwigrid/k8s-sidecar:1.26.1","quay.io/prometheus-operator/prometheus-config-reloader:v0.73.1","quay.io/prometheus-operator/prometheus-operator:v0.73.1","quay.io/prometheus/alertmanager:v0.27.0","quay.io/prometheus/node-exporter:v1.7.0","quay.io/prometheus/prometheus:v2.51.1","registry.k8s.io/kube-state-metrics/kube-state-metrics:v2.12.0"]},"sync":{"comparedTo":{"destination":{"namespace":"monitoring","server":"https://kubernetes.default.svc"},"source":{"chart":"kube-prometheus-stack","repoURL":"https://prometheus-community.github.io/helm-charts","targetRevision":"58.1.1"}},"revision":"58.1.1","status":"OutOfSync"}}}
   creationTimestamp: '2024-07-22T12:18:30Z'
-  generation: 296
+  generation: 1966
   labels:
     project: infrastructure
     source: external
@@ -39,7 +39,6 @@ metadata:
             .: {}
             f:chart: {}
             f:repoURL: {}
-            f:targetRevision: {}
           f:syncPolicy:
             .: {}
             f:syncOptions: {}
@@ -47,7 +46,6 @@ metadata:
           .: {}
           f:controllerNamespace: {}
           f:health: {}
-          f:sourceType: {}
           f:summary: {}
           f:sync:
             .: {}
@@ -61,11 +59,18 @@ metadata:
                 .: {}
                 f:chart: {}
                 f:repoURL: {}
-                f:targetRevision: {}
-            f:revision: {}
       manager: kubectl-client-side-apply
       operation: Update
       time: '2024-07-22T12:18:30Z'
+    - apiVersion: argoproj.io/v1alpha1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          f:source:
+            f:targetRevision: {}
+      manager: argocd-server
+      operation: Update
+      time: '2024-10-03T14:49:48Z'
     - apiVersion: argoproj.io/v1alpha1
       fieldsType: FieldsV1
       fieldsV1:
@@ -82,14 +87,7 @@ metadata:
               f:initiatedBy:
                 .: {}
                 f:username: {}
-              f:retry:
-                .: {}
-                f:backoff:
-                  .: {}
-                  f:duration: {}
-                  f:factor: {}
-                  f:maxDuration: {}
-                f:limit: {}
+              f:retry: {}
               f:sync:
                 .: {}
                 f:revision: {}
@@ -98,7 +96,6 @@ metadata:
                   .: {}
                   f:hook: {}
             f:phase: {}
-            f:retryCount: {}
             f:startedAt: {}
             f:syncResult:
               .: {}
@@ -111,16 +108,21 @@ metadata:
                 f:targetRevision: {}
           f:reconciledAt: {}
           f:resources: {}
+          f:sourceType: {}
           f:summary:
             f:images: {}
           f:sync:
+            f:comparedTo:
+              f:source:
+                f:targetRevision: {}
+            f:revision: {}
             f:status: {}
       manager: argocd-application-controller
       operation: Update
-      time: '2024-07-23T12:40:01Z'
+      time: '2024-10-03T14:57:38Z'
   name: monitoring
   namespace: argocd
-  resourceVersion: '237055'
+  resourceVersion: '2133165'
   uid: 15e4f8a4-e9cf-4a54-b7c2-cf93acc46728
   selfLink: /apis/argoproj.io/v1alpha1/namespaces/argocd/applications/monitoring
 status:
@@ -156,28 +158,32 @@ status:
         chart: kube-prometheus-stack
         repoURL: https://prometheus-community.github.io/helm-charts
         targetRevision: 58.1.1
+    - deployStartedAt: '2024-10-03T14:49:48Z'
+      deployedAt: '2024-10-03T14:51:54Z'
+      id: 3
+      initiatedBy:
+        username: admin
+      revision: 65.0.0
+      source:
+        chart: kube-prometheus-stack
+        repoURL: https://prometheus-community.github.io/helm-charts
+        targetRevision: 65.0.0
   operationState:
-    finishedAt: '2024-07-23T11:58:00Z'
+    finishedAt: '2024-10-03T14:51:54Z'
     message: successfully synced (no more tasks)
     operation:
       initiatedBy:
         username: admin
-      retry:
-        backoff:
-          duration: 5s
-          factor: 2
-          maxDuration: 3m0s
-        limit: 2
+      retry: {}
       sync:
-        revision: 58.1.1
+        revision: 65.0.0
         syncOptions:
           - CreateNamespace=true
           - ServerSideApply=true
         syncStrategy:
           hook: {}
     phase: Succeeded
-    retryCount: 2
-    startedAt: '2024-07-23T11:56:26Z'
+    startedAt: '2024-10-03T14:49:48Z'
     syncResult:
       resources:
         - group: ''
@@ -239,17 +245,6 @@ status:
         - group: ''
           hookPhase: Succeeded
           kind: ServiceAccount
-          message: >-
-            serviceaccount/monitoring-kube-prometheus-prometheus
-            serverside-applied
-          name: monitoring-kube-prometheus-prometheus
-          namespace: monitoring
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: ''
-          hookPhase: Succeeded
-          kind: ServiceAccount
           message: serviceaccount/monitoring-grafana serverside-applied
           name: monitoring-grafana
           namespace: monitoring
@@ -272,6 +267,17 @@ status:
             serviceaccount/monitoring-kube-prometheus-operator
             serverside-applied
           name: monitoring-kube-prometheus-operator
+          namespace: monitoring
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: ''
+          hookPhase: Succeeded
+          kind: ServiceAccount
+          message: >-
+            serviceaccount/monitoring-kube-prometheus-prometheus
+            serverside-applied
+          name: monitoring-kube-prometheus-prometheus
           namespace: monitoring
           status: Synced
           syncPhase: Sync
@@ -321,137 +327,17 @@ status:
         - group: ''
           hookPhase: Succeeded
           kind: ConfigMap
-          message: configmap/monitoring-grafana serverside-applied
-          name: monitoring-grafana
-          namespace: monitoring
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: ''
-          hookPhase: Succeeded
-          kind: ConfigMap
-          message: configmap/monitoring-kube-prometheus-nodes-darwin serverside-applied
-          name: monitoring-kube-prometheus-nodes-darwin
-          namespace: monitoring
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: ''
-          hookPhase: Succeeded
-          kind: ConfigMap
-          message: >-
-            configmap/monitoring-kube-prometheus-cluster-total
-            serverside-applied
-          name: monitoring-kube-prometheus-cluster-total
-          namespace: monitoring
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: ''
-          hookPhase: Succeeded
-          kind: ConfigMap
-          message: >-
-            configmap/monitoring-kube-prometheus-persistentvolumesusage
-            serverside-applied
-          name: monitoring-kube-prometheus-persistentvolumesusage
-          namespace: monitoring
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: ''
-          hookPhase: Succeeded
-          kind: ConfigMap
-          message: configmap/monitoring-kube-prometheus-kubelet serverside-applied
-          name: monitoring-kube-prometheus-kubelet
-          namespace: monitoring
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: ''
-          hookPhase: Succeeded
-          kind: ConfigMap
-          message: configmap/monitoring-kube-prometheus-apiserver serverside-applied
-          name: monitoring-kube-prometheus-apiserver
-          namespace: monitoring
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: ''
-          hookPhase: Succeeded
-          kind: ConfigMap
-          message: >-
-            configmap/monitoring-kube-prometheus-controller-manager
-            serverside-applied
-          name: monitoring-kube-prometheus-controller-manager
-          namespace: monitoring
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: ''
-          hookPhase: Succeeded
-          kind: ConfigMap
-          message: configmap/monitoring-kube-prometheus-pod-total serverside-applied
-          name: monitoring-kube-prometheus-pod-total
-          namespace: monitoring
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: ''
-          hookPhase: Succeeded
-          kind: ConfigMap
-          message: configmap/monitoring-kube-prometheus-etcd serverside-applied
-          name: monitoring-kube-prometheus-etcd
-          namespace: monitoring
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: ''
-          hookPhase: Succeeded
-          kind: ConfigMap
-          message: configmap/monitoring-kube-prometheus-prometheus serverside-applied
-          name: monitoring-kube-prometheus-prometheus
-          namespace: monitoring
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: ''
-          hookPhase: Succeeded
-          kind: ConfigMap
-          message: >-
-            configmap/monitoring-kube-prometheus-grafana-datasource
-            serverside-applied
-          name: monitoring-kube-prometheus-grafana-datasource
-          namespace: monitoring
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: ''
-          hookPhase: Succeeded
-          kind: ConfigMap
-          message: >-
-            configmap/monitoring-kube-prometheus-grafana-overview
-            serverside-applied
-          name: monitoring-kube-prometheus-grafana-overview
-          namespace: monitoring
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: ''
-          hookPhase: Succeeded
-          kind: ConfigMap
-          message: >-
-            configmap/monitoring-kube-prometheus-alertmanager-overview
-            serverside-applied
-          name: monitoring-kube-prometheus-alertmanager-overview
-          namespace: monitoring
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: ''
-          hookPhase: Succeeded
-          kind: ConfigMap
           message: configmap/monitoring-kube-prometheus-proxy serverside-applied
           name: monitoring-kube-prometheus-proxy
+          namespace: monitoring
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: ''
+          hookPhase: Succeeded
+          kind: ConfigMap
+          message: configmap/monitoring-grafana serverside-applied
+          name: monitoring-grafana
           namespace: monitoring
           status: Synced
           syncPhase: Sync
@@ -469,9 +355,29 @@ status:
           hookPhase: Succeeded
           kind: ConfigMap
           message: >-
-            configmap/monitoring-kube-prometheus-namespace-by-pod
+            configmap/monitoring-kube-prometheus-node-rsrc-use
             serverside-applied
-          name: monitoring-kube-prometheus-namespace-by-pod
+          name: monitoring-kube-prometheus-node-rsrc-use
+          namespace: monitoring
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: ''
+          hookPhase: Succeeded
+          kind: ConfigMap
+          message: configmap/monitoring-kube-prometheus-pod-total serverside-applied
+          name: monitoring-kube-prometheus-pod-total
+          namespace: monitoring
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: ''
+          hookPhase: Succeeded
+          kind: ConfigMap
+          message: >-
+            configmap/monitoring-kube-prometheus-k8s-resources-workload
+            serverside-applied
+          name: monitoring-kube-prometheus-k8s-resources-workload
           namespace: monitoring
           status: Synced
           syncPhase: Sync
@@ -490,8 +396,39 @@ status:
         - group: ''
           hookPhase: Succeeded
           kind: ConfigMap
-          message: configmap/monitoring-kube-prometheus-k8s-coredns serverside-applied
-          name: monitoring-kube-prometheus-k8s-coredns
+          message: >-
+            configmap/monitoring-kube-prometheus-alertmanager-overview
+            serverside-applied
+          name: monitoring-kube-prometheus-alertmanager-overview
+          namespace: monitoring
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: ''
+          hookPhase: Succeeded
+          kind: ConfigMap
+          message: configmap/monitoring-kube-prometheus-nodes-aix serverside-applied
+          name: monitoring-kube-prometheus-nodes-aix
+          namespace: monitoring
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: ''
+          hookPhase: Succeeded
+          kind: ConfigMap
+          message: >-
+            configmap/monitoring-kube-prometheus-grafana-overview
+            serverside-applied
+          name: monitoring-kube-prometheus-grafana-overview
+          namespace: monitoring
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: ''
+          hookPhase: Succeeded
+          kind: ConfigMap
+          message: configmap/monitoring-kube-prometheus-apiserver serverside-applied
+          name: monitoring-kube-prometheus-apiserver
           namespace: monitoring
           status: Synced
           syncPhase: Sync
@@ -508,10 +445,35 @@ status:
         - group: ''
           hookPhase: Succeeded
           kind: ConfigMap
-          message: >-
-            configmap/monitoring-kube-prometheus-namespace-by-workload
-            serverside-applied
-          name: monitoring-kube-prometheus-namespace-by-workload
+          message: configmap/monitoring-kube-prometheus-nodes serverside-applied
+          name: monitoring-kube-prometheus-nodes
+          namespace: monitoring
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: ''
+          hookPhase: Succeeded
+          kind: ConfigMap
+          message: configmap/monitoring-kube-prometheus-nodes-darwin serverside-applied
+          name: monitoring-kube-prometheus-nodes-darwin
+          namespace: monitoring
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: ''
+          hookPhase: Succeeded
+          kind: ConfigMap
+          message: configmap/monitoring-kube-prometheus-k8s-coredns serverside-applied
+          name: monitoring-kube-prometheus-k8s-coredns
+          namespace: monitoring
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: ''
+          hookPhase: Succeeded
+          kind: ConfigMap
+          message: configmap/monitoring-kube-prometheus-kubelet serverside-applied
+          name: monitoring-kube-prometheus-kubelet
           namespace: monitoring
           status: Synced
           syncPhase: Sync
@@ -520,9 +482,9 @@ status:
           hookPhase: Succeeded
           kind: ConfigMap
           message: >-
-            configmap/monitoring-kube-prometheus-node-rsrc-use
+            configmap/monitoring-kube-prometheus-namespace-by-pod
             serverside-applied
-          name: monitoring-kube-prometheus-node-rsrc-use
+          name: monitoring-kube-prometheus-namespace-by-pod
           namespace: monitoring
           status: Synced
           syncPhase: Sync
@@ -552,10 +514,94 @@ status:
         - group: ''
           hookPhase: Succeeded
           kind: ConfigMap
+          message: configmap/monitoring-kube-prometheus-prometheus serverside-applied
+          name: monitoring-kube-prometheus-prometheus
+          namespace: monitoring
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: ''
+          hookPhase: Succeeded
+          kind: ConfigMap
           message: >-
-            configmap/monitoring-kube-prometheus-k8s-resources-cluster
+            configmap/monitoring-kube-prometheus-k8s-resources-namespace
             serverside-applied
-          name: monitoring-kube-prometheus-k8s-resources-cluster
+          name: monitoring-kube-prometheus-k8s-resources-namespace
+          namespace: monitoring
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: ''
+          hookPhase: Succeeded
+          kind: ConfigMap
+          message: >-
+            configmap/monitoring-kube-prometheus-controller-manager
+            serverside-applied
+          name: monitoring-kube-prometheus-controller-manager
+          namespace: monitoring
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: ''
+          hookPhase: Succeeded
+          kind: ConfigMap
+          message: >-
+            configmap/monitoring-kube-prometheus-namespace-by-workload
+            serverside-applied
+          name: monitoring-kube-prometheus-namespace-by-workload
+          namespace: monitoring
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: ''
+          hookPhase: Succeeded
+          kind: ConfigMap
+          message: >-
+            configmap/monitoring-kube-prometheus-grafana-datasource
+            serverside-applied
+          name: monitoring-kube-prometheus-grafana-datasource
+          namespace: monitoring
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: ''
+          hookPhase: Succeeded
+          kind: ConfigMap
+          message: >-
+            configmap/monitoring-kube-prometheus-persistentvolumesusage
+            serverside-applied
+          name: monitoring-kube-prometheus-persistentvolumesusage
+          namespace: monitoring
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: ''
+          hookPhase: Succeeded
+          kind: ConfigMap
+          message: >-
+            configmap/monitoring-kube-prometheus-cluster-total
+            serverside-applied
+          name: monitoring-kube-prometheus-cluster-total
+          namespace: monitoring
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: ''
+          hookPhase: Succeeded
+          kind: ConfigMap
+          message: >-
+            configmap/monitoring-kube-prometheus-k8s-resources-multicluster
+            serverside-applied
+          name: monitoring-kube-prometheus-k8s-resources-multicluster
+          namespace: monitoring
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: ''
+          hookPhase: Succeeded
+          kind: ConfigMap
+          message: configmap/monitoring-kube-prometheus-etcd serverside-applied
+          name: monitoring-kube-prometheus-etcd
           namespace: monitoring
           status: Synced
           syncPhase: Sync
@@ -575,20 +621,9 @@ status:
           hookPhase: Succeeded
           kind: ConfigMap
           message: >-
-            configmap/monitoring-kube-prometheus-k8s-resources-workload
+            configmap/monitoring-kube-prometheus-k8s-resources-cluster
             serverside-applied
-          name: monitoring-kube-prometheus-k8s-resources-workload
-          namespace: monitoring
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: ''
-          hookPhase: Succeeded
-          kind: ConfigMap
-          message: >-
-            configmap/monitoring-kube-prometheus-k8s-resources-multicluster
-            serverside-applied
-          name: monitoring-kube-prometheus-k8s-resources-multicluster
+          name: monitoring-kube-prometheus-k8s-resources-cluster
           namespace: monitoring
           status: Synced
           syncPhase: Sync
@@ -600,37 +635,6 @@ status:
             configmap/monitoring-kube-prometheus-k8s-resources-workloads-namespace
             serverside-applied
           name: monitoring-kube-prometheus-k8s-resources-workloads-namespace
-          namespace: monitoring
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: ''
-          hookPhase: Succeeded
-          kind: ConfigMap
-          message: configmap/monitoring-kube-prometheus-nodes serverside-applied
-          name: monitoring-kube-prometheus-nodes
-          namespace: monitoring
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: ''
-          hookPhase: Succeeded
-          kind: ConfigMap
-          message: >-
-            configmap/monitoring-kube-prometheus-k8s-resources-namespace
-            serverside-applied
-          name: monitoring-kube-prometheus-k8s-resources-namespace
-          namespace: monitoring
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: apiextensions.k8s.io
-          hookPhase: Succeeded
-          kind: CustomResourceDefinition
-          message: >-
-            customresourcedefinition.apiextensions.k8s.io/probes.monitoring.coreos.com
-            serverside-applied
-          name: probes.monitoring.coreos.com
           namespace: monitoring
           status: Synced
           syncPhase: Sync
@@ -650,17 +654,6 @@ status:
           hookPhase: Succeeded
           kind: CustomResourceDefinition
           message: >-
-            customresourcedefinition.apiextensions.k8s.io/servicemonitors.monitoring.coreos.com
-            serverside-applied
-          name: servicemonitors.monitoring.coreos.com
-          namespace: monitoring
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: apiextensions.k8s.io
-          hookPhase: Succeeded
-          kind: CustomResourceDefinition
-          message: >-
             customresourcedefinition.apiextensions.k8s.io/podmonitors.monitoring.coreos.com
             serverside-applied
           name: podmonitors.monitoring.coreos.com
@@ -672,9 +665,20 @@ status:
           hookPhase: Succeeded
           kind: CustomResourceDefinition
           message: >-
-            customresourcedefinition.apiextensions.k8s.io/scrapeconfigs.monitoring.coreos.com
+            customresourcedefinition.apiextensions.k8s.io/servicemonitors.monitoring.coreos.com
             serverside-applied
-          name: scrapeconfigs.monitoring.coreos.com
+          name: servicemonitors.monitoring.coreos.com
+          namespace: monitoring
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: apiextensions.k8s.io
+          hookPhase: Succeeded
+          kind: CustomResourceDefinition
+          message: >-
+            customresourcedefinition.apiextensions.k8s.io/probes.monitoring.coreos.com
+            serverside-applied
+          name: probes.monitoring.coreos.com
           namespace: monitoring
           status: Synced
           syncPhase: Sync
@@ -694,9 +698,9 @@ status:
           hookPhase: Succeeded
           kind: CustomResourceDefinition
           message: >-
-            customresourcedefinition.apiextensions.k8s.io/thanosrulers.monitoring.coreos.com
+            customresourcedefinition.apiextensions.k8s.io/scrapeconfigs.monitoring.coreos.com
             serverside-applied
-          name: thanosrulers.monitoring.coreos.com
+          name: scrapeconfigs.monitoring.coreos.com
           namespace: monitoring
           status: Synced
           syncPhase: Sync
@@ -708,6 +712,17 @@ status:
             customresourcedefinition.apiextensions.k8s.io/alertmanagers.monitoring.coreos.com
             serverside-applied
           name: alertmanagers.monitoring.coreos.com
+          namespace: monitoring
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: apiextensions.k8s.io
+          hookPhase: Succeeded
+          kind: CustomResourceDefinition
+          message: >-
+            customresourcedefinition.apiextensions.k8s.io/thanosrulers.monitoring.coreos.com
+            serverside-applied
+          name: thanosrulers.monitoring.coreos.com
           namespace: monitoring
           status: Synced
           syncPhase: Sync
@@ -738,32 +753,6 @@ status:
           hookPhase: Succeeded
           kind: ClusterRole
           message: >-
-            clusterrole.rbac.authorization.k8s.io/monitoring-grafana-clusterrole
-            reconciled.
-            clusterrole.rbac.authorization.k8s.io/monitoring-grafana-clusterrole
-            serverside-applied
-          name: monitoring-grafana-clusterrole
-          namespace: monitoring
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: rbac.authorization.k8s.io
-          hookPhase: Succeeded
-          kind: ClusterRole
-          message: >-
-            clusterrole.rbac.authorization.k8s.io/monitoring-kube-prometheus-prometheus
-            reconciled.
-            clusterrole.rbac.authorization.k8s.io/monitoring-kube-prometheus-prometheus
-            serverside-applied
-          name: monitoring-kube-prometheus-prometheus
-          namespace: monitoring
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: rbac.authorization.k8s.io
-          hookPhase: Succeeded
-          kind: ClusterRole
-          message: >-
             clusterrole.rbac.authorization.k8s.io/monitoring-kube-prometheus-operator
             reconciled.
             clusterrole.rbac.authorization.k8s.io/monitoring-kube-prometheus-operator
@@ -776,10 +765,58 @@ status:
         - group: rbac.authorization.k8s.io
           hookPhase: Succeeded
           kind: ClusterRole
+          message: "clusterrole.rbac.authorization.k8s.io/monitoring-kube-prometheus-prometheus reconciled. reconciliation required update\n\tmissing rules added:\n\t\t{Verbs:[get] APIGroups:[discovery.k8s.io] Resources:[endpointslices] ResourceNames:[] NonResourceURLs:[]}\n\t\t{Verbs:[list] APIGroups:[discovery.k8s.io] Resources:[endpointslices] ResourceNames:[] NonResourceURLs:[]}\n\t\t{Verbs:[watch] APIGroups:[discovery.k8s.io] Resources:[endpointslices] ResourceNames:[] NonResourceURLs:[]}. clusterrole.rbac.authorization.k8s.io/monitoring-kube-prometheus-prometheus serverside-applied"
+          name: monitoring-kube-prometheus-prometheus
+          namespace: monitoring
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: rbac.authorization.k8s.io
+          hookPhase: Succeeded
+          kind: ClusterRole
           message: >-
             clusterrole.rbac.authorization.k8s.io/monitoring-kube-state-metrics
             reconciled.
             clusterrole.rbac.authorization.k8s.io/monitoring-kube-state-metrics
+            serverside-applied
+          name: monitoring-kube-state-metrics
+          namespace: monitoring
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: rbac.authorization.k8s.io
+          hookPhase: Succeeded
+          kind: ClusterRole
+          message: >-
+            clusterrole.rbac.authorization.k8s.io/monitoring-grafana-clusterrole
+            reconciled.
+            clusterrole.rbac.authorization.k8s.io/monitoring-grafana-clusterrole
+            serverside-applied
+          name: monitoring-grafana-clusterrole
+          namespace: monitoring
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: rbac.authorization.k8s.io
+          hookPhase: Succeeded
+          kind: ClusterRoleBinding
+          message: >-
+            clusterrolebinding.rbac.authorization.k8s.io/monitoring-kube-prometheus-prometheus
+            reconciled.
+            clusterrolebinding.rbac.authorization.k8s.io/monitoring-kube-prometheus-prometheus
+            serverside-applied
+          name: monitoring-kube-prometheus-prometheus
+          namespace: monitoring
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: rbac.authorization.k8s.io
+          hookPhase: Succeeded
+          kind: ClusterRoleBinding
+          message: >-
+            clusterrolebinding.rbac.authorization.k8s.io/monitoring-kube-state-metrics
+            reconciled.
+            clusterrolebinding.rbac.authorization.k8s.io/monitoring-kube-state-metrics
             serverside-applied
           name: monitoring-kube-state-metrics
           namespace: monitoring
@@ -814,32 +851,6 @@ status:
           version: v1
         - group: rbac.authorization.k8s.io
           hookPhase: Succeeded
-          kind: ClusterRoleBinding
-          message: >-
-            clusterrolebinding.rbac.authorization.k8s.io/monitoring-kube-state-metrics
-            reconciled.
-            clusterrolebinding.rbac.authorization.k8s.io/monitoring-kube-state-metrics
-            serverside-applied
-          name: monitoring-kube-state-metrics
-          namespace: monitoring
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: rbac.authorization.k8s.io
-          hookPhase: Succeeded
-          kind: ClusterRoleBinding
-          message: >-
-            clusterrolebinding.rbac.authorization.k8s.io/monitoring-kube-prometheus-prometheus
-            reconciled.
-            clusterrolebinding.rbac.authorization.k8s.io/monitoring-kube-prometheus-prometheus
-            serverside-applied
-          name: monitoring-kube-prometheus-prometheus
-          namespace: monitoring
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: rbac.authorization.k8s.io
-          hookPhase: Succeeded
           kind: Role
           message: >-
             role.rbac.authorization.k8s.io/monitoring-grafana reconciled.
@@ -864,24 +875,6 @@ status:
         - group: ''
           hookPhase: Succeeded
           kind: Service
-          message: service/monitoring-grafana serverside-applied
-          name: monitoring-grafana
-          namespace: monitoring
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: ''
-          hookPhase: Succeeded
-          kind: Service
-          message: service/monitoring-kube-prometheus-kube-scheduler serverside-applied
-          name: monitoring-kube-prometheus-kube-scheduler
-          namespace: kube-system
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: ''
-          hookPhase: Succeeded
-          kind: Service
           message: service/monitoring-kube-prometheus-kube-proxy serverside-applied
           name: monitoring-kube-prometheus-kube-proxy
           namespace: kube-system
@@ -900,6 +893,24 @@ status:
         - group: ''
           hookPhase: Succeeded
           kind: Service
+          message: service/monitoring-kube-state-metrics serverside-applied
+          name: monitoring-kube-state-metrics
+          namespace: monitoring
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: ''
+          hookPhase: Succeeded
+          kind: Service
+          message: service/monitoring-grafana serverside-applied
+          name: monitoring-grafana
+          namespace: monitoring
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: ''
+          hookPhase: Succeeded
+          kind: Service
           message: >-
             service/monitoring-kube-prometheus-kube-controller-manager
             serverside-applied
@@ -911,9 +922,18 @@ status:
         - group: ''
           hookPhase: Succeeded
           kind: Service
-          message: service/monitoring-kube-prometheus-kube-etcd serverside-applied
-          name: monitoring-kube-prometheus-kube-etcd
+          message: service/monitoring-kube-prometheus-kube-scheduler serverside-applied
+          name: monitoring-kube-prometheus-kube-scheduler
           namespace: kube-system
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: ''
+          hookPhase: Succeeded
+          kind: Service
+          message: service/monitoring-kube-prometheus-alertmanager serverside-applied
+          name: monitoring-kube-prometheus-alertmanager
+          namespace: monitoring
           status: Synced
           syncPhase: Sync
           version: v1
@@ -922,24 +942,6 @@ status:
           kind: Service
           message: service/monitoring-prometheus-node-exporter serverside-applied
           name: monitoring-prometheus-node-exporter
-          namespace: monitoring
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: ''
-          hookPhase: Succeeded
-          kind: Service
-          message: service/monitoring-kube-prometheus-prometheus serverside-applied
-          name: monitoring-kube-prometheus-prometheus
-          namespace: monitoring
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: ''
-          hookPhase: Succeeded
-          kind: Service
-          message: service/monitoring-kube-state-metrics serverside-applied
-          name: monitoring-kube-state-metrics
           namespace: monitoring
           status: Synced
           syncPhase: Sync
@@ -956,9 +958,18 @@ status:
         - group: ''
           hookPhase: Succeeded
           kind: Service
-          message: service/monitoring-kube-prometheus-alertmanager serverside-applied
-          name: monitoring-kube-prometheus-alertmanager
+          message: service/monitoring-kube-prometheus-prometheus serverside-applied
+          name: monitoring-kube-prometheus-prometheus
           namespace: monitoring
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: ''
+          hookPhase: Succeeded
+          kind: Service
+          message: service/monitoring-kube-prometheus-kube-etcd serverside-applied
+          name: monitoring-kube-prometheus-kube-etcd
+          namespace: kube-system
           status: Synced
           syncPhase: Sync
           version: v1
@@ -976,8 +987,10 @@ status:
         - group: apps
           hookPhase: Succeeded
           kind: Deployment
-          message: deployment.apps/monitoring-kube-state-metrics serverside-applied
-          name: monitoring-kube-state-metrics
+          message: >-
+            deployment.apps/monitoring-kube-prometheus-operator
+            serverside-applied
+          name: monitoring-kube-prometheus-operator
           namespace: monitoring
           status: Synced
           syncPhase: Sync
@@ -985,10 +998,8 @@ status:
         - group: apps
           hookPhase: Succeeded
           kind: Deployment
-          message: >-
-            deployment.apps/monitoring-kube-prometheus-operator
-            serverside-applied
-          name: monitoring-kube-prometheus-operator
+          message: deployment.apps/monitoring-kube-state-metrics serverside-applied
+          name: monitoring-kube-state-metrics
           namespace: monitoring
           status: Synced
           syncPhase: Sync
@@ -1015,17 +1026,6 @@ status:
           version: v1
         - group: admissionregistration.k8s.io
           hookPhase: Succeeded
-          kind: ValidatingWebhookConfiguration
-          message: >-
-            validatingwebhookconfiguration.admissionregistration.k8s.io/monitoring-kube-prometheus-admission
-            serverside-applied
-          name: monitoring-kube-prometheus-admission
-          namespace: monitoring
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: admissionregistration.k8s.io
-          hookPhase: Succeeded
           kind: MutatingWebhookConfiguration
           message: >-
             mutatingwebhookconfiguration.admissionregistration.k8s.io/monitoring-kube-prometheus-admission
@@ -1035,13 +1035,13 @@ status:
           status: Synced
           syncPhase: Sync
           version: v1
-        - group: monitoring.coreos.com
+        - group: admissionregistration.k8s.io
           hookPhase: Succeeded
-          kind: ServiceMonitor
+          kind: ValidatingWebhookConfiguration
           message: >-
-            servicemonitor.monitoring.coreos.com/monitoring-kube-prometheus-alertmanager
+            validatingwebhookconfiguration.admissionregistration.k8s.io/monitoring-kube-prometheus-admission
             serverside-applied
-          name: monitoring-kube-prometheus-alertmanager
+          name: monitoring-kube-prometheus-admission
           namespace: monitoring
           status: Synced
           syncPhase: Sync
@@ -1051,6 +1051,17 @@ status:
           kind: Alertmanager
           message: >-
             alertmanager.monitoring.coreos.com/monitoring-kube-prometheus-alertmanager
+            serverside-applied
+          name: monitoring-kube-prometheus-alertmanager
+          namespace: monitoring
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: monitoring.coreos.com
+          hookPhase: Succeeded
+          kind: ServiceMonitor
+          message: >-
+            servicemonitor.monitoring.coreos.com/monitoring-kube-prometheus-alertmanager
             serverside-applied
           name: monitoring-kube-prometheus-alertmanager
           namespace: monitoring
@@ -1105,6 +1116,17 @@ status:
           hookPhase: Succeeded
           kind: PrometheusRule
           message: >-
+            prometheusrule.monitoring.coreos.com/monitoring-kube-prometheus-k8s.rules.container-cpu-usage-second
+            serverside-applied
+          name: monitoring-kube-prometheus-k8s.rules.container-cpu-usage-second
+          namespace: monitoring
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: monitoring.coreos.com
+          hookPhase: Succeeded
+          kind: PrometheusRule
+          message: >-
             prometheusrule.monitoring.coreos.com/monitoring-kube-prometheus-k8s.rules.container-memory-cache
             serverside-applied
           name: monitoring-kube-prometheus-k8s.rules.container-memory-cache
@@ -1116,9 +1138,9 @@ status:
           hookPhase: Succeeded
           kind: PrometheusRule
           message: >-
-            prometheusrule.monitoring.coreos.com/monitoring-kube-prometheus-k8s.rules.container-memory-working-s
+            prometheusrule.monitoring.coreos.com/monitoring-kube-prometheus-k8s.rules.container-memory-swap
             serverside-applied
-          name: monitoring-kube-prometheus-k8s.rules.container-memory-working-s
+          name: monitoring-kube-prometheus-k8s.rules.container-memory-swap
           namespace: monitoring
           status: Synced
           syncPhase: Sync
@@ -1138,28 +1160,6 @@ status:
           hookPhase: Succeeded
           kind: PrometheusRule
           message: >-
-            prometheusrule.monitoring.coreos.com/monitoring-kube-prometheus-k8s.rules.container-cpu-usage-second
-            serverside-applied
-          name: monitoring-kube-prometheus-k8s.rules.container-cpu-usage-second
-          namespace: monitoring
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: monitoring.coreos.com
-          hookPhase: Succeeded
-          kind: PrometheusRule
-          message: >-
-            prometheusrule.monitoring.coreos.com/monitoring-kube-prometheus-k8s.rules.container-resource
-            serverside-applied
-          name: monitoring-kube-prometheus-k8s.rules.container-resource
-          namespace: monitoring
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: monitoring.coreos.com
-          hookPhase: Succeeded
-          kind: PrometheusRule
-          message: >-
             prometheusrule.monitoring.coreos.com/monitoring-kube-prometheus-general.rules
             serverside-applied
           name: monitoring-kube-prometheus-general.rules
@@ -1171,9 +1171,9 @@ status:
           hookPhase: Succeeded
           kind: PrometheusRule
           message: >-
-            prometheusrule.monitoring.coreos.com/monitoring-kube-prometheus-k8s.rules.container-memory-swap
+            prometheusrule.monitoring.coreos.com/monitoring-kube-prometheus-k8s.rules.container-memory-working-s
             serverside-applied
-          name: monitoring-kube-prometheus-k8s.rules.container-memory-swap
+          name: monitoring-kube-prometheus-k8s.rules.container-memory-working-s
           namespace: monitoring
           status: Synced
           syncPhase: Sync
@@ -1204,9 +1204,9 @@ status:
           hookPhase: Succeeded
           kind: PrometheusRule
           message: >-
-            prometheusrule.monitoring.coreos.com/monitoring-kube-prometheus-kube-apiserver-burnrate.rules
+            prometheusrule.monitoring.coreos.com/monitoring-kube-prometheus-kube-apiserver-slos
             serverside-applied
-          name: monitoring-kube-prometheus-kube-apiserver-burnrate.rules
+          name: monitoring-kube-prometheus-kube-apiserver-slos
           namespace: monitoring
           status: Synced
           syncPhase: Sync
@@ -1215,9 +1215,20 @@ status:
           hookPhase: Succeeded
           kind: PrometheusRule
           message: >-
-            prometheusrule.monitoring.coreos.com/monitoring-kube-prometheus-kube-apiserver-slos
+            prometheusrule.monitoring.coreos.com/monitoring-kube-prometheus-k8s.rules.container-resource
             serverside-applied
-          name: monitoring-kube-prometheus-kube-apiserver-slos
+          name: monitoring-kube-prometheus-k8s.rules.container-resource
+          namespace: monitoring
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: monitoring.coreos.com
+          hookPhase: Succeeded
+          kind: PrometheusRule
+          message: >-
+            prometheusrule.monitoring.coreos.com/monitoring-kube-prometheus-kube-apiserver-availability.rules
+            serverside-applied
+          name: monitoring-kube-prometheus-kube-apiserver-availability.rules
           namespace: monitoring
           status: Synced
           syncPhase: Sync
@@ -1237,20 +1248,9 @@ status:
           hookPhase: Succeeded
           kind: PrometheusRule
           message: >-
-            prometheusrule.monitoring.coreos.com/monitoring-kube-prometheus-kube-apiserver-availability.rules
+            prometheusrule.monitoring.coreos.com/monitoring-kube-prometheus-kube-apiserver-burnrate.rules
             serverside-applied
-          name: monitoring-kube-prometheus-kube-apiserver-availability.rules
-          namespace: monitoring
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: monitoring.coreos.com
-          hookPhase: Succeeded
-          kind: ServiceMonitor
-          message: >-
-            servicemonitor.monitoring.coreos.com/monitoring-kube-prometheus-kube-etcd
-            serverside-applied
-          name: monitoring-kube-prometheus-kube-etcd
+          name: monitoring-kube-prometheus-kube-apiserver-burnrate.rules
           namespace: monitoring
           status: Synced
           syncPhase: Sync
@@ -1262,6 +1262,17 @@ status:
             servicemonitor.monitoring.coreos.com/monitoring-kube-prometheus-kube-controller-manager
             serverside-applied
           name: monitoring-kube-prometheus-kube-controller-manager
+          namespace: monitoring
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: monitoring.coreos.com
+          hookPhase: Succeeded
+          kind: ServiceMonitor
+          message: >-
+            servicemonitor.monitoring.coreos.com/monitoring-kube-prometheus-kube-etcd
+            serverside-applied
+          name: monitoring-kube-prometheus-kube-etcd
           namespace: monitoring
           status: Synced
           syncPhase: Sync
@@ -1292,17 +1303,6 @@ status:
           hookPhase: Succeeded
           kind: ServiceMonitor
           message: >-
-            servicemonitor.monitoring.coreos.com/monitoring-kube-prometheus-kube-proxy
-            serverside-applied
-          name: monitoring-kube-prometheus-kube-proxy
-          namespace: monitoring
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: monitoring.coreos.com
-          hookPhase: Succeeded
-          kind: ServiceMonitor
-          message: >-
             servicemonitor.monitoring.coreos.com/monitoring-kube-prometheus-kube-scheduler
             serverside-applied
           name: monitoring-kube-prometheus-kube-scheduler
@@ -1312,11 +1312,11 @@ status:
           version: v1
         - group: monitoring.coreos.com
           hookPhase: Succeeded
-          kind: PrometheusRule
+          kind: ServiceMonitor
           message: >-
-            prometheusrule.monitoring.coreos.com/monitoring-kube-prometheus-kube-scheduler.rules
+            servicemonitor.monitoring.coreos.com/monitoring-kube-prometheus-kube-proxy
             serverside-applied
-          name: monitoring-kube-prometheus-kube-scheduler.rules
+          name: monitoring-kube-prometheus-kube-proxy
           namespace: monitoring
           status: Synced
           syncPhase: Sync
@@ -1328,6 +1328,17 @@ status:
             prometheusrule.monitoring.coreos.com/monitoring-kube-prometheus-kube-state-metrics
             serverside-applied
           name: monitoring-kube-prometheus-kube-state-metrics
+          namespace: monitoring
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: monitoring.coreos.com
+          hookPhase: Succeeded
+          kind: PrometheusRule
+          message: >-
+            prometheusrule.monitoring.coreos.com/monitoring-kube-prometheus-kube-scheduler.rules
+            serverside-applied
+          name: monitoring-kube-prometheus-kube-scheduler.rules
           namespace: monitoring
           status: Synced
           syncPhase: Sync
@@ -1347,75 +1358,9 @@ status:
           hookPhase: Succeeded
           kind: PrometheusRule
           message: >-
-            prometheusrule.monitoring.coreos.com/monitoring-kube-prometheus-kubernetes-system-kube-proxy
-            serverside-applied
-          name: monitoring-kube-prometheus-kubernetes-system-kube-proxy
-          namespace: monitoring
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: monitoring.coreos.com
-          hookPhase: Succeeded
-          kind: PrometheusRule
-          message: >-
-            prometheusrule.monitoring.coreos.com/monitoring-kube-prometheus-kubernetes-system-kubelet
-            serverside-applied
-          name: monitoring-kube-prometheus-kubernetes-system-kubelet
-          namespace: monitoring
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: monitoring.coreos.com
-          hookPhase: Succeeded
-          kind: PrometheusRule
-          message: >-
-            prometheusrule.monitoring.coreos.com/monitoring-kube-prometheus-node-network
-            serverside-applied
-          name: monitoring-kube-prometheus-node-network
-          namespace: monitoring
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: monitoring.coreos.com
-          hookPhase: Succeeded
-          kind: PrometheusRule
-          message: >-
             prometheusrule.monitoring.coreos.com/monitoring-kube-prometheus-kubernetes-system
             serverside-applied
           name: monitoring-kube-prometheus-kubernetes-system
-          namespace: monitoring
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: monitoring.coreos.com
-          hookPhase: Succeeded
-          kind: PrometheusRule
-          message: >-
-            prometheusrule.monitoring.coreos.com/monitoring-kube-prometheus-node.rules
-            serverside-applied
-          name: monitoring-kube-prometheus-node.rules
-          namespace: monitoring
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: monitoring.coreos.com
-          hookPhase: Succeeded
-          kind: PrometheusRule
-          message: >-
-            prometheusrule.monitoring.coreos.com/monitoring-kube-prometheus-node-exporter
-            serverside-applied
-          name: monitoring-kube-prometheus-node-exporter
-          namespace: monitoring
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: monitoring.coreos.com
-          hookPhase: Succeeded
-          kind: PrometheusRule
-          message: >-
-            prometheusrule.monitoring.coreos.com/monitoring-kube-prometheus-kubernetes-resources
-            serverside-applied
-          name: monitoring-kube-prometheus-kubernetes-resources
           namespace: monitoring
           status: Synced
           syncPhase: Sync
@@ -1435,9 +1380,9 @@ status:
           hookPhase: Succeeded
           kind: PrometheusRule
           message: >-
-            prometheusrule.monitoring.coreos.com/monitoring-kube-prometheus-kubernetes-system-scheduler
+            prometheusrule.monitoring.coreos.com/monitoring-kube-prometheus-node-network
             serverside-applied
-          name: monitoring-kube-prometheus-kubernetes-system-scheduler
+          name: monitoring-kube-prometheus-node-network
           namespace: monitoring
           status: Synced
           syncPhase: Sync
@@ -1446,20 +1391,9 @@ status:
           hookPhase: Succeeded
           kind: PrometheusRule
           message: >-
-            prometheusrule.monitoring.coreos.com/monitoring-kube-prometheus-kubernetes-system-apiserver
+            prometheusrule.monitoring.coreos.com/monitoring-kube-prometheus-node.rules
             serverside-applied
-          name: monitoring-kube-prometheus-kubernetes-system-apiserver
-          namespace: monitoring
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: monitoring.coreos.com
-          hookPhase: Succeeded
-          kind: PrometheusRule
-          message: >-
-            prometheusrule.monitoring.coreos.com/monitoring-kube-prometheus-kubernetes-storage
-            serverside-applied
-          name: monitoring-kube-prometheus-kubernetes-storage
+          name: monitoring-kube-prometheus-node.rules
           namespace: monitoring
           status: Synced
           syncPhase: Sync
@@ -1479,9 +1413,86 @@ status:
           hookPhase: Succeeded
           kind: PrometheusRule
           message: >-
+            prometheusrule.monitoring.coreos.com/monitoring-kube-prometheus-kubernetes-system-scheduler
+            serverside-applied
+          name: monitoring-kube-prometheus-kubernetes-system-scheduler
+          namespace: monitoring
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: monitoring.coreos.com
+          hookPhase: Succeeded
+          kind: PrometheusRule
+          message: >-
+            prometheusrule.monitoring.coreos.com/monitoring-kube-prometheus-kubernetes-system-kube-proxy
+            serverside-applied
+          name: monitoring-kube-prometheus-kubernetes-system-kube-proxy
+          namespace: monitoring
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: monitoring.coreos.com
+          hookPhase: Succeeded
+          kind: PrometheusRule
+          message: >-
             prometheusrule.monitoring.coreos.com/monitoring-kube-prometheus-node-exporter.rules
             serverside-applied
           name: monitoring-kube-prometheus-node-exporter.rules
+          namespace: monitoring
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: monitoring.coreos.com
+          hookPhase: Succeeded
+          kind: PrometheusRule
+          message: >-
+            prometheusrule.monitoring.coreos.com/monitoring-kube-prometheus-kubernetes-storage
+            serverside-applied
+          name: monitoring-kube-prometheus-kubernetes-storage
+          namespace: monitoring
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: monitoring.coreos.com
+          hookPhase: Succeeded
+          kind: PrometheusRule
+          message: >-
+            prometheusrule.monitoring.coreos.com/monitoring-kube-prometheus-kubernetes-resources
+            serverside-applied
+          name: monitoring-kube-prometheus-kubernetes-resources
+          namespace: monitoring
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: monitoring.coreos.com
+          hookPhase: Succeeded
+          kind: PrometheusRule
+          message: >-
+            prometheusrule.monitoring.coreos.com/monitoring-kube-prometheus-kubernetes-system-apiserver
+            serverside-applied
+          name: monitoring-kube-prometheus-kubernetes-system-apiserver
+          namespace: monitoring
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: monitoring.coreos.com
+          hookPhase: Succeeded
+          kind: PrometheusRule
+          message: >-
+            prometheusrule.monitoring.coreos.com/monitoring-kube-prometheus-kubernetes-system-kubelet
+            serverside-applied
+          name: monitoring-kube-prometheus-kubernetes-system-kubelet
+          namespace: monitoring
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: monitoring.coreos.com
+          hookPhase: Succeeded
+          kind: PrometheusRule
+          message: >-
+            prometheusrule.monitoring.coreos.com/monitoring-kube-prometheus-node-exporter
+            serverside-applied
+          name: monitoring-kube-prometheus-node-exporter
           namespace: monitoring
           status: Synced
           syncPhase: Sync
@@ -1504,6 +1515,17 @@ status:
             servicemonitor.monitoring.coreos.com/monitoring-kube-prometheus-operator
             serverside-applied
           name: monitoring-kube-prometheus-operator
+          namespace: monitoring
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: monitoring.coreos.com
+          hookPhase: Succeeded
+          kind: PrometheusRule
+          message: >-
+            prometheusrule.monitoring.coreos.com/monitoring-kube-prometheus-prometheus
+            serverside-applied
+          name: monitoring-kube-prometheus-prometheus
           namespace: monitoring
           status: Synced
           syncPhase: Sync
@@ -1535,17 +1557,6 @@ status:
             prometheusrule.monitoring.coreos.com/monitoring-kube-prometheus-prometheus-operator
             serverside-applied
           name: monitoring-kube-prometheus-prometheus-operator
-          namespace: monitoring
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: monitoring.coreos.com
-          hookPhase: Succeeded
-          kind: PrometheusRule
-          message: >-
-            prometheusrule.monitoring.coreos.com/monitoring-kube-prometheus-prometheus
-            serverside-applied
-          name: monitoring-kube-prometheus-prometheus
           namespace: monitoring
           status: Synced
           syncPhase: Sync
@@ -1628,12 +1639,12 @@ status:
           namespace: monitoring
           syncPhase: PostSync
           version: v1
-      revision: 58.1.1
+      revision: 65.0.0
       source:
         chart: kube-prometheus-stack
         repoURL: https://prometheus-community.github.io/helm-charts
-        targetRevision: 58.1.1
-  reconciledAt: '2024-07-23T12:39:57Z'
+        targetRevision: 65.0.0
+  reconciledAt: '2024-10-03T14:57:35Z'
   resources:
     - kind: ConfigMap
       name: monitoring-grafana
@@ -1747,6 +1758,11 @@ status:
       version: v1
     - kind: ConfigMap
       name: monitoring-kube-prometheus-nodes
+      namespace: monitoring
+      status: Synced
+      version: v1
+    - kind: ConfigMap
+      name: monitoring-kube-prometheus-nodes-aix
       namespace: monitoring
       status: Synced
       version: v1
@@ -2353,13 +2369,16 @@ status:
   summary:
     images:
       - docker.io/grafana/grafana:10.4.1
+      - docker.io/grafana/grafana:11.2.1
       - quay.io/kiwigrid/k8s-sidecar:1.26.1
-      - quay.io/prometheus-operator/prometheus-config-reloader:v0.73.1
+      - quay.io/kiwigrid/k8s-sidecar:1.27.4
+      - quay.io/prometheus-operator/prometheus-config-reloader:v0.77.1
       - quay.io/prometheus-operator/prometheus-operator:v0.73.1
+      - quay.io/prometheus-operator/prometheus-operator:v0.77.1
       - quay.io/prometheus/alertmanager:v0.27.0
-      - quay.io/prometheus/node-exporter:v1.7.0
-      - quay.io/prometheus/prometheus:v2.51.1
-      - registry.k8s.io/kube-state-metrics/kube-state-metrics:v2.12.0
+      - quay.io/prometheus/node-exporter:v1.8.2
+      - quay.io/prometheus/prometheus:v2.54.1
+      - registry.k8s.io/kube-state-metrics/kube-state-metrics:v2.13.0
   sync:
     comparedTo:
       destination:
@@ -2368,8 +2387,8 @@ status:
       source:
         chart: kube-prometheus-stack
         repoURL: https://prometheus-community.github.io/helm-charts
-        targetRevision: 58.1.1
-    revision: 58.1.1
+        targetRevision: 65.0.0
+    revision: 65.0.0
     status: Synced
 spec:
   destination:
@@ -2379,7 +2398,7 @@ spec:
   source:
     chart: kube-prometheus-stack
     repoURL: https://prometheus-community.github.io/helm-charts
-    targetRevision: 58.1.1
+    targetRevision: 65.0.0
   syncPolicy:
     syncOptions:
       - CreateNamespace=true

@@ -31,7 +31,7 @@ metadata:
       deleted\ndeployment.apps/nfs-provisioner-nfs-subdir-external-provisioner
       replaced","name":"nfs-provisioner-nfs-subdir-external-provisioner","namespace":"nfs-provisioner","status":"Synced","syncPhase":"Sync","version":"v1"}],"revision":"4.0.18","source":{"chart":"nfs-subdir-external-provisioner","helm":{"parameters":[{"name":"nfs.path","value":"/var/nfs/volumes"},{"name":"nfs.server","value":"192.168.0.150"},{"name":"storageClass.reclaimPolicy","value":"Retain"}]},"repoURL":"https://kubernetes-sigs.github.io/nfs-subdir-external-provisioner","targetRevision":"4.0.18"}}},"reconciledAt":"2024-05-03T17:04:38Z","resources":[{"kind":"ServiceAccount","name":"nfs-provisioner-nfs-subdir-external-provisioner","namespace":"nfs-provisioner","status":"Synced","version":"v1"},{"group":"apps","health":{"status":"Healthy"},"kind":"Deployment","name":"nfs-provisioner-nfs-subdir-external-provisioner","namespace":"nfs-provisioner","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"nfs-provisioner-nfs-subdir-external-provisioner-runner","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"ClusterRoleBinding","name":"run-nfs-provisioner-nfs-subdir-external-provisioner","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"Role","name":"leader-locking-nfs-provisioner-nfs-subdir-external-provisioner","namespace":"nfs-provisioner","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"RoleBinding","name":"leader-locking-nfs-provisioner-nfs-subdir-external-provisioner","namespace":"nfs-provisioner","status":"Synced","version":"v1"},{"group":"storage.k8s.io","kind":"StorageClass","name":"nfs-client","status":"Synced","version":"v1"}],"sourceType":"Helm","summary":{"images":["registry.k8s.io/sig-storage/nfs-subdir-external-provisioner:v4.0.2"]},"sync":{"comparedTo":{"destination":{"namespace":"nfs-provisioner","server":"https://kubernetes.default.svc"},"source":{"chart":"nfs-subdir-external-provisioner","helm":{"parameters":[{"name":"nfs.path","value":"/var/nfs/volumes"},{"name":"nfs.server","value":"192.168.0.150"},{"name":"storageClass.reclaimPolicy","value":"Retain"}]},"repoURL":"https://kubernetes-sigs.github.io/nfs-subdir-external-provisioner","targetRevision":"4.0.18"}},"revision":"4.0.18","status":"Synced"}}}
   creationTimestamp: '2024-07-22T12:18:30Z'
-  generation: 247
+  generation: 1904
   labels:
     project: infrastructure
     source: external
@@ -69,7 +69,6 @@ metadata:
           .: {}
           f:controllerNamespace: {}
           f:health: {}
-          f:sourceType: {}
           f:summary: {}
           f:sync:
             .: {}
@@ -87,7 +86,6 @@ metadata:
                   f:parameters: {}
                 f:repoURL: {}
                 f:targetRevision: {}
-            f:revision: {}
       manager: kubectl-client-side-apply
       operation: Update
       time: '2024-07-22T12:18:30Z'
@@ -131,16 +129,18 @@ metadata:
                 f:targetRevision: {}
           f:reconciledAt: {}
           f:resources: {}
+          f:sourceType: {}
           f:summary:
             f:images: {}
           f:sync:
+            f:revision: {}
             f:status: {}
       manager: argocd-application-controller
       operation: Update
-      time: '2024-07-23T12:39:57Z'
+      time: '2024-10-03T14:57:36Z'
   name: nfs-provisioner
   namespace: argocd
-  resourceVersion: '237017'
+  resourceVersion: '2133142'
   uid: 4843dadf-6c5d-409a-97a9-cad760808b88
   selfLink: /apis/argoproj.io/v1alpha1/namespaces/argocd/applications/nfs-provisioner
 status:
@@ -304,7 +304,7 @@ status:
               value: Retain
         repoURL: https://kubernetes-sigs.github.io/nfs-subdir-external-provisioner
         targetRevision: 4.0.18
-  reconciledAt: '2024-07-23T12:39:57Z'
+  reconciledAt: '2024-10-03T14:57:35Z'
   resources:
     - kind: ServiceAccount
       name: nfs-provisioner-nfs-subdir-external-provisioner

@@ -43,7 +43,7 @@ metadata:
       all checks
       passed","status":"Healthy"},"kind":"APIService","name":"v1beta1.external.metrics.k8s.io","status":"Synced","version":"v1"},{"group":"apps","health":{"status":"Healthy"},"kind":"Deployment","name":"keda-admission","namespace":"keda","status":"Synced","version":"v1"},{"group":"apps","health":{"status":"Healthy"},"kind":"Deployment","name":"keda-metrics-apiserver","namespace":"keda","status":"Synced","version":"v1"},{"group":"apps","health":{"status":"Healthy"},"kind":"Deployment","name":"keda-operator","namespace":"keda","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"keda-external-metrics-reader","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"keda-operator","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"ClusterRoleBinding","name":"keda-hpa-controller-external-metrics","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"ClusterRoleBinding","name":"keda-operator","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"ClusterRoleBinding","name":"keda-system-auth-delegator","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"Role","name":"keda-operator","namespace":"keda","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"RoleBinding","name":"keda-auth-reader","namespace":"keda","status":"Synced","version":"v1"},{"group":"rbac.authorization.k8s.io","kind":"RoleBinding","name":"keda-operator","namespace":"keda","status":"Synced","version":"v1"}],"sourceType":"Kustomize","summary":{"images":["ghcr.io/kedacore/keda-admission-webhooks:2.13.1","ghcr.io/kedacore/keda-metrics-apiserver:2.13.1","ghcr.io/kedacore/keda:2.13.1"]},"sync":{"comparedTo":{"destination":{"namespace":"keda","server":"https://kubernetes.default.svc"},"source":{"path":"argocd/sources/keda","repoURL":"git@github.com:Binesty/Automation.git","targetRevision":"main"}},"revision":"2325df6152c42fe82976edd3eff16d40c0d39366","status":"Synced"}}}
   creationTimestamp: '2024-07-22T14:51:11Z'
-  generation: 194
+  generation: 1925
   labels:
     project: infrastructure
     source: internal
@@ -78,7 +78,6 @@ metadata:
           .: {}
           f:controllerNamespace: {}
           f:health: {}
-          f:sourceType: {}
           f:summary: {}
           f:sync:
             .: {}
@@ -133,6 +132,7 @@ metadata:
                 f:targetRevision: {}
           f:reconciledAt: {}
           f:resources: {}
+          f:sourceType: {}
           f:summary:
             f:images: {}
           f:sync:
@@ -140,10 +140,10 @@ metadata:
             f:status: {}
       manager: argocd-application-controller
       operation: Update
-      time: '2024-07-23T12:30:58Z'
+      time: '2024-10-03T14:57:38Z'
   name: keda
   namespace: argocd
-  resourceVersion: '233480'
+  resourceVersion: '2133166'
   uid: 7461f648-6903-46fe-babb-ed0d57c9d02b
   selfLink: /apis/argoproj.io/v1alpha1/namespaces/argocd/applications/keda
 status:
@@ -432,7 +432,7 @@ status:
         path: argocd/sources/keda
         repoURL: git@github.com:Binesty/Automation.git
         targetRevision: main
-  reconciledAt: '2024-07-23T12:30:57Z'
+  reconciledAt: '2024-10-03T14:57:35Z'
   resources:
     - kind: Namespace
       name: keda
@@ -584,7 +584,7 @@ status:
         path: argocd/sources/keda
         repoURL: git@github.com:Binesty/Automation.git
         targetRevision: main
-    revision: e5d794e616b52162b76b97d41c8ca39fd6f171f2
+    revision: b7502173803aa4b39bfa80cbf636b252e35012e1
     status: Synced
 spec:
   destination:

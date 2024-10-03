@@ -19,7 +19,7 @@ metadata:
       rolling update complete 1 pods at revision
       redis-node-7f9454d9bf...","status":"Healthy"},"kind":"StatefulSet","name":"redis-node","namespace":"redis","status":"Synced","version":"v1"},{"group":"networking.k8s.io","kind":"NetworkPolicy","name":"redis","namespace":"redis","status":"Synced","version":"v1"}],"sourceType":"Helm","summary":{"images":["docker.io/bitnami/redis-sentinel:7.2.4-debian-12-r7","docker.io/bitnami/redis:7.2.4-debian-12-r9"]},"sync":{"comparedTo":{"destination":{"namespace":"redis","server":"https://kubernetes.default.svc"},"source":{"chart":"redis","helm":{"parameters":[{"name":"auth.password","value":"chageme"},{"name":"sentinel.enabled","value":"true"},{"name":"replica.replicaCount","value":"1"},{"name":"auth.existingSecret","value":"redis-secret"},{"name":"auth.existingSecretPasswordKey","value":"REDIS_PASSWORD"}]},"repoURL":"https://charts.bitnami.com/bitnami","targetRevision":"19.0.2"}},"revision":"19.0.2","status":"Synced"}}}
   creationTimestamp: '2024-07-22T12:18:30Z'
-  generation: 249
+  generation: 1891
   labels:
     project: infrastructure
     source: external
@@ -49,7 +49,6 @@ metadata:
               .: {}
               f:parameters: {}
             f:repoURL: {}
-            f:targetRevision: {}
           f:syncPolicy:
             .: {}
             f:syncOptions: {}
@@ -57,7 +56,6 @@ metadata:
           .: {}
           f:controllerNamespace: {}
           f:health: {}
-          f:sourceType: {}
           f:summary: {}
           f:sync:
             .: {}
@@ -74,11 +72,18 @@ metadata:
                   .: {}
                   f:parameters: {}
                 f:repoURL: {}
-                f:targetRevision: {}
-            f:revision: {}
       manager: kubectl-client-side-apply
       operation: Update
       time: '2024-07-22T12:18:30Z'
+    - apiVersion: argoproj.io/v1alpha1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          f:source:
+            f:targetRevision: {}
+      manager: argocd-server
+      operation: Update
+      time: '2024-10-03T14:44:52Z'
     - apiVersion: argoproj.io/v1alpha1
       fieldsType: FieldsV1
       fieldsV1:
@@ -119,16 +124,21 @@ metadata:
                 f:targetRevision: {}
           f:reconciledAt: {}
           f:resources: {}
+          f:sourceType: {}
           f:summary:
             f:images: {}
           f:sync:
+            f:comparedTo:
+              f:source:
+                f:targetRevision: {}
+            f:revision: {}
             f:status: {}
       manager: argocd-application-controller
       operation: Update
-      time: '2024-07-23T12:39:58Z'
+      time: '2024-10-03T15:00:36Z'
   name: redis
   namespace: argocd
-  resourceVersion: '237026'
+  resourceVersion: '2134192'
   uid: e73c172e-046e-4c63-9364-8d524ee0b6d2
   selfLink: /apis/argoproj.io/v1alpha1/namespaces/argocd/applications/redis
 status:
@@ -258,96 +268,12 @@ status:
               value: REDIS_PASSWORD
         repoURL: https://charts.bitnami.com/bitnami
         targetRevision: 19.0.2
-  operationState:
-    finishedAt: '2024-07-22T19:57:13Z'
-    message: successfully synced (all tasks run)
-    operation:
+    - deployStartedAt: '2024-10-03T14:44:52Z'
+      deployedAt: '2024-10-03T14:44:53Z'
+      id: 7
       initiatedBy:
         username: admin
-      retry: {}
-      sync:
-        revision: 19.0.2
-        syncOptions:
-          - CreateNamespace=true
-        syncStrategy:
-          hook: {}
-    phase: Succeeded
-    startedAt: '2024-07-22T19:57:12Z'
-    syncResult:
-      resources:
-        - group: networking.k8s.io
-          hookPhase: Running
-          kind: NetworkPolicy
-          message: networkpolicy.networking.k8s.io/redis created
-          name: redis
-          namespace: redis
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: ''
-          hookPhase: Running
-          kind: ServiceAccount
-          message: serviceaccount/redis created
-          name: redis
-          namespace: redis
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: ''
-          hookPhase: Running
-          kind: ConfigMap
-          message: configmap/redis-configuration created
-          name: redis-configuration
-          namespace: redis
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: ''
-          hookPhase: Running
-          kind: ConfigMap
-          message: configmap/redis-health created
-          name: redis-health
-          namespace: redis
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: ''
-          hookPhase: Running
-          kind: ConfigMap
-          message: configmap/redis-scripts created
-          name: redis-scripts
-          namespace: redis
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: ''
-          hookPhase: Running
-          kind: Service
-          message: service/redis-headless created
-          name: redis-headless
-          namespace: redis
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: ''
-          hookPhase: Running
-          kind: Service
-          message: service/redis created
-          name: redis
-          namespace: redis
-          status: Synced
-          syncPhase: Sync
-          version: v1
-        - group: apps
-          hookPhase: Running
-          kind: StatefulSet
-          message: statefulset.apps/redis-node created
-          name: redis-node
-          namespace: redis
-          status: Synced
-          syncPhase: Sync
-          version: v1
-      revision: 19.0.2
+      revision: 20.1.7
       source:
         chart: redis
         helm:
@@ -363,8 +289,123 @@ status:
             - name: auth.existingSecretPasswordKey
               value: REDIS_PASSWORD
         repoURL: https://charts.bitnami.com/bitnami
-        targetRevision: 19.0.2
-  reconciledAt: '2024-07-23T12:39:57Z'
+        targetRevision: 20.1.7
+  operationState:
+    finishedAt: '2024-10-03T14:44:53Z'
+    message: successfully synced (all tasks run)
+    operation:
+      initiatedBy:
+        username: admin
+      retry: {}
+      sync:
+        revision: 20.1.7
+        syncOptions:
+          - CreateNamespace=true
+        syncStrategy:
+          hook: {}
+    phase: Succeeded
+    startedAt: '2024-10-03T14:44:52Z'
+    syncResult:
+      resources:
+        - group: networking.k8s.io
+          hookPhase: Running
+          kind: NetworkPolicy
+          message: networkpolicy.networking.k8s.io/redis configured
+          name: redis
+          namespace: redis
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: policy
+          hookPhase: Running
+          kind: PodDisruptionBudget
+          message: poddisruptionbudget.policy/redis-node created
+          name: redis-node
+          namespace: redis
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: ''
+          hookPhase: Running
+          kind: ServiceAccount
+          message: serviceaccount/redis configured
+          name: redis
+          namespace: redis
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: ''
+          hookPhase: Running
+          kind: ConfigMap
+          message: configmap/redis-configuration configured
+          name: redis-configuration
+          namespace: redis
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: ''
+          hookPhase: Running
+          kind: ConfigMap
+          message: configmap/redis-health configured
+          name: redis-health
+          namespace: redis
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: ''
+          hookPhase: Running
+          kind: ConfigMap
+          message: configmap/redis-scripts configured
+          name: redis-scripts
+          namespace: redis
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: ''
+          hookPhase: Running
+          kind: Service
+          message: service/redis-headless configured
+          name: redis-headless
+          namespace: redis
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: ''
+          hookPhase: Running
+          kind: Service
+          message: service/redis configured
+          name: redis
+          namespace: redis
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: apps
+          hookPhase: Running
+          kind: StatefulSet
+          message: statefulset.apps/redis-node configured
+          name: redis-node
+          namespace: redis
+          status: Synced
+          syncPhase: Sync
+          version: v1
+      revision: 20.1.7
+      source:
+        chart: redis
+        helm:
+          parameters:
+            - name: auth.password
+              value: chageme
+            - name: sentinel.enabled
+              value: 'true'
+            - name: replica.replicaCount
+              value: '1'
+            - name: auth.existingSecret
+              value: redis-secret
+            - name: auth.existingSecretPasswordKey
+              value: REDIS_PASSWORD
+        repoURL: https://charts.bitnami.com/bitnami
+        targetRevision: 20.1.7
+  reconciledAt: '2024-10-03T15:00:35Z'
   resources:
     - kind: ConfigMap
       name: redis-configuration
@@ -404,7 +445,7 @@ status:
       health:
         message: >-
           statefulset rolling update complete 1 pods at revision
-          redis-node-7f9454d9bf...
+          redis-node-5548bf7478...
         status: Healthy
       kind: StatefulSet
       name: redis-node
@@ -417,11 +458,17 @@ status:
       namespace: redis
       status: Synced
       version: v1
+    - group: policy
+      kind: PodDisruptionBudget
+      name: redis-node
+      namespace: redis
+      status: Synced
+      version: v1
   sourceType: Helm
   summary:
     images:
-      - docker.io/bitnami/redis-sentinel:7.2.4-debian-12-r7
-      - docker.io/bitnami/redis:7.2.4-debian-12-r9
+      - docker.io/bitnami/redis-sentinel:7.4.1-debian-12-r0
+      - docker.io/bitnami/redis:7.4.1-debian-12-r0
   sync:
     comparedTo:
       destination:
@@ -442,8 +489,8 @@ status:
             - name: auth.existingSecretPasswordKey
               value: REDIS_PASSWORD
         repoURL: https://charts.bitnami.com/bitnami
-        targetRevision: 19.0.2
-    revision: 19.0.2
+        targetRevision: 20.1.7
+    revision: 20.1.7
     status: Synced
 spec:
   destination:
@@ -465,7 +512,7 @@ spec:
         - name: auth.existingSecretPasswordKey
           value: REDIS_PASSWORD
     repoURL: https://charts.bitnami.com/bitnami
-    targetRevision: 19.0.2
+    targetRevision: 20.1.7
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
